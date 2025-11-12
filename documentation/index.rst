@@ -6,10 +6,10 @@
 Welkom bij de VKBO cursus Robotica met Python 
 =============================================
 
-**VKBO cursus Robotica met Python** is ontwikkeld voor de Landelijke Studiedag Mechatronica 2025
+**VKBO cursus Robotica met Python** is ontwikkeld voor het project Verbetering Kolom BeroepsOnderwijs (VKBO) en is bedoeld om studenten kennis te laten maken met de basisprincipes van robotica en programmeren met Python.
+
 .. note::
    This project is under active development.
-
 
 
 .. toctree::
