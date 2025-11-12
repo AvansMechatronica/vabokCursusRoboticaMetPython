@@ -17,6 +17,8 @@ Welkom bij de VKBO cursus Robotica met Python
    :caption: Contents:
 
    documentation/inleiding.md
+   documentation/robots.md
+   documentation/software.md
    documentation/referenties.md
 
 

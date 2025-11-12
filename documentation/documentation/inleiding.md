@@ -1,9 +1,20 @@
+![image](../images/yonder-logo.png)
+![image](../images/avans-hogeschool-logo.png)
+
+# Discaimer  
+Al het hier gepresenteerde materaiaal is onder voorbehoud van nader te bepalen leerdoelen en inhoudelijke inhoud.
+
 # Inleiding
 
-Welkom bij deze crash course **Vision With Python**. In deze course gaan we een aantal demonstraties en opdrachten uitvoeren die de een tipje van de sluier oplichten over de mogelijkheden om vision applicaties te maken in Python met behulp van de *OpenCV* en *numyp* bibliotheken van Phyton.
+Welkom bij deze vkbo cursus Robotica in Python! In deze cursus leer je de basisprincipes van robotica en hoe je robots kunt programmeren met behulp van de programmeertaal Python. We zullen verschillende onderwerpen behandelen, waaronder:
+- Basisconcepten van robotica
+- Sensoren en actuatoren    
+- Bewegingsplanning
+- Robotbesturing
+- Praktische toepassingen van robotica
 
-De bijbehorende presenatie kun je hier terug vinden: [*Crash Course Vision With Python*](./CrashCourseVisionWithPython.pdf)
 
-Voor deze cursus is geen specefieke kennis van Python, Vision of OpenCV nodig, maar enige affiniteit met programmeren, Python of vision strekt tot aanbeveling.
+Deze cursus is ontworpen voor beginners, dus je hebt geen voorkennis van robotica of programmeren nodig. We zullen stap voor stap door de concepten en technieken gaan, met veel voorbeelden en oefeningen om je te helpen de stof te begrijpen.
 
-Veel succes en plezier bij deze crash course.
+
+Veel succes en plezier bij deze cursus.
