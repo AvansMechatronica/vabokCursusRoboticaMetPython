@@ -1,1 +1,1 @@
-[Documentatie](https://avansmechatronica.github.io/CrashCourseVisionWithPython/)
+[Documentatie](https://avansmechatronica.github.io/vkboCursusRoboticaMetPython/index.html)
