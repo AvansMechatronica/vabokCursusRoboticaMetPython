@@ -6,6 +6,7 @@ In deze cursus maken we gebruik van de volgende software:
 [Zie python.org voor download en installatie](https://www.python.org/downloads/)
 2. **Thonny**: Een eenvoudige IDE voor Python, ideaal voor beginners.
 [Zie thonny.org voor download en installatie](https://thonny.org/)
+![Thonny IDE Screenshot](../images/thonny.jpg)
 
 Zorg ervoor dat je deze software installeert en configureert voordat je aan de cursus begint.
 

@@ -14,4 +14,6 @@ In deze cursus maken we gebruik van de volgende robots:
 
 [Info uFactory Robot](https://www.ufactory.us/product/lite-6)
 
+![uFactory Lite 6 Screenshot](../images/uFactory.png)
+
 Elke robot heeft zijn eigen specifieke kenmerken en mogelijkheden, en we zullen leren hoe we ze kunnen programmeren en besturen met behulp van Python. Zorg ervoor dat je toegang hebt tot deze robots tijdens de cursus, zodat je de praktische oefeningen kunt volgen.
