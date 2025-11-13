@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welkom bij de VKBO cursus Robotica met Python 
-=============================================
+Welkom bij de VABOK cursus Robotica met Python 
+=============================================_
 
-**VKBO cursus Robotica met Python** is ontwikkeld voor het project Verbetering Kolom BeroepsOnderwijs (VKBO) en is bedoeld om studenten kennis te laten maken met de basisprincipes van robotica en programmeren met Python.
+**VABOK cursus Robotica met Python** is ontwikkeld voor het project Versterking aansluiting beroepsonderwijskolom (VABOK) en is bedoeld om studenten kennis te laten maken met de basisprincipes van robotica en programmeren met Python.
 
 .. note::
    This project is under active development.

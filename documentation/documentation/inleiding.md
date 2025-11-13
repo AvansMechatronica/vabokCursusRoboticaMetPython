@@ -6,7 +6,7 @@ Al het hier gepresenteerde materaiaal is onder voorbehoud van nader te bepalen l
 
 # Inleiding
 
-Welkom bij deze vkbo cursus Robotica in Python! In deze cursus leer je de basisprincipes van robotica en hoe je robots kunt programmeren met behulp van de programmeertaal Python. We zullen verschillende onderwerpen behandelen, waaronder:
+Welkom bij deze vabok cursus Robotica in Python! In deze cursus leer je de basisprincipes van robotica en hoe je robots kunt programmeren met behulp van de programmeertaal Python. We zullen verschillende onderwerpen behandelen, waaronder:
 - Basisconcepten van robotica
 - Sensoren en actuatoren    
 - Bewegingsplanning

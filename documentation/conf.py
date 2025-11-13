@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Avans: VKBO cursus Robotica met Python'
+project = 'Avans: VABOK cursus Robotica met Python'
 copyright = 'Avans ATIx: Gerard Harkema'
 author = 'Gerard Harkema'
 release = '0.1'
