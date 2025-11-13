@@ -8,3 +8,5 @@ In deze cursus maken we gebruik van de volgende software:
 [Zie thonny.org voor download en installatie](https://thonny.org/)
 
 Zorg ervoor dat je deze software installeert en configureert voordat je aan de cursus begint.
+
+Je unt ook een online Python IDE gebruiken: [online-python](https://www.online-python.com/)
