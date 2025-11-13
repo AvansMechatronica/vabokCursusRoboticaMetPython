@@ -1,1 +1,1 @@
-[Documentatie](https://avansmechatronica.github.io/vkboCursusRoboticaMetPython/index.html)
+[Documentatie](https://avansmechatronica.github.io/vabokCursusRoboticaMetPython/index.html)
