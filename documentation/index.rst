@@ -17,6 +17,7 @@ Welkom bij de VABOK cursus Robotica met Python
    :caption: Contents:
 
    documentation/inleiding.md
+   documentation/robbie.md
    documentation/les1.md
    documentation/les2.md
    documentation/les3.md
