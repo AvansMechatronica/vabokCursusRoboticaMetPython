@@ -29,8 +29,7 @@ Welkom bij de VABOK cursus Robotica met Python
    documentation/les8.md
    documentation/les9.md
    documentation/les10.md
-   documentation/robots.md
-   documentation/software.md
+   documentation/pico_car_functies.md
    documentation/referenties.md
    documentation/docent_handleiding.md
 

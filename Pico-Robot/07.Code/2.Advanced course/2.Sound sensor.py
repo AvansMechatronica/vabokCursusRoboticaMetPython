@@ -1,19 +1,19 @@
 from pico_car import SSD1306_I2C
 from machine import Pin, I2C, ADC
 import time
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
-#initialization ADC
+# Initialiseer ADC
 Sound = machine.ADC(27)
 
 while True:
-    #get value
+    # Lees waarde uit
     sounds = Sound.read_u16()
     print(sounds)
     oled.text('Sound:', 0, 0)
     oled.text(str(sounds), 50, 0)
-    #Display sound on OLED
+    # Toon geluidsniveau op OLED
     for i in range(10):
         oled.pixel(i, 30, 1)
         oled.pixel(i, 29, 1)

@@ -3,23 +3,23 @@ import time
 
 Motor = pico_car()
 
-#Car forward，parameter(Left motor speed，Right motor speed),speed 0-255
+# Auto vooruit, parameter (Linker motor snelheid, Rechter motor snelheid), snelheid 0-255
 Motor.Car_Run(255,255)
 time.sleep(1)
-#Car back
+# Auto achteruit
 Motor.Car_Back(255,255)
 time.sleep(1)
-#left
+# Links
 Motor.Car_Run(0,255)
 time.sleep(1)
-#right
+# Rechts
 Motor.Car_Run(255,0)
 time.sleep(1)
-#Turn left
+# Draai naar links
 Motor.Car_Left(255,255)
 time.sleep(1)
-#Turn right
+# Draai naar rechts
 Motor.Car_Right(255,255)
 time.sleep(1)
-#Car stop
+# Auto stoppen
 Motor.Car_Stop()

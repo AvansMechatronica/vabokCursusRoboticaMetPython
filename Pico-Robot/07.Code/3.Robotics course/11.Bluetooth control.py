@@ -11,28 +11,28 @@ time.sleep(.1)
 
 Motor = pico_car()
 Motor.Car_Stop()
-num_leds = 8  # Number of NeoPixels
-# Pin where NeoPixels are connected
+num_leds = 8  # Aantal NeoPixels
+# Pin waar NeoPixels zijn aangesloten
 pixels = ws2812b(num_leds, 0)
 pixels.fill(0,0,0)
 pixels.show()
-# set buzzer pin
+# Stel buzzer pin in
 BZ = PWM(Pin(22))
 BZ.freq(1000)
-# Initialize music
+# Initialiseer muziek
 CM = [0, 330, 350, 393, 441, 495, 556, 624]
-#initialization ultrasonic
+# Initialiseer ultrasone sensor
 ultrasonic = ultrasonic()
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
-#initialization Bluetooth
+# Initialiseer Bluetooth
 uart = UART(0, 9600, bits=8, parity=None, stop=1, tx=Pin(16), rx=Pin(17))
 dat = 0
-#initialization ADC
+# Initialiseer ADC
 Quantity_of_electricity = machine.ADC(28)
 Sound = machine.ADC(27)
-#define Timer
+# Definieer Timer
 tim = Timer()
 def tick(timer):
     global g_distance, g_ultrasonic_state

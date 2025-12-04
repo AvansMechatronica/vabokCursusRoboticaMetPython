@@ -1,50 +1,115 @@
+"""
+================================================================================
+PICO CAR BIBLIOTHEEK - Volledige robotbesturing voor Raspberry Pi Pico
+================================================================================
+
+Deze bibliotheek bevat alle benodigde klassen en functies om de Pico Robot
+aan te sturen. Het ondersteunt:
+
+KLASSEN:
+    - pico_car:      Hoofdklasse voor motor- en servobesturing
+    - ws2812b:       RGB LED strip besturing (NeoPixels)
+    - ultrasonic:    Ultrasone afstandssensor
+    - SSD1306:       OLED display basisklasse
+    - SSD1306_I2C:   OLED display via I2C communicatie
+    - ir:            Infrarood ontvanger voor afstandsbediening
+    - ds:            DS18B20 temperatuursensor (OneWire)
+
+HARDWARE PINOUT:
+    Motoren:
+        - Linker motor A: GPIO 12 (L_A)
+        - Linker motor B: GPIO 13 (L_B)
+        - Rechter motor A: GPIO 10 (R_A)
+        - Rechter motor B: GPIO 11 (R_B)
+    
+    Servo's:
+        - Servo 1: GPIO 18
+        - Servo 2: GPIO 19
+        - Servo 3: GPIO 20
+        - Servo 4: GPIO 21
+    
+    Sensoren en overig:
+        - Ultrasone Trigger: GPIO 0
+        - Ultrasone Echo: GPIO 1
+        - WS2812B LEDs: GPIO 6
+        - Infrarood ontvanger: GPIO 7
+        - I2C SDA (OLED): GPIO 14
+        - I2C SCL (OLED): GPIO 15
+
+AUTEUR: Pico Robot Team
+VERSIE: 1.0
+DATUM: 2024
+================================================================================
+"""
+
 import array, time
-import machine,onewire
+import machine, onewire
 from machine import Pin, PWM
 from onewire import OneWire
 import rp2
 import framebuf
-'''
-library:
-    pciocar
-    ws2812b
-    ultrasonic
-    SSD1306
-    SSD1306_I2C
-    ir
-    ds18b20
-'''
 
-S1 = PWM(Pin(18))
-S2 = PWM(Pin(19))
-S3 = PWM(Pin(20))
-S4 = PWM(Pin(21))
-R_B = PWM(Pin(11))
-R_A = PWM(Pin(10))
-L_B = PWM(Pin(13))
-L_A = PWM(Pin(12))
+# ============================================================================
+# PWM PINNEN CONFIGURATIE
+# ============================================================================
 
-# register definitions
-SET_CONTRAST        = 0x81
-SET_ENTIRE_ON       = 0xa4
-SET_NORM_INV        = 0xa6
-SET_DISP            = 0xae
-SET_MEM_ADDR        = 0x20
-SET_COL_ADDR        = 0x21
-SET_PAGE_ADDR       = 0x22
-SET_DISP_START_LINE = 0x40
-SET_SEG_REMAP       = 0xa0
-SET_MUX_RATIO       = 0xa8
-SET_COM_OUT_DIR     = 0xc0
-SET_DISP_OFFSET     = 0xd3
-SET_COM_PIN_CFG     = 0xda
-SET_DISP_CLK_DIV    = 0xd5
-SET_PRECHARGE       = 0xd9
-SET_VCOM_DESEL      = 0xdb
-SET_CHARGE_PUMP     = 0x8d
-    
+# Servo PWM pinnen (S1 t/m S4) - voor robotarm of andere servo toepassingen
+S1 = PWM(Pin(18))  # Servo aansluiting 1
+S2 = PWM(Pin(19))  # Servo aansluiting 2
+S3 = PWM(Pin(20))  # Servo aansluiting 3
+S4 = PWM(Pin(21))  # Servo aansluiting 4
+
+# Motor PWM pinnen voor H-brug motor driver
+# Rechter motor (R) en Linker motor (L)
+# A = vooruit, B = achteruit
+R_B = PWM(Pin(11))  # Rechter motor achteruit
+R_A = PWM(Pin(10))  # Rechter motor vooruit
+L_B = PWM(Pin(13))  # Linker motor achteruit
+L_A = PWM(Pin(12))  # Linker motor vooruit
+
+# ============================================================================
+# SSD1306 OLED DISPLAY REGISTER DEFINITIES
+# ============================================================================
+# ============================================================================
+# SSD1306 OLED DISPLAY REGISTER DEFINITIES
+# ============================================================================
+# Deze constanten definiëren de commando's voor het OLED scherm
+
+SET_CONTRAST        = 0x81  # Stel contrast/helderheid in
+SET_ENTIRE_ON       = 0xa4  # Zet hele display aan
+SET_NORM_INV        = 0xa6  # Normaal of geïnverteerde weergave
+SET_DISP            = 0xae  # Display aan/uit
+SET_MEM_ADDR        = 0x20  # Geheugen adresseringsmodus
+SET_COL_ADDR        = 0x21  # Kolom adres instellen
+SET_PAGE_ADDR       = 0x22  # Pagina adres instellen
+SET_DISP_START_LINE = 0x40  # Display startlijn
+SET_SEG_REMAP       = 0xa0  # Segment remapping
+SET_MUX_RATIO       = 0xa8  # Multiplex ratio
+SET_COM_OUT_DIR     = 0xc0  # COM output scan richting
+SET_DISP_OFFSET     = 0xd3  # Display offset
+SET_COM_PIN_CFG     = 0xda  # COM pinnen hardware configuratie
+SET_DISP_CLK_DIV    = 0xd5  # Display klok deler
+SET_PRECHARGE       = 0xd9  # Pre-charge periode
+SET_VCOM_DESEL      = 0xdb  # VCOM deselect niveau
+SET_CHARGE_PUMP     = 0x8d  # Charge pump instelling
+# ============================================================================
+# WS2812B LED STRIP DRIVER (PIO Assembly)
+# ============================================================================
+# Deze functie gebruikt de Programmable I/O (PIO) van de RP2040 chip
+# om de WS2812B RGB LED strip aan te sturen met nauwkeurige timing
+
 @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
 def ws2812():
+    """
+    PIO state machine programma voor WS2812B LEDs
+    
+    Timing parameters voor WS2812B protocol:
+    - T1 = HIGH tijd voor een '1' bit (800ns)
+    - T2 = LOW tijd voor een '1' bit (450ns)  
+    - T3 = HIGH tijd voor een '0' bit (400ns)
+    
+    De state machine stuurt 24-bit RGB data naar de LED strip
+    """
     T1 = 2
     T2 = 5
     T3 = 3
@@ -57,57 +122,199 @@ def ws2812():
     nop()                   .side(0)    [T2 - 1]
     wrap()
 
+# ============================================================================
+# PICO_CAR KLASSE - Hoofdbesturing voor robot
+# ============================================================================
+
 class pico_car:
+    """
+    Hoofdklasse voor het aansturen van de Pico Robot.
+    
+    Deze klasse regelt:
+    - Motor besturing (vooruit, achteruit, draaien, stoppen)
+    - Servo motor controle (180°, 270°, en 360° servo's)
+    
+    GEBRUIK:
+        Motor = pico_car()
+        Motor.Car_Run(255, 255)    # Rij vooruit op volle snelheid
+        Motor.Car_Stop()           # Stop de robot
+    """
+    
     def __init__(self):
+        """
+        Initialiseer de robot door PWM frequenties in te stellen.
+        
+        Servo's krijgen 100 Hz (standaard voor servo's)
+        Motoren krijgen 1000 Hz (voor soepele motor besturing)
+        """
+        # Stel servo PWM frequenties in (100 Hz = 10ms periode)
         S1.freq(100)
         S2.freq(100)
         S3.freq(100)
         S4.freq(100)
+        
+        # Stel motor PWM frequenties in (1000 Hz voor soepel draaien)
         R_B.freq(1000)
         R_A.freq(1000)
         L_B.freq(1000)
         L_A.freq(1000)
         
     def Car_Run(self, speed1, speed2):
-        speed1 = speed1*257
-        speed2 = speed2*257
-        R_B.duty_u16(0)
-        R_A.duty_u16(speed2)
-        L_B.duty_u16(speed1)
-        L_A.duty_u16(0)
+        """
+        Laat de robot vooruit rijden.
+        
+        Parameters:
+            speed1 (int): Snelheid linker motor (0-255)
+            speed2 (int): Snelheid rechter motor (0-255)
+        
+        Werking:
+            - Zet beide motoren in voorwaartse richting
+            - L_B en R_A krijgen PWM signaal voor vooruit
+            - L_A en R_B staan uit
+        
+        Voorbeeld:
+            Motor.Car_Run(255, 255)  # Volle snelheid vooruit
+            Motor.Car_Run(150, 150)  # Halve snelheid vooruit
+            Motor.Car_Run(200, 150)  # Vooruit met bocht naar rechts
+        """
+        # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
+        speed1 = speed1 * 257  # Linker motor snelheid
+        speed2 = speed2 * 257  # Rechter motor snelheid
+        
+        # Rechter motor vooruit
+        R_B.duty_u16(0)        # Achteruit uit
+        R_A.duty_u16(speed2)   # Vooruit aan met snelheid
+        
+        # Linker motor vooruit
+        L_B.duty_u16(speed1)   # Vooruit aan met snelheid
+        L_A.duty_u16(0)        # Achteruit uit
         
     def Car_Stop(self):
-        R_B.duty_u16(0)
-        R_A.duty_u16(0)
-        L_B.duty_u16(0)
-        L_A.duty_u16(0)
+        """
+        Stop de robot volledig.
+        
+        Zet alle motor PWM signalen op 0, waardoor beide motoren stoppen.
+        Gebruik deze functie altijd aan het einde van een beweging om
+        de robot gecontroleerd te laten stoppen.
+        
+        Voorbeeld:
+            Motor.Car_Run(255, 255)
+            time.sleep(2)
+            Motor.Car_Stop()  # Stop na 2 seconden
+        """
+        R_B.duty_u16(0)  # Rechter motor achteruit uit
+        R_A.duty_u16(0)  # Rechter motor vooruit uit
+        L_B.duty_u16(0)  # Linker motor vooruit uit
+        L_A.duty_u16(0)  # Linker motor achteruit uit
     
     def Car_Back(self, speed1, speed2):
-        speed1 = speed1*257
-        speed2 = speed2*257
-        R_B.duty_u16(speed2)
-        R_A.duty_u16(0)
-        L_B.duty_u16(0)
-        L_A.duty_u16(speed1)
+        """
+        Laat de robot achteruit rijden.
+        
+        Parameters:
+            speed1 (int): Snelheid linker motor (0-255)
+            speed2 (int): Snelheid rechter motor (0-255)
+        
+        Werking:
+            - Zet beide motoren in achterwaartse richting
+            - R_B en L_A krijgen PWM signaal voor achteruit
+            - R_A en L_B staan uit
+        
+        Voorbeeld:
+            Motor.Car_Back(200, 200)  # Achteruit rijden
+        """
+        # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
+        speed1 = speed1 * 257
+        speed2 = speed2 * 257
+        
+        # Rechter motor achteruit
+        R_B.duty_u16(speed2)   # Achteruit aan met snelheid
+        R_A.duty_u16(0)        # Vooruit uit
+        
+        # Linker motor achteruit
+        L_B.duty_u16(0)        # Vooruit uit
+        L_A.duty_u16(speed1)   # Achteruit aan met snelheid
         
     def Car_Left(self, speed1, speed2):
-        speed1 = speed1*257
-        speed2 = speed2*257
+        """
+        Laat de robot op de plaats naar links draaien.
+        
+        Parameters:
+            speed1 (int): Snelheid linker motor (0-255)
+            speed2 (int): Snelheid rechter motor (0-255)
+        
+        Werking:
+            - Linker motor draait achteruit
+            - Rechter motor draait vooruit
+            - Robot draait linksom op zijn as
+        
+        Voorbeeld:
+            Motor.Car_Left(150, 150)  # Draai links met gemiddelde snelheid
+        """
+        # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
+        speed1 = speed1 * 257
+        speed2 = speed2 * 257
+        
+        # Rechter motor vooruit (voor linkse draai)
         R_B.duty_u16(0)
         R_A.duty_u16(speed2)
+        
+        # Linker motor achteruit (voor linkse draai)
         L_B.duty_u16(0)
         L_A.duty_u16(speed1)
         
     def Car_Right(self, speed1, speed2):
-        speed1 = speed1*257
-        speed2 = speed2*257
+        """
+        Laat de robot op de plaats naar rechts draaien.
+        
+        Parameters:
+            speed1 (int): Snelheid linker motor (0-255)
+            speed2 (int): Snelheid rechter motor (0-255)
+        
+        Werking:
+            - Linker motor draait vooruit
+            - Rechter motor draait achteruit
+            - Robot draait rechtsom op zijn as
+        
+        Voorbeeld:
+            Motor.Car_Right(150, 150)  # Draai rechts met gemiddelde snelheid
+        """
+        # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
+        speed1 = speed1 * 257
+        speed2 = speed2 * 257
+        
+        # Rechter motor achteruit (voor rechtse draai)
         R_B.duty_u16(speed2)
         R_A.duty_u16(0)
+        
+        # Linker motor vooruit (voor rechtse draai)
         L_B.duty_u16(speed1)
         L_A.duty_u16(0)
         
     def servo180(self, num, angle):
-        angle = angle*72.2222+3535
+        """
+        Bestuur een 180 graden servo motor.
+        
+        Parameters:
+            num (int): Servo nummer (1-4)
+            angle (int): Gewenste hoek (0-180 graden)
+        
+        Een 180° servo kan draaien van 0 tot 180 graden.
+        0° = helemaal links, 90° = midden, 180° = helemaal rechts
+        
+        De hoek wordt omgezet naar een PWM waarde:
+        - Formule: PWM = hoek * 72.2222 + 3535
+        - Dit geeft pulsbreedte van ~1ms (0°) tot ~2ms (180°)
+        
+        Voorbeeld:
+            Motor.servo180(1, 90)   # Zet servo 1 naar middenpositie
+            Motor.servo180(2, 0)    # Zet servo 2 naar uiterst links
+            Motor.servo180(3, 180)  # Zet servo 3 naar uiterst rechts
+        """
+        # Bereken PWM waarde uit hoek (0-180 graden)
+        angle = angle * 72.2222 + 3535
+        
+        # Selecteer de juiste servo en stel PWM in
         if num == 1:
             S1.duty_u16(int(angle))
         elif num == 2:
@@ -118,7 +325,27 @@ class pico_car:
             S4.duty_u16(int(angle))
             
     def servo270(self, num, angle):
-        angle = angle*48.1481+3535
+        """
+        Bestuur een 270 graden servo motor.
+        
+        Parameters:
+            num (int): Servo nummer (1-4)
+            angle (int): Gewenste hoek (0-270 graden)
+        
+        Een 270° servo heeft een groter bereik dan een standaard servo.
+        0° = uiterst links, 135° = midden, 270° = uiterst rechts
+        
+        De hoek wordt omgezet naar een PWM waarde:
+        - Formule: PWM = hoek * 48.1481 + 3535
+        
+        Voorbeeld:
+            Motor.servo270(1, 135)  # Zet servo 1 naar middenpositie
+            Motor.servo270(2, 0)    # Zet servo 2 naar uiterst links
+        """
+        # Bereken PWM waarde uit hoek (0-270 graden)
+        angle = angle * 48.1481 + 3535
+        
+        # Selecteer de juiste servo en stel PWM in
         if num == 1:
             S1.duty_u16(int(angle))
         elif num == 2:
@@ -130,7 +357,30 @@ class pico_car:
             
        
     def servo360(self, num, angle):
-        angle = angle*36.1111+3535
+        """
+        Bestuur een 360 graden (continu rotatie) servo motor.
+        
+        Parameters:
+            num (int): Servo nummer (1-4)
+            angle (int): Rotatie snelheid/richting (0-360)
+        
+        Een 360° servo is eigenlijk een continue rotatie motor:
+        - 0° = volle snelheid achteruit
+        - 180° = stop
+        - 360° = volle snelheid vooruit
+        
+        De waarde wordt omgezet naar een PWM waarde:
+        - Formule: PWM = waarde * 36.1111 + 3535
+        
+        Voorbeeld:
+            Motor.servo360(1, 180)  # Stop servo 1
+            Motor.servo360(2, 270)  # Draai servo 2 vooruit
+            Motor.servo360(3, 90)   # Draai servo 3 achteruit
+        """
+        # Bereken PWM waarde uit rotatie waarde (0-360)
+        angle = angle * 36.1111 + 3535
+        
+        # Selecteer de juiste servo en stel PWM in
         if num == 1:
             S1.duty_u16(int(angle))
         elif num == 2:
@@ -140,36 +390,106 @@ class pico_car:
         elif num == 4:
             S4.duty_u16(int(angle))
 
-#delay here is the reset time. You need a pause to reset the LED strip back to the initial LED
-#however, if you have quite a bit of processing to do before the next time you update the strip
-#you could put in delay=0 (or a lower delay)
+# ============================================================================
+# WS2812B LED STRIP KLASSE
+# ============================================================================
+
 class ws2812b:
+    """
+    Klasse voor het aansturen van WS2812B RGB LED strips (NeoPixels).
+    
+    Deze LEDs zijn adresseerbaar, wat betekent dat elke LED individueel
+    een kleur kan krijgen. Ze worden vaak gebruikt voor:
+    - Status indicatie (rood = stop, groen = go)
+    - Lichteffecten (regenboog, vloeiende kleuren)
+    - Visuele feedback
+    
+    GEBRUIK:
+        pixels = ws2812b(8, 0)           # 8 LEDs, state machine 0
+        pixels.set_pixel(0, 255, 0, 0)   # LED 0 rood
+        pixels.set_pixel(1, 0, 255, 0)   # LED 1 groen
+        pixels.show()                     # Toon de kleuren
+    """
+    
     def __init__(self, num_leds, state_machine, delay=0.001):
+        """
+        Initialiseer de WS2812B LED strip.
+        
+        Parameters:
+            num_leds (int): Aantal LEDs in de strip
+            state_machine (int): PIO state machine nummer (0-7)
+            delay (float): Vertragingstijd na update (seconden)
+        
+        De delay is de reset tijd voor de LED strip. Een korte pauze
+        is nodig om de LED strip terug te zetten naar de initiële staat.
+        Als je veel processing doet tussen updates, kun je delay=0 gebruiken.
+        """
+        # Maak een array voor pixel kleuren (32-bit per pixel: RGB)
         self.pixels = array.array("I", [0 for _ in range(num_leds)])
+        
+        # Start de PIO state machine voor WS2812 protocol
         self.sm = rp2.StateMachine(state_machine, ws2812, freq=8000000, sideset_base=Pin(6))
-        self.sm.active(1)
+        self.sm.active(1)  # Activeer de state machine
+        
         self.num_leds = num_leds
         self.delay = delay
-        self.brightnessvalue = 255
+        self.brightnessvalue = 255  # Maximale helderheid (0-255)
 
-    # Set the overal value to adjust brightness when updating leds
-    def brightness(self, brightness = None):
+    # ========================================================================
+    # HELDERHEID CONTROLE
+    # ========================================================================
+    
+    def brightness(self, brightness=None):
+        """
+        Stel de helderheid van alle LEDs in of vraag huidige helderheid op.
+        
+        Parameters:
+            brightness (int, optional): Helderheid (1-255)
+                - None: Geef huidige helderheid terug
+                - 1-255: Stel nieuwe helderheid in
+        
+        Returns:
+            int: Huidige helderheid (als geen parameter wordt gegeven)
+        
+        Voorbeeld:
+            pixels.brightness(100)     # Zet helderheid op 100
+            current = pixels.brightness()  # Lees huidige helderheid
+        """
         if brightness == None:
             return self.brightnessvalue
         else:
+            # Beperk helderheid tussen 1 en 255
             if (brightness < 1):
                 brightness = 1
-        if (brightness > 255):
-            brightness = 255
-        self.brightnessvalue = brightness
+            if (brightness > 255):
+                brightness = 255
+            self.brightnessvalue = brightness
 
-      # Create a gradient with two RGB colors between "pixel1" and "pixel2" (inclusive)
+    # ========================================================================
+    # LED PIXEL FUNCTIES
+    # ========================================================================
+      
     def set_pixel_line_gradient(self, pixel1, pixel2, left_red, left_green, left_blue, right_red, right_green, right_blue):
-        if pixel2 - pixel1 == 0: return
+        """
+        Maak een vloeiend kleurverloop tussen twee pixels.
+        
+        Parameters:
+            pixel1 (int): Start pixel nummer
+            pixel2 (int): Eind pixel nummer
+            left_red, left_green, left_blue (int): Start kleur RGB (0-255)
+            right_red, right_green, right_blue (int): Eind kleur RGB (0-255)
+        
+        Voorbeeld:
+            # Maak gradient van rood (pixel 0) naar blauw (pixel 7)
+            pixels.set_pixel_line_gradient(0, 7, 255, 0, 0, 0, 0, 255)
+        """
+        if pixel2 - pixel1 == 0: 
+            return
     
         right_pixel = max(pixel1, pixel2)
         left_pixel = min(pixel1, pixel2)
         
+        # Bereken kleur voor elke pixel in het verloop
         for i in range(right_pixel - left_pixel + 1):
             fraction = i / (right_pixel - left_pixel)
             red = round((right_red - left_red) * fraction + left_red)
@@ -178,96 +498,274 @@ class ws2812b:
             
             self.set_pixel(left_pixel + i, red, green, blue)
     
-      # Set an array of pixels starting from "pixel1" to "pixel2" to the desired color.
     def set_pixel_line(self, pixel1, pixel2, red, green, blue):
-        for i in range(pixel1, pixel2+1):
+        """
+        Zet een reeks pixels naar dezelfde kleur.
+        
+        Parameters:
+            pixel1 (int): Start pixel
+            pixel2 (int): Eind pixel (inclusief)
+            red, green, blue (int): RGB kleurwaarden (0-255)
+        
+        Voorbeeld:
+            pixels.set_pixel_line(0, 3, 255, 0, 0)  # Pixels 0-3 rood
+        """
+        for i in range(pixel1, pixel2 + 1):
             self.set_pixel(i, red, green, blue)
 
     def set_pixel(self, pixel_num, red, green, blue):
-        # Adjust color values with brightnesslevel
+        """
+        Zet een individuele pixel naar een specifieke kleur.
+        
+        Parameters:
+            pixel_num (int): Pixel nummer (0 tot num_leds-1)
+            red, green, blue (int): RGB kleurwaarden (0-255)
+        
+        De kleuren worden automatisch aangepast op basis van de
+        ingestelde helderheid.
+        
+        Voorbeeld:
+            pixels.set_pixel(0, 255, 0, 0)    # Pixel 0 rood
+            pixels.set_pixel(1, 0, 255, 0)    # Pixel 1 groen
+            pixels.set_pixel(2, 0, 0, 255)    # Pixel 2 blauw
+        """
+        # Pas kleurwaarden aan met helderheid
         blue = round(blue * (self.brightness() / 255))
         red = round(red * (self.brightness() / 255))
         green = round(green * (self.brightness() / 255))
 
+        # Sla kleur op in 32-bit formaat: [0][G][R][B]
         self.pixels[pixel_num] = blue | red << 8 | green << 16
     
-    # rotate x pixels to the left
+    # ========================================================================
+    # ROTATIE FUNCTIES
+    # ========================================================================
+    
     def rotate_left(self, num_of_pixels):
+        """
+        Roteer alle pixels een aantal posities naar links.
+        
+        Parameters:
+            num_of_pixels (int): Aantal posities om te roteren (standaard 1)
+        
+        Dit creëert een "lopend licht" effect waarbij de kleuren
+        naar links verschuiven.
+        
+        Voorbeeld:
+            pixels.rotate_left(1)  # Roteer 1 positie naar links
+            pixels.rotate_left(2)  # Roteer 2 posities naar links
+        """
         if num_of_pixels == None:
             num_of_pixels = 1
+        # Verplaats pixels: pak eerste n pixels en zet ze achteraan
         self.pixels = self.pixels[num_of_pixels:] + self.pixels[:num_of_pixels]
 
-    # rotate x pixels to the right
     def rotate_right(self, num_of_pixels):
+        """
+        Roteer alle pixels een aantal posities naar rechts.
+        
+        Parameters:
+            num_of_pixels (int): Aantal posities om te roteren (standaard 1)
+        
+        Dit creëert een "lopend licht" effect waarbij de kleuren
+        naar rechts verschuiven.
+        
+        Voorbeeld:
+            pixels.rotate_right(1)  # Roteer 1 positie naar rechts
+        """
         if num_of_pixels == None:
             num_of_pixels = 1
+        # Verplaats pixels naar rechts door negatieve rotatie naar links
         num_of_pixels = -1 * num_of_pixels
         self.pixels = self.pixels[num_of_pixels:] + self.pixels[:num_of_pixels]
 
     def show(self):
+        """
+        Stuur de pixel data naar de LED strip.
+        
+        Deze functie moet aangeroepen worden NA het instellen van de
+        pixel kleuren met set_pixel() of andere functies. Pas dan worden
+        de kleuren zichtbaar op de LEDs.
+        
+        Voorbeeld:
+            pixels.set_pixel(0, 255, 0, 0)  # Stel kleur in
+            pixels.set_pixel(1, 0, 255, 0)  # Stel kleur in
+            pixels.show()                    # Toon de kleuren!
+        """
         for i in range(self.num_leds):
-            self.sm.put(self.pixels[i],8)
-        time.sleep(self.delay)
+            self.sm.put(self.pixels[i], 8)  # Stuur 32-bit kleurdata naar PIO
+        time.sleep(self.delay)  # Wacht even voor reset timing
             
     def fill(self, red, green, blue):
+        """
+        Zet alle pixels naar dezelfde kleur.
+        
+        Parameters:
+            red, green, blue (int): RGB kleurwaarden (0-255)
+        
+        Handig om alle LEDs tegelijk uit te zetten (0,0,0) of
+        om een uniforme kleur in te stellen.
+        
+        Voorbeeld:
+            pixels.fill(255, 0, 0)  # Alle LEDs rood
+            pixels.fill(0, 0, 0)    # Alle LEDs uit
+            pixels.show()            # Vergeet niet te tonen!
+        """
         for i in range(self.num_leds):
             self.set_pixel(i, red, green, blue)
         time.sleep(self.delay)
 
 
+# ============================================================================
+# ULTRASONIC AFSTANDSSENSOR KLASSE
+# ============================================================================
+
 class ultrasonic():
+    """
+    Klasse voor het uitlezen van de HC-SR04 ultrasone afstandssensor.
+    
+    Deze sensor werkt met geluidsgolven:
+    1. Stuur een korte puls uit via de Trigger pin
+    2. Wacht tot de Echo pin hoog wordt (echo ontvangen)
+    3. Meet hoe lang de Echo pin hoog blijft
+    4. Bereken afstand: tijd * geluidssnelheid / 2
+    
+    Bereik: 2cm tot 400cm
+    Nauwkeurigheid: ±3mm
+    
+    GEBRUIK:
+        sensor = ultrasonic()
+        afstand = sensor.Distance_accurate()  # In centimeters
+        print("Afstand:", afstand, "cm")
+    """
+    
     def __init__(self):
-        self.Trig = Pin(0, Pin.OUT)
-        self.Echo = Pin(1, Pin.IN)
+        """
+        Initialiseer de ultrasone sensor.
+        
+        Pin configuratie:
+            - Trigger: GPIO 0 (output) - stuurt ultrasone puls uit
+            - Echo: GPIO 1 (input) - ontvangt echo terug
+        """
+        self.Trig = Pin(0, Pin.OUT)  # Trigger pin voor uitzenden
+        self.Echo = Pin(1, Pin.IN)   # Echo pin voor ontvangen
             
     def Distance(self):
+        """
+        Voer een enkele afstandsmeting uit.
+        
+        Returns:
+            float: Afstand in centimeters (of -1 bij fout)
+        
+        Werking:
+            1. Trigger pin 10µs hoog (ultrasone puls uitgezonden)
+            2. Wacht tot Echo pin hoog wordt
+            3. Tel hoe lang Echo pin hoog blijft
+            4. Bereken afstand uit tijd
+        
+        Let op: Deze functie geeft soms onbetrouwbare metingen.
+        Gebruik bij voorkeur Distance_accurate() voor betere resultaten.
+        """
+        # Stuur trigger puls (10µs hoog)
         self.Trig.value(0)
-        time.sleep(0.000002)
+        time.sleep(0.000002)  # 2µs laag
         self.Trig.value(1)
-        time.sleep(0.000015)
+        time.sleep(0.000015)  # 15µs hoog (trigger puls)
         self.Trig.value(0)
+        
+        # Wacht tot echo start
         t2 = 0
         while not self.Echo.value():
             t1 = 0
         t1 = 0
+        
+        # Tel hoe lang echo hoog is
         while self.Echo.value():
             t2 += 1
 
-        time.sleep(0.001)
-        #print ("distance_1 is %d " % ((t2 - t1)* 2.0192))
-        return ((t2 - t1)* 2.0192/10)
+        time.sleep(0.001)  # Korte pauze tussen metingen
+        
+        # Bereken afstand: tijd * snelheidsconversie / 10
+        # Factor 2.0192 is gecalibreerd voor deze sensor
+        return ((t2 - t1) * 2.0192 / 10)
 
     def Distance_accurate(self):
+        """
+        Voer een nauwkeurige afstandsmeting uit door meerdere metingen.
+        
+        Returns:
+            int: Gemiddelde afstand in centimeters
+        
+        Werking:
+            - Voer 5 metingen uit
+            - Filter onbetrouwbare waarden (>500cm of 0cm)
+            - Neem gemiddelde van middelste 3 waarden
+            - Dit vermindert ruis en geeft stabielere metingen
+        
+        Dit is de aanbevolen functie voor betrouwbare afstandsmetingen.
+        
+        Voorbeeld:
+            sensor = ultrasonic()
+            afstand = sensor.Distance_accurate()
+            if afstand < 20:
+                print("Obstakel dichtbij!")
+        """
         num = 0
         ultrasonic = []
+        
+        # Verzamel 5 metingen
         while num < 5:
+            distance = self.Distance()
+            
+            # Filter foutieve metingen
+            while int(distance) == -1:
                 distance = self.Distance()
-                #print("distance is %f"%(distance))
-                while int(distance) == -1 :
-                    distance = self.Distance()
-                    return int(999)
-                    #print("Tdistance is %f"%(distance) )
-                while (int(distance) >= 500 or int(distance) == 0) :
-                    distance = self.Distance()
-                    return int(999)
-                    #print("Edistance is %f"%(distance) )
-                ultrasonic.append(distance)
-                num = num + 1
-                time.sleep(0.01)
-        distance = (ultrasonic[1] + ultrasonic[2] + ultrasonic[3])/3
-        #print("distance is %f cm"%(distance) ) 
+                return int(999)  # Foutcode
+                
+            while (int(distance) >= 500 or int(distance) == 0):
+                distance = self.Distance()
+                return int(999)  # Foutcode voor buiten bereik
+                
+            # Voeg goede meting toe aan lijst
+            ultrasonic.append(distance)
+            num = num + 1
+            time.sleep(0.01)  # Korte pauze tussen metingen
+        
+        # Bereken gemiddelde van middelste 3 metingen (filter uitschieters)
+        distance = (ultrasonic[1] + ultrasonic[2] + ultrasonic[3]) / 3
         return int(distance)
 
 
+# ============================================================================
+# SSD1306 OLED DISPLAY BASISKLASSE
+# ============================================================================
+
 class SSD1306:
+    """
+    Basisklasse voor SSD1306 OLED displays.
+    
+    Het SSD1306 is een populaire OLED display controller die wordt
+    gebruikt in kleine monochrome displays (meestal 128x64 of 128x32).
+    
+    Deze klasse wordt niet direct gebruikt, maar dient als basis voor:
+    - SSD1306_I2C (communicatie via I2C)
+    - SSD1306_SPI (communicatie via SPI)
+    """
+    
     def __init__(self, width, height, external_vcc):
+        """
+        Initialiseer het OLED display.
+        
+        Parameters:
+            width (int): Breedte in pixels (meestal 128)
+            height (int): Hoogte in pixels (32 of 64)
+            external_vcc (bool): True als externe voeding wordt gebruikt
+        """
         self.width = width
         self.height = height
         self.external_vcc = external_vcc
         self.pages = self.height
-        # Note the subclass must initialize self.framebuf to a framebuffer.
-        # This is necessary because the underlying data buffer is different
-        # between I2C and SPI implementations (I2C needs an extra byte).
+        # De subklasse moet self.framebuf initialiseren
         self.poweron()
         self.init_display()
 

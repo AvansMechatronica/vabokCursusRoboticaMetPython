@@ -1,17 +1,17 @@
 import time
 from pico_car import ws2812b
 
-num_leds = 8  # Number of NeoPixels
-# Pin where NeoPixels are connected
+num_leds = 8  # Aantal NeoPixels
+# Pin waar NeoPixels zijn aangesloten
 pixels = ws2812b(num_leds, 0)
-# Set all led off
+# Zet alle leds uit
 pixels.fill(0,0,0)
 pixels.show()
-# Define variables
+# Definieer variabelen
 i = 0
 brightness = 0
 fadeAmount = 1
-# Breathing
+# Ademhaling effect
 while True:
     for i in range(num_leds):
         pixels.set_pixel(i,0,brightness,brightness)

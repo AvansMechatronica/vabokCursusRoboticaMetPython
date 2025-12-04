@@ -3,18 +3,18 @@ from pico_car import pico_car, ws2812b, SSD1306_I2C
 import time
 
 Motor = pico_car()
-num_leds = 8  # Number of NeoPixels
-# Pin where NeoPixels are connected
+num_leds = 8  # Aantal NeoPixels
+# Pin waar NeoPixels zijn aangesloten
 pixels = ws2812b(num_leds, 0)
-# Set all led off
+# Zet alle leds uit
 pixels.fill(0,0,0)
 pixels.show()
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
-#Define the tracking sensor, 1-4 from left to right
-#recognize that black is 0 and white is 1
-#Tracing_1 Tracing_2 Tracing_3 Tracing_4
+# Definieer de lijnvolg sensoren, 1-4 van links naar rechts
+# Zwart wordt herkend als 0 en wit als 1
+# Tracing_1 Tracing_2 Tracing_3 Tracing_4
 #    2         3        4          5     
 Tracing_1 = machine.Pin(2, machine.Pin.IN)
 Tracing_2 = machine.Pin(3, machine.Pin.IN)
@@ -23,13 +23,11 @@ Tracing_4 = machine.Pin(5, machine.Pin.IN)
 
 while True:
     
-    #四路循迹引脚电平状态
-    #Four channel tracking pin level status
+    # Vier lijnvolg sensoren status
     # 0 0 X 0
     # 1 0 X 0
     # 0 1 X 0
-    #处理右锐角和右直角的转动
-    #Handle the rotation of right acute angle and right right right angle
+    # Verwerk scherpe en rechte bochten naar rechts
     if (Tracing_1.value() == 0 or Tracing_2.value() == 0) and Tracing_4.value() == 0:
         Motor.Car_Right(120,120)
         for i in range(num_leds):
@@ -37,13 +35,11 @@ while True:
         oled.text('Turn Right', 0, 0)
         #time.sleep(0.08)
         
-    #四路循迹引脚电平状态
-    #Four channel tracking pin level status
+    # Vier lijnvolg sensoren status
     # 0 X 0 0       
     # 0 X 0 1 
     # 0 X 1 0       
-    #处理左锐角和左直角的转动
-    #Handle the rotation of left sharp angle and left right angle
+    # Verwerk scherpe en rechte bochten naar links
     elif Tracing_1.value() == 0 and (Tracing_3.value() == 0 or Tracing_4.value() == 0):
         Motor.Car_Left(120,120)
         for i in range(num_leds):
@@ -52,8 +48,7 @@ while True:
         #time.sleep(0.08)
         
     # 0 X X X
-    #最左边检测到
-    #Leftmost detected
+    # Meest linkse sensor gedetecteerd
     elif Tracing_1.value() == 0:
         Motor.Car_Left(100,100)
         for i in range(num_leds):
@@ -61,8 +56,7 @@ while True:
         oled.text('Turn Left', 0, 0)
     
     # X X X 0
-    #最右边检测到
-    #Rightmost detected
+    # Meest rechtse sensor gedetecteerd
     elif Tracing_4.value() == 0:
         Motor.Car_Right(100,100)
         for i in range(num_leds):
@@ -70,8 +64,7 @@ while True:
         oled.text('Turn Right', 0, 0)
 
     # X 0 1 X
-    #处理左小弯
-    #Deal with small left bend
+    # Verwerk kleine bocht naar links
     elif Tracing_2.value() == 0 and Tracing_3.value() == 1:
         Motor.Car_Run(0,100)
         for i in range(num_leds):
@@ -79,8 +72,7 @@ while True:
         oled.text('Left', 0, 0)
 
     # X 1 0 X  
-    #处理右小弯
-    #Handle small right bend
+    # Verwerk kleine bocht naar rechts
     elif Tracing_2.value() == 1 and Tracing_3.value() == 0:
         Motor.Car_Run(100,0)
         for i in range(num_leds):
@@ -88,8 +80,7 @@ while True:
         oled.text('Right', 0, 0)
 
     # X 0 0 X
-    #处理直线
-    #Processing line
+    # Verwerk rechte lijn
     elif Tracing_2.value() == 0 and Tracing_3.value() == 0:
         Motor.Car_Run(200,200)
         for i in range(num_leds):

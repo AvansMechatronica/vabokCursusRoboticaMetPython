@@ -1,19 +1,19 @@
 import time
 from machine import Pin, I2C
 from pico_car import SSD1306_I2C, ir
-#initialization ir
+# Initialiseer infrarood
 Ir = ir()
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
 
 while True:
-    #get value
+    # Lees waarde uit
     value = Ir.Getir()
     time.sleep(0.01)
     if value != None:
         print(value)
-        #display press
+        # Toon ingedrukte knop
         if value == 0:
             while value == 0:
                 value = Ir.Getir()

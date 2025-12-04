@@ -4,21 +4,21 @@ from pico_car import SSD1306_I2C, ir, pico_car, ws2812b
 
 Motor = pico_car()
 Motor.Car_Stop()
-num_leds = 8  # Number of NeoPixels
-# Pin where NeoPixels are connected
+num_leds = 8  # Aantal NeoPixels
+# Pin waar NeoPixels zijn aangesloten
 pixels = ws2812b(num_leds, 0)
-# Set all led off
+# Zet alle leds uit
 pixels.fill(0,0,0)
 pixels.show()
-# set buzzer pin
+# Stel buzzer pin in
 BZ = PWM(Pin(22))
 BZ.freq(1000)
-#initialization ir
+# Initialiseer infrarood
 Ir = ir()
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
-#define Timer
+# Definieer Timer
 tim = Timer()
 times_ = 0
 def tick(timer):
@@ -26,16 +26,16 @@ def tick(timer):
     times_ = times_ + 1
     if times_ > 100:
         times_ = 0
-#set timer frequency 20
+# Stel timer frequentie in op 20
 tim.init(freq = 20,mode = Timer.PERIODIC,callback = tick)
 
 while True:
-    #get value
+    # Lees waarde uit
     value = Ir.Getir()
     time.sleep(0.01)
     if value != None:
         print(value)
-        #display press
+        # Toon ingedrukte knop
         if value == 1:
             i = 0
             while value == 1:

@@ -1,12 +1,12 @@
 from machine import Pin, I2C
 from pico_car import SSD1306_I2C
 import time
-#initialization oled
+# Initialiseer OLED
 i2c=I2C(1, scl=Pin(15),sda=Pin(14), freq=100000)
 oled = SSD1306_I2C(128, 32, i2c)
-#Define the tracking sensor, 1-4 from left to right
-#recognize that black is 0 and white is 1
-#Tracing_1 Tracing_2 Tracing_3 Tracing_4
+# Definieer de lijnvolg sensoren, 1-4 van links naar rechts
+# Zwart wordt herkend als 0 en wit als 1
+# Tracing_1 Tracing_2 Tracing_3 Tracing_4
 #    2         3        4          5     
 Tracing_1 = machine.Pin(2, machine.Pin.IN)
 Tracing_2 = machine.Pin(3, machine.Pin.IN)
@@ -19,7 +19,7 @@ while True:
     oled.text('T3', 65, 0)
     oled.text('T4', 95, 0)
     print("T1: %d T2: %d T3: %d T4: %d "%(Tracing_1.value(),Tracing_2.value(),Tracing_3.value(),Tracing_4.value()))
-    # Tracing1 display
+    # Tracing1 weergave
     if Tracing_1.value() == 1:
         oled.text('1', 9, 10)
         for i in range(10):

@@ -3,8 +3,8 @@ import time
 
 Motor = pico_car()
 
-#Car forward，parameter(Left motor speed，Right motor speed),speed 0-255
+# Auto vooruit, parameter (Linker motor snelheid, Rechter motor snelheid), snelheid 0-255
 Motor.Car_Run(255,255)
 time.sleep(100)
-#Car stop
+# Auto stoppen
 Motor.Car_Stop()
