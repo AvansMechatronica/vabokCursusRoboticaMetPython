@@ -158,6 +158,15 @@ class pico_car:
         R_A.freq(1000)
         L_B.freq(1000)
         L_A.freq(1000)
+        self.max_speed = 257
+        
+    def Car_MaxSpeed(self, max_speed):
+        if max_speed > 257:
+            max_speed = 257
+        if max_speed < 0:
+            max_speed = 0
+        self.max_speed = max_speed
+        
         
     def Car_Run(self, speed1, speed2):
         """
@@ -178,8 +187,8 @@ class pico_car:
             Motor.Car_Run(200, 150)  # Vooruit met bocht naar rechts
         """
         # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
-        speed1 = speed1 * 257  # Linker motor snelheid
-        speed2 = speed2 * 257  # Rechter motor snelheid
+        speed1 = speed1 * self.max_speed  # Linker motor snelheid
+        speed2 = speed2 * self.max_speed  # Rechter motor snelheid
         
         # Rechter motor vooruit
         R_B.duty_u16(0)        # Achteruit uit
@@ -224,8 +233,8 @@ class pico_car:
             Motor.Car_Back(200, 200)  # Achteruit rijden
         """
         # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
-        speed1 = speed1 * 257
-        speed2 = speed2 * 257
+        speed1 = speed1 * self.max_speed
+        speed2 = speed2 * self.max_speed
         
         # Rechter motor achteruit
         R_B.duty_u16(speed2)   # Achteruit aan met snelheid
@@ -252,8 +261,8 @@ class pico_car:
             Motor.Car_Left(150, 150)  # Draai links met gemiddelde snelheid
         """
         # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
-        speed1 = speed1 * 257
-        speed2 = speed2 * 257
+        speed1 = speed1 * self.max_speed
+        speed2 = speed2 * self.max_speed
         
         # Rechter motor vooruit (voor linkse draai)
         R_B.duty_u16(0)
@@ -280,8 +289,8 @@ class pico_car:
             Motor.Car_Right(150, 150)  # Draai rechts met gemiddelde snelheid
         """
         # Converteer snelheid van 0-255 naar 0-65535 (16-bit PWM)
-        speed1 = speed1 * 257
-        speed2 = speed2 * 257
+        speed1 = speed1 * self.max_speed
+        speed2 = speed2 * self.max_speed
         
         # Rechter motor achteruit (voor rechtse draai)
         R_B.duty_u16(speed2)
