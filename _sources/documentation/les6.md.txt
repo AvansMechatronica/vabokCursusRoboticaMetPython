@@ -1,0 +1,3 @@
+# Les 6: Geavanceerde robotica technieken
+
+In deze les duiken we dieper in de wereld van robotica en verkennen we geavanceerde technieken die je kunt toepassen in je robotprojecten. Je zult leren hoe je deze technieken kunt implementeren in je Python-programma's om je robot slimmer en efficiënter te maken. Daarnaast bespreken we ook de nieuwste trends en ontwikkelingen in de robotica-industrie, zodat je op de hoogte blijft van de laatste innovaties.

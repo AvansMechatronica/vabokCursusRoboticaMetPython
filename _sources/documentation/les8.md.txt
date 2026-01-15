@@ -1,0 +1,3 @@
+# Les 8: Werkende eindopdracht robotica in Python
+
+In deze les ga je aan de slag met het voltooien van je eindopdracht voor de cursus Robotica met Python. Je zult de kennis en vaardigheden die je in de vorige lessen hebt opgedaan toepassen om een functionele robot te bouwen en te programmeren die aan de gestelde eisen voldoet. We zullen ook bespreken hoe je je project kunt documenteren en presenteren, zodat je klaar bent voor de uiteindelijke beoordeling.
