@@ -25,7 +25,8 @@ language = 'nl'
 extensions = [
     'myst_parser',
     'sphinx_design',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx.ext.mathjax'
 ]
 
 
@@ -40,3 +41,9 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_logo = "_static/avans-hogeschool-logo.png"
 
+myst_enable_extensions = ["html_admonition", "html_image", "colon_fence", "dollarmath"]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
