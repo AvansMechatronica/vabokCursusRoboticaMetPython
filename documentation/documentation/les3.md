@@ -70,4 +70,33 @@ De uitleg van dit Python-programma vind je in de [Ultrasoon Sensor Code Uitleg](
 Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je voor de sensor een voorwerp(je hand kan ook) houd op verschillende afstanden van de sensor.
 
 ## Trackingsensoren
+Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot lijnen op de grond volgen, bijvoorbeeld een zwarte lijn op een witte ondergrond. De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet.
+
 ![image](../images/trackingsensors.jpg)
+Hier is een voorbeeldcode om de trackingsensoren uit te lezen en de waarden op de console weer te geven:
+
+```python
+from machine import Pin, I2C
+from pico_car import SSD1306_I2C
+import time
+
+
+# Definieer de lijnvolg sensoren, 1-4 van links naar rechts
+# Zwart wordt herkend als 0 en wit als 1
+# Tracing_1 Tracing_2 Tracing_3 Tracing_4
+#    2         3        4          5     
+Tracing_1 = machine.Pin(2, machine.Pin.IN)
+Tracing_2 = machine.Pin(3, machine.Pin.IN)
+Tracing_3 = machine.Pin(4, machine.Pin.IN)
+Tracing_4 = machine.Pin(5, machine.Pin.IN)
+
+while True:
+    print("T1: %d T2: %d T3: %d T4: %d "%(Tracing_1.value(),Tracing_2.value(),Tracing_3.value(),Tracing_4.value()))
+
+    time.sleep(0.1)
+```
+
+De uitleg van dit Python-programma vind je in de [Trackingsensor Code Uitleg](les3_uitleg_code_trackingsensor.md).
+
+### Opdracht
+Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Plaats de robot op een oppervlak met een duidelijke lijn (bijvoorbeeld een zwarte tape op een witte vloer) en observeer de waarden die worden weergegeven op de console terwijl de robot over de lijn beweegt.  

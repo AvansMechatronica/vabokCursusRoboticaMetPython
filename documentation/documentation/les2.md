@@ -142,17 +142,7 @@ Motor.Car_Stop()
 
 print("Robot gestopt!")
 ```
-
-**Uitleg van de code:**
-
-| Code | Wat doet het? |
-|------|---------------|
-| `from pico_car import pico_car` | Laadt de robot bibliotheek |
-| `import time` | Laadt de tijd bibliotheek (voor pauzes) |
-| `Motor = pico_car()` | Maakt een Motor object aan om de robot te besturen |
-| `Motor.Car_Run(255, 255)` | Zet beide motoren aan op maximale snelheid (255) |
-| `time.sleep(5)` | Wacht 5 seconden |
-| `Motor.Car_Stop()` | Stopt beide motoren |
+De uitleg van dit  programma kun je vinden in de [Eerste Robot Programma Code Uitleg](les2_eerste_robot_programma.md).
 
 **Stap 4.3:** Bewaar het programma
 - Klik op **"File"** → **"Save as..."**
