@@ -70,9 +70,19 @@ De uitleg van dit Python-programma vind je in de [Ultrasoon Sensor Code Uitleg](
 Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je voor de sensor een voorwerp(je hand kan ook) houd op verschillende afstanden van de sensor.
 
 ## Trackingsensoren
-Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot lijnen op de grond volgen, bijvoorbeeld een zwarte lijn op een witte ondergrond. De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet.
+Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot lijnen op de grond volgen, bijvoorbeeld een zwarte lijn op een witte ondergrond. 
 
 ![image](../images/trackingsensors.jpg)
+
+De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet. Er is een bijzijzonder soort licht gebruikt, infrarood licht, dat voor mensen onzichtbaar is maar wel door de sensoren kan worden gedetecteerd. De trackingsensoren geven een digitale waarde terug: `0` (nul) wanneer ze een donkere lijn detecteren (zwart) en `1` (één) wanneer ze een lichte ondergrond detecteren (wit). De trackingsensoren worden gebruikt om op korte afstand een lijn te detecteren en te volgen.
+
+![image](../images/infraroodsensor.gif)
+
+> Zoals al beschreven is het licht niet zichtbaar voor het menselijk oog, maar je kunt het licht wel zien door met de camera van je telefoon naar de sensoren te kijken terwijl ze actief zijn. Je zult een zwak paarsachtig licht zien dat door de infrarood LED's van de sensoren wordt uitgezonden.
+
+> Dit kun je thuis ook doen met een afstandsbediening van een televisie: richt de afstandsbediening op de camera van je telefoon en druk op een knop. Je zult een lichtflits zien op het scherm van je telefoon, wat het infrarode licht van de afstandsbediening is. Zo kun je controleren of de batterijen van de afstandsbediening nog werken!
+
+
 Hier is een voorbeeldcode om de trackingsensoren uit te lezen en de waarden op de console weer te geven:
 
 ```python
