@@ -74,7 +74,11 @@ Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot l
 
 ![image](../images/trackingsensors.jpg)
 
-De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet. Er is een bijzijzonder soort licht gebruikt, infrarood licht, dat voor mensen onzichtbaar is maar wel door de sensoren kan worden gedetecteerd. De trackingsensoren geven een digitale waarde terug: `0` (nul) wanneer ze een donkere lijn detecteren (zwart) en `1` (één) wanneer ze een lichte ondergrond detecteren (wit). De trackingsensoren worden gebruikt om op korte afstand een lijn te detecteren en te volgen.
+De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet. 
+
+Er wordt een bijzijzonder soort licht gebruikt, infrarood licht, dat voor mensen onzichtbaar is maar wel door de sensoren kan worden gedetecteerd. 
+
+De trackingsensoren geven een digitale waarde terug: `0` (nul) wanneer ze een donkere lijn detecteren (zwart) en `1` (één) wanneer ze een lichte ondergrond detecteren (wit). De trackingsensoren worden gebruikt om op korte afstand een lijn te detecteren en te volgen.
 
 ![image](../images/infraroodsensor.gif)
 
