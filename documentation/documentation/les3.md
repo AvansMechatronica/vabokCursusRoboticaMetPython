@@ -38,6 +38,8 @@ while True:
     print("light2 is %d"%(LightS2) )
     time.sleep(0.5)
 ```
+De uitleg van dit Python-programma vind je in de [Licht Sensor Code Uitleg](les3_uitleg_code_licht_sensor.md).
+
 ### Opdracht
 Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je de lichtsensoren blootstelt aan verschillende lichtomstandigheden (gebruik de zaklamp van je telefoon als lichtbron om op de sensor te schijnen).
     
@@ -62,6 +64,7 @@ while True:
     print("distance is %d cm"%(distance) )
     time.sleep(1)
 ```
+De uitleg van dit Python-programma vind je in de [Ultrasoon Sensor Code Uitleg](les3_uitleg_code_ultrasoon_sensor.md).
 
 ### Opdracht
 Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je voor de sensor een voorwerp(je hand kan ook) houd op verschillende afstanden van de sensor.
