@@ -6,8 +6,7 @@ Deze code leest de vier trackingsensoren uit die op je Pico-robot zitten. Deze s
 ## Stap-voor-stap uitleg
 
 ```python
-from machine import Pin, I2C
-from pico_car import SSD1306_I2C
+from machine import Pin
 import time
 ```
 **Wat gebeurt hier?**
@@ -22,15 +21,15 @@ We halen gereedschap uit onze "gereedschapskist":
 # Zwart wordt herkend als 0 en wit als 1
 # Tracing_1 Tracing_2 Tracing_3 Tracing_4
 #    2         3        4          5     
-Tracing_1 = machine.Pin(2, machine.Pin.IN)
-Tracing_2 = machine.Pin(3, machine.Pin.IN)
-Tracing_3 = machine.Pin(4, machine.Pin.IN)
-Tracing_4 = machine.Pin(5, machine.Pin.IN)
+Tracing_1 = Pin(2, Pin.IN)
+Tracing_2 = Pin(3, Pin.IN)
+Tracing_3 = Pin(4, Pin.IN)
+Tracing_4 = Pin(5, Pin.IN)
 ```
 **Wat gebeurt hier?**
 - We zeggen tegen de robot waar de 4 trackingsensoren zitten
 - `Pin(2)`, `Pin(3)`, `Pin(4)`, `Pin(5)` zijn de verbindingspunten op de robot
-- `machine.Pin.IN` betekent: "Dit is een ingang waar sensoren informatie naar sturen"
+- `Pin.IN` betekent: "Dit is een ingang waar sensoren informatie naar sturen"
 - De sensoren zijn genummerd van 1 tot 4, van links naar rechts
 - `Tracing_1` is de linkersensor, `Tracing_4` is de rechtersensor
 

@@ -13,7 +13,6 @@ from pico_car import SSD1306_I2C, ultrasonic
 **Wat gebeurt hier?**
 We halen gereedschap uit onze "gereedschapskist":
 - `time`: voor het wachten tussen metingen
-- `Pin`, `I2C`: communicatiemiddelen voor verbinding met sensoren
 - `ultrasonic`: speciale code voor de ultrasoon sensor
 
 ```python

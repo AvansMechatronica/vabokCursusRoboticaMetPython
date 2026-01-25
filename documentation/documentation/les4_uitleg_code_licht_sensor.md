@@ -6,13 +6,11 @@ Deze code leest de waardes van twee lichtsensoren uit die op je Pico-robot zitte
 ## Stap-voor-stap uitleg
 
 ```python
-from pico_car import ds, SSD1306_I2C
-from machine import Pin, I2C, ADC
+from machine import Pin, ADC
 import time
 ```
 **Wat gebeurt hier?**
 We importeren (= meenemen) gereedschap dat we nodig hebben:
-- `pico_car`: speciale code voor de Pico-robot
 - `ADC`: dit is een apparaat dat analoge waarden kan lezen (zoals sensoren)
 - `time`: voor het wachten tussen metingen
 
