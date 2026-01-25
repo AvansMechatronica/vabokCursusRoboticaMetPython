@@ -12,8 +12,6 @@ import time
 **Wat gebeurt hier?**
 We halen gereedschap uit onze "gereedschapskist":
 - `Pin`: dit helpt de robot contact te maken met sensoren
-- `I2C`: communicatiemiddel voor verbinding met apparaten
-- `SSD1306_I2C`: code voor het scherm van de robot
 - `time`: voor het wachten tussen metingen
 
 ```python

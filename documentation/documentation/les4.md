@@ -89,8 +89,7 @@ De trackingsensoren geven een digitale waarde terug: `0` (nul) wanneer ze een do
 Hier is een voorbeeldcode om de trackingsensoren uit te lezen en de waarden op de console weer te geven:
 
 ```python
-from machine import Pin, I2C
-from pico_car import SSD1306_I2C
+from machine import Pin
 import time
 
 
@@ -98,10 +97,10 @@ import time
 # Zwart wordt herkend als 0 en wit als 1
 # Tracing_1 Tracing_2 Tracing_3 Tracing_4
 #    2         3        4          5     
-Tracing_1 = Pin(2, machine.Pin.IN)
-Tracing_2 = Pin(3, machine.Pin.IN)
-Tracing_3 = Pin(4, machine.Pin.IN)
-Tracing_4 = Pin(5, machine.Pin.IN)
+Tracing_1 = Pin(2, Pin.IN)
+Tracing_2 = Pin(3, Pin.IN)
+Tracing_3 = Pin(4, Pin.IN)
+Tracing_4 = Pin(5, Pin.IN)
 
 while True:
     print("T1: %d T2: %d T3: %d T4: %d "%(Tracing_1.value(),Tracing_2.value(),Tracing_3.value(),Tracing_4.value()))
