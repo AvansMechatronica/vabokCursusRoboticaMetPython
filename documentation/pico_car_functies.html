@@ -1,0 +1,1450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pico Car Bibliotheek - Functie Referentie &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Referenties" href="referenties.html" />
+    <link rel="prev" title="Les 10: Oplevering en presentatie van je robotproject" href="les10.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1a.html">Les 1a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1b.html">Les 1b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2.html">Les 2: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Programmeren van actoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les4.html">Les 4: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 6: Geavanceerde robotica technieken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de eindopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende eindopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pico Car Bibliotheek - Functie Referentie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-pico-car">Klasse: pico_car</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init"><code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#motor-functies">Motor Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#car-run-speed1-speed2"><code class="docutils literal notranslate"><span class="pre">Car_Run(speed1,</span> <span class="pre">speed2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#car-stop"><code class="docutils literal notranslate"><span class="pre">Car_Stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#car-back-speed1-speed2"><code class="docutils literal notranslate"><span class="pre">Car_Back(speed1,</span> <span class="pre">speed2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#car-left-speed1-speed2"><code class="docutils literal notranslate"><span class="pre">Car_Left(speed1,</span> <span class="pre">speed2)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#car-right-speed1-speed2"><code class="docutils literal notranslate"><span class="pre">Car_Right(speed1,</span> <span class="pre">speed2)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#servo-functies">Servo Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#servo180-num-angle"><code class="docutils literal notranslate"><span class="pre">servo180(num,</span> <span class="pre">angle)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#servo270-num-angle"><code class="docutils literal notranslate"><span class="pre">servo270(num,</span> <span class="pre">angle)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#servo360-num-speed"><code class="docutils literal notranslate"><span class="pre">servo360(num,</span> <span class="pre">speed)</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-ws2812b">Klasse: ws2812b</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init-num-leds-state-machine-delay-0-001"><code class="docutils literal notranslate"><span class="pre">__init__(num_leds,</span> <span class="pre">state_machine,</span> <span class="pre">delay=0.001)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#led-functies">LED Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-pixel-pixel-num-red-green-blue"><code class="docutils literal notranslate"><span class="pre">set_pixel(pixel_num,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-pixel-line-pixel1-pixel2-red-green-blue"><code class="docutils literal notranslate"><span class="pre">set_pixel_line(pixel1,</span> <span class="pre">pixel2,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-pixel-line-gradient-pixel1-pixel2-left-red-left-green-left-blue-right-red-right-green-right-blue"><code class="docutils literal notranslate"><span class="pre">set_pixel_line_gradient(pixel1,</span> <span class="pre">pixel2,</span> <span class="pre">left_red,</span> <span class="pre">left_green,</span> <span class="pre">left_blue,</span> <span class="pre">right_red,</span> <span class="pre">right_green,</span> <span class="pre">right_blue)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fill-red-green-blue"><code class="docutils literal notranslate"><span class="pre">fill(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#brightness-brightness-none"><code class="docutils literal notranslate"><span class="pre">brightness(brightness=None)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotate-left-num-of-pixels-1"><code class="docutils literal notranslate"><span class="pre">rotate_left(num_of_pixels=1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotate-right-num-of-pixels-1"><code class="docutils literal notranslate"><span class="pre">rotate_right(num_of_pixels=1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#show"><code class="docutils literal notranslate"><span class="pre">show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-ultrasonic">Klasse: ultrasonic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-functies">Sensor Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#distance"><code class="docutils literal notranslate"><span class="pre">Distance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distance-accurate"><code class="docutils literal notranslate"><span class="pre">Distance_accurate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-ssd1306-i2c">Klasse: SSD1306_I2C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init-width-height-i2c-addr-0x3c-external-vcc-false"><code class="docutils literal notranslate"><span class="pre">__init__(width,</span> <span class="pre">height,</span> <span class="pre">i2c,</span> <span class="pre">addr=0x3c,</span> <span class="pre">external_vcc=False)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#display-functies">Display Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text-string-x-y-col-1"><code class="docutils literal notranslate"><span class="pre">text(string,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">col=1)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pixel-x-y-col"><code class="docutils literal notranslate"><span class="pre">pixel(x,</span> <span class="pre">y,</span> <span class="pre">col)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fill-col"><code class="docutils literal notranslate"><span class="pre">fill(col)</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">show()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#praktische-voorbeelden-oled">Praktische Voorbeelden OLED</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#voorbeeld-1-sensor-waarde-tonen">Voorbeeld 1: Sensor waarde tonen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#voorbeeld-2-status-display">Voorbeeld 2: Status display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#voorbeeld-3-scrollende-tekst">Voorbeeld 3: Scrollende tekst</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-ir">Klasse: ir</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ir-functies">IR Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getir"><code class="docutils literal notranslate"><span class="pre">Getir()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#praktisch-voorbeeld-robot-met-afstandsbediening">Praktisch Voorbeeld: Robot met afstandsbediening</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#klasse-ds">Klasse: ds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#init-unit-c-resolution-12"><code class="docutils literal notranslate"><span class="pre">__init__(unit='c',</span> <span class="pre">resolution=12)</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#temperatuur-functies">Temperatuur Functies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#complete-voorbeelden">Complete Voorbeelden</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#voorbeeld-1-obstakelvermijding-met-leds-en-display">Voorbeeld 1: Obstakelvermijding met LEDs en Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voorbeeld-2-lijnvolger-met-feedback">Voorbeeld 2: Lijnvolger met Feedback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voorbeeld-3-dashboard-met-alle-sensoren">Voorbeeld 3: Dashboard met alle sensoren</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-en-trucs">Tips en Trucs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motorbesturing">Motorbesturing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#led-strip">LED Strip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oled-display">OLED Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ultrasone-sensor">Ultrasone Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#algemeen">Algemeen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motor-draait-niet">Motor draait niet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leds-werken-niet">LEDs werken niet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oled-toont-niets">OLED toont niets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ultrasone-sensor-geeft-999">Ultrasone sensor geeft 999</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ir-werkt-niet">IR werkt niet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#snelle-referentie-tabel">Snelle Referentie Tabel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Pico Car Bibliotheek - Functie Referentie</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/pico_car_functies.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pico-car-bibliotheek-functie-referentie">
+<h1>Pico Car Bibliotheek - Functie Referentie<a class="headerlink" href="#pico-car-bibliotheek-functie-referentie" title="Link to this heading"></a></h1>
+<p>Dit document beschrijft alle functies en klassen in de <code class="docutils literal notranslate"><span class="pre">pico_car.py</span></code> bibliotheek voor de Raspberry Pi Pico Robot.</p>
+<hr class="docutils" />
+<section id="inhoudsopgave">
+<h2>Inhoudsopgave<a class="headerlink" href="#inhoudsopgave" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#klasse-pico_car"><span class="xref myst">Klasse: pico_car</span></a></p></li>
+<li><p><a class="reference internal" href="#klasse-ws2812b"><span class="xref myst">Klasse: ws2812b</span></a></p></li>
+<li><p><a class="reference internal" href="#klasse-ultrasonic"><span class="xref myst">Klasse: ultrasonic</span></a></p></li>
+<li><p><a class="reference internal" href="#klasse-ssd1306_i2c"><span class="xref myst">Klasse: SSD1306_I2C</span></a></p></li>
+<li><p><a class="reference internal" href="#klasse-ir"><span class="xref myst">Klasse: ir</span></a></p></li>
+<li><p><a class="reference internal" href="#klasse-ds"><span class="xref myst">Klasse: ds</span></a></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="klasse-pico-car">
+<h2>Klasse: pico_car<a class="headerlink" href="#klasse-pico-car" title="Link to this heading"></a></h2>
+<p>De hoofdklasse voor het besturen van de robot. Deze klasse regelt de motoren en servo’s.</p>
+<section id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Link to this heading"></a></h3>
+<section id="init">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#init" title="Link to this heading"></a></h4>
+<p>Initialiseer de pico_car klasse.</p>
+<p><strong>Gebruik:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Wat doet het:</strong></p>
+<ul class="simple">
+<li><p>Stelt PWM frequenties in voor alle servo’s (100 Hz)</p></li>
+<li><p>Stelt PWM frequenties in voor alle motoren (1000 Hz)</p></li>
+<li><p>Maakt de robot klaar voor gebruik</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="motor-functies">
+<h3>Motor Functies<a class="headerlink" href="#motor-functies" title="Link to this heading"></a></h3>
+<section id="car-run-speed1-speed2">
+<h4><code class="docutils literal notranslate"><span class="pre">Car_Run(speed1,</span> <span class="pre">speed2)</span></code><a class="headerlink" href="#car-run-speed1-speed2" title="Link to this heading"></a></h4>
+<p>Laat de robot vooruit rijden.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speed1</span></code> (int): Snelheid linker motor (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed2</span></code> (int): Snelheid rechter motor (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Volle snelheid vooruit</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Halve snelheid vooruit</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Vooruit met bocht naar rechts</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>0 = motor staat stil</p></li>
+<li><p>255 = maximale snelheid</p></li>
+<li><p>Verschillende snelheden voor linker en rechter motor zorgen voor bochten</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="car-stop">
+<h4><code class="docutils literal notranslate"><span class="pre">Car_Stop()</span></code><a class="headerlink" href="#car-stop" title="Link to this heading"></a></h4>
+<p>Stop de robot volledig.</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Zet alle motor PWM signalen op 0</p></li>
+<li><p>Robot stopt met bewegen</p></li>
+<li><p>Gebruik dit altijd aan het einde van een beweging</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="car-back-speed1-speed2">
+<h4><code class="docutils literal notranslate"><span class="pre">Car_Back(speed1,</span> <span class="pre">speed2)</span></code><a class="headerlink" href="#car-back-speed1-speed2" title="Link to this heading"></a></h4>
+<p>Laat de robot achteruit rijden.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speed1</span></code> (int): Snelheid linker motor (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed2</span></code> (int): Snelheid rechter motor (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>  <span class="c1"># Achteruit op volle snelheid</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Achteruit met bocht</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Werkt hetzelfde als Car_Run maar dan in achterwaartse richting</p></li>
+<li><p>Verschillende snelheden zorgen voor bochten tijdens achteruitrijden</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="car-left-speed1-speed2">
+<h4><code class="docutils literal notranslate"><span class="pre">Car_Left(speed1,</span> <span class="pre">speed2)</span></code><a class="headerlink" href="#car-left-speed1-speed2" title="Link to this heading"></a></h4>
+<p>Laat de robot op de plaats naar links draaien.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speed1</span></code> (int): Snelheid linker motor (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed2</span></code> (int): Snelheid rechter motor (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">Car_Left</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Draai links met gemiddelde snelheid</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>           <span class="c1"># Draai een halve seconde</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Linker motor draait achteruit</p></li>
+<li><p>Rechter motor draait vooruit</p></li>
+<li><p>Robot draait linksom op zijn as (spot turn)</p></li>
+<li><p>Hogere snelheid = snellere draaiing</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="car-right-speed1-speed2">
+<h4><code class="docutils literal notranslate"><span class="pre">Car_Right(speed1,</span> <span class="pre">speed2)</span></code><a class="headerlink" href="#car-right-speed1-speed2" title="Link to this heading"></a></h4>
+<p>Laat de robot op de plaats naar rechts draaien.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speed1</span></code> (int): Snelheid linker motor (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed2</span></code> (int): Snelheid rechter motor (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>  <span class="c1"># Draai rechts met gemiddelde snelheid</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>            <span class="c1"># Draai een halve seconde</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Linker motor draait vooruit</p></li>
+<li><p>Rechter motor draait achteruit</p></li>
+<li><p>Robot draait rechtsom op zijn as</p></li>
+<li><p>De tijd bepaalt hoe ver de robot draait (bijv. 0.5s voor 90°)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="servo-functies">
+<h3>Servo Functies<a class="headerlink" href="#servo-functies" title="Link to this heading"></a></h3>
+<section id="servo180-num-angle">
+<h4><code class="docutils literal notranslate"><span class="pre">servo180(num,</span> <span class="pre">angle)</span></code><a class="headerlink" href="#servo180-num-angle" title="Link to this heading"></a></h4>
+<p>Bestuur een 180 graden servo motor.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code> (int): Servo nummer (1, 2, 3 of 4)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code> (int): Gewenste hoek (0-180 graden)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">servo180</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>   <span class="c1"># Zet servo 1 naar middenpositie</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo180</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># Zet servo 2 naar uiterst links</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo180</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>  <span class="c1"># Zet servo 3 naar uiterst rechts</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Standaard servo met 180° bereik</p></li>
+<li><p>0° = helemaal links</p></li>
+<li><p>90° = midden</p></li>
+<li><p>180° = helemaal rechts</p></li>
+<li><p>Veel gebruikt voor robotarmen, camera mounts, etc.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="servo270-num-angle">
+<h4><code class="docutils literal notranslate"><span class="pre">servo270(num,</span> <span class="pre">angle)</span></code><a class="headerlink" href="#servo270-num-angle" title="Link to this heading"></a></h4>
+<p>Bestuur een 270 graden servo motor.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code> (int): Servo nummer (1, 2, 3 of 4)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code> (int): Gewenste hoek (0-270 graden)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">servo270</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">135</span><span class="p">)</span>  <span class="c1"># Zet servo 1 naar middenpositie</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo270</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># Zet servo 2 naar uiterst links</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo270</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">270</span><span class="p">)</span>  <span class="c1"># Zet servo 2 naar uiterst rechts</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Servo met groter draaigebied (270° in plaats van 180°)</p></li>
+<li><p>Biedt meer bewegingsvrijheid</p></li>
+<li><p>0° = uiterst links, 135° = midden, 270° = uiterst rechts</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="servo360-num-speed">
+<h4><code class="docutils literal notranslate"><span class="pre">servo360(num,</span> <span class="pre">speed)</span></code><a class="headerlink" href="#servo360-num-speed" title="Link to this heading"></a></h4>
+<p>Bestuur een 360 graden (continue rotatie) servo motor.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num</span></code> (int): Servo nummer (1, 2, 3 of 4)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code> (int): Rotatie snelheid/richting (0-360)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Motor</span><span class="o">.</span><span class="n">servo360</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>  <span class="c1"># Stop servo 1</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo360</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">270</span><span class="p">)</span>  <span class="c1"># Draai servo 2 vooruit (halve snelheid)</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo360</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>  <span class="c1"># Draai servo 3 vooruit (volle snelheid)</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo360</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>   <span class="c1"># Draai servo 4 achteruit (halve snelheid)</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">servo360</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># Draai servo 4 achteruit (volle snelheid)</span>
+</pre></div>
+</div>
+<p><strong>Uitleg:</strong></p>
+<ul class="simple">
+<li><p>Dit is geen standaard servo maar een continue rotatie motor</p></li>
+<li><p>Kan oneindig in beide richtingen draaien</p></li>
+<li><p>0 = volle snelheid achteruit</p></li>
+<li><p>180 = stop</p></li>
+<li><p>360 = volle snelheid vooruit</p></li>
+<li><p>Handig voor wielen, transportbanden, etc.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="klasse-ws2812b">
+<h2>Klasse: ws2812b<a class="headerlink" href="#klasse-ws2812b" title="Link to this heading"></a></h2>
+<p>Klasse voor het aansturen van WS2812B RGB LED strips (NeoPixels).</p>
+<section id="id1">
+<h3>Constructor<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="init-num-leds-state-machine-delay-0-001">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__(num_leds,</span> <span class="pre">state_machine,</span> <span class="pre">delay=0.001)</span></code><a class="headerlink" href="#init-num-leds-state-machine-delay-0-001" title="Link to this heading"></a></h4>
+<p>Initialiseer de LED strip.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_leds</span></code> (int): Aantal LEDs in de strip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state_machine</span></code> (int): PIO state machine nummer (0-7)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay</span></code> (float): Vertragingstijd na update in seconden (standaard 0.001)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span> <span class="o">=</span> <span class="n">ws2812b</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 8 LEDs, state machine 0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="led-functies">
+<h3>LED Functies<a class="headerlink" href="#led-functies" title="Link to this heading"></a></h3>
+<section id="set-pixel-pixel-num-red-green-blue">
+<h4><code class="docutils literal notranslate"><span class="pre">set_pixel(pixel_num,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code><a class="headerlink" href="#set-pixel-pixel-num-red-green-blue" title="Link to this heading"></a></h4>
+<p>Zet een individuele LED naar een specifieke kleur.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel_num</span></code> (int): LED nummer (0 tot num_leds-1)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">red</span></code> (int): Rood component (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">green</span></code> (int): Groen component (0-255)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blue</span></code> (int): Blauw component (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># LED 0 helder rood</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># LED 1 helder groen</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>    <span class="c1"># LED 2 helder blauw</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># LED 3 geel (rood + groen)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># LED 4 magenta (rood + blauw)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># LED 5 cyaan (groen + blauw)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="c1"># LED 6 wit (alle kleuren)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># VERGEET NIET OM show() AAN TE ROEPEN!</span>
+</pre></div>
+</div>
+<p><strong>Belangrijke kleuren:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> = Rood</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code> = Groen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></code> = Blauw</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0)</span></code> = Geel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">255)</span></code> = Magenta</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">255)</span></code> = Cyaan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code> = Wit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> = Uit</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="set-pixel-line-pixel1-pixel2-red-green-blue">
+<h4><code class="docutils literal notranslate"><span class="pre">set_pixel_line(pixel1,</span> <span class="pre">pixel2,</span> <span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code><a class="headerlink" href="#set-pixel-line-pixel1-pixel2-red-green-blue" title="Link to this heading"></a></h4>
+<p>Zet een reeks LEDs naar dezelfde kleur.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel1</span></code> (int): Start LED nummer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel2</span></code> (int): Eind LED nummer (inclusief)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue</span></code> (int): RGB kleurwaarden (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel_line</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># LEDs 0 t/m 3 rood</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel_line</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># LEDs 4 t/m 7 blauw</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Handig voor:</strong></p>
+<ul class="simple">
+<li><p>Snel meerdere LEDs tegelijk instellen</p></li>
+<li><p>Status indicatie met meerdere LEDs</p></li>
+<li><p>Zones maken op de LED strip</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="set-pixel-line-gradient-pixel1-pixel2-left-red-left-green-left-blue-right-red-right-green-right-blue">
+<h4><code class="docutils literal notranslate"><span class="pre">set_pixel_line_gradient(pixel1,</span> <span class="pre">pixel2,</span> <span class="pre">left_red,</span> <span class="pre">left_green,</span> <span class="pre">left_blue,</span> <span class="pre">right_red,</span> <span class="pre">right_green,</span> <span class="pre">right_blue)</span></code><a class="headerlink" href="#set-pixel-line-gradient-pixel1-pixel2-left-red-left-green-left-blue-right-red-right-green-right-blue" title="Link to this heading"></a></h4>
+<p>Maak een vloeiend kleurverloop tussen twee LEDs.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel1</span></code> (int): Start LED</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixel2</span></code> (int): Eind LED</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">left_red,</span> <span class="pre">left_green,</span> <span class="pre">left_blue</span></code> (int): Start kleur RGB</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right_red,</span> <span class="pre">right_green,</span> <span class="pre">right_blue</span></code> (int): Eind kleur RGB</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gradient van rood naar blauw over alle 8 LEDs</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel_line_gradient</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Gradient van groen naar geel</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel_line_gradient</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Mooie effecten:</strong></p>
+<ul class="simple">
+<li><p>Regenboog effect</p></li>
+<li><p>Zonsondergang (rood → oranje → geel)</p></li>
+<li><p>Oceaan (blauw → groen → cyaan)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="fill-red-green-blue">
+<h4><code class="docutils literal notranslate"><span class="pre">fill(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code><a class="headerlink" href="#fill-red-green-blue" title="Link to this heading"></a></h4>
+<p>Zet alle LEDs naar dezelfde kleur.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">red,</span> <span class="pre">green,</span> <span class="pre">blue</span></code> (int): RGB kleurwaarden (0-255)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Alle LEDs rood</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># Alle LEDs uit</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Alle LEDs wit</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Gebruik:</strong></p>
+<ul class="simple">
+<li><p>Snel alle LEDs dezelfde kleur geven</p></li>
+<li><p>LEDs uitzetten met (0, 0, 0)</p></li>
+<li><p>Status indicatie (rood = fout, groen = OK)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="brightness-brightness-none">
+<h4><code class="docutils literal notranslate"><span class="pre">brightness(brightness=None)</span></code><a class="headerlink" href="#brightness-brightness-none" title="Link to this heading"></a></h4>
+<p>Stel de helderheid in of lees deze uit.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">brightness</span></code> (int, optioneel): Helderheid (1-255)</p>
+<ul>
+<li><p>Als None: geeft huidige helderheid terug</p></li>
+<li><p>Als getal: stelt nieuwe helderheid in</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="o">.</span><span class="n">brightness</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>   <span class="c1"># Zet helderheid op 50/255 (dimmen)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">brightness</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>  <span class="c1"># Maximale helderheid</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">brightness</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># Minimale helderheid (bijna uit)</span>
+
+<span class="n">current</span> <span class="o">=</span> <span class="n">pixels</span><span class="o">.</span><span class="n">brightness</span><span class="p">()</span>  <span class="c1"># Lees huidige helderheid</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Helderheid:&quot;</span><span class="p">,</span> <span class="n">current</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Tip:</strong></p>
+<ul class="simple">
+<li><p>Gebruik lagere helderheid om stroom te besparen</p></li>
+<li><p>Bij heldere omgevingsverlichting: hogere helderheid</p></li>
+<li><p>Bij gebruik in het donker: lagere helderheid is prettiger</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="rotate-left-num-of-pixels-1">
+<h4><code class="docutils literal notranslate"><span class="pre">rotate_left(num_of_pixels=1)</span></code><a class="headerlink" href="#rotate-left-num-of-pixels-1" title="Link to this heading"></a></h4>
+<p>Roteer alle LEDs een aantal posities naar links.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_of_pixels</span></code> (int): Aantal posities (standaard 1)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak een lopend licht effect</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">pixels</span><span class="o">.</span><span class="n">rotate_left</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Effect:</strong></p>
+<ul class="simple">
+<li><p>LED 0 → LED 7</p></li>
+<li><p>LED 1 → LED 0</p></li>
+<li><p>LED 2 → LED 1</p></li>
+<li><p>etc.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="rotate-right-num-of-pixels-1">
+<h4><code class="docutils literal notranslate"><span class="pre">rotate_right(num_of_pixels=1)</span></code><a class="headerlink" href="#rotate-right-num-of-pixels-1" title="Link to this heading"></a></h4>
+<p>Roteer alle LEDs een aantal posities naar rechts.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_of_pixels</span></code> (int): Aantal posities (standaard 1)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak een lopend licht effect (andere kant op)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">pixels</span><span class="o">.</span><span class="n">rotate_right</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="show">
+<h4><code class="docutils literal notranslate"><span class="pre">show()</span></code><a class="headerlink" href="#show" title="Link to this heading"></a></h4>
+<p>Stuur de LED data naar de strip en toon de kleuren.</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Stel kleur in</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Stel kleur in</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                    <span class="c1"># NU pas worden kleuren zichtbaar!</span>
+</pre></div>
+</div>
+<p><strong>BELANGRIJK:</strong></p>
+<ul class="simple">
+<li><p>Je MOET show() aanroepen na het instellen van kleuren</p></li>
+<li><p>Zonder show() zie je geen veranderingen</p></li>
+<li><p>Je kunt meerdere set_pixel() aanroepen doen en dan één keer show()</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="klasse-ultrasonic">
+<h2>Klasse: ultrasonic<a class="headerlink" href="#klasse-ultrasonic" title="Link to this heading"></a></h2>
+<p>Klasse voor het uitlezen van de HC-SR04 ultrasone afstandssensor.</p>
+<section id="id2">
+<h3>Constructor<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<section id="id3">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>Initialiseer de ultrasone sensor.</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>Trigger pin: GPIO 0</p></li>
+<li><p>Echo pin: GPIO 1</p></li>
+<li><p>Bereik: 2cm tot 400cm</p></li>
+<li><p>Nauwkeurigheid: ±3mm</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sensor-functies">
+<h3>Sensor Functies<a class="headerlink" href="#sensor-functies" title="Link to this heading"></a></h3>
+<section id="distance">
+<h4><code class="docutils literal notranslate"><span class="pre">Distance()</span></code><a class="headerlink" href="#distance" title="Link to this heading"></a></h4>
+<p>Voer een enkele afstandsmeting uit (basis functie).</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">float</span></code> - Afstand in centimeters</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+<span class="n">afstand</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">Distance</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Afstand:&quot;</span><span class="p">,</span> <span class="n">afstand</span><span class="p">,</span> <span class="s2">&quot;cm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Let op:</strong></p>
+<ul class="simple">
+<li><p>Deze functie kan soms onbetrouwbare metingen geven</p></li>
+<li><p>Gebruik bij voorkeur <code class="docutils literal notranslate"><span class="pre">Distance_accurate()</span></code> voor betere resultaten</p></li>
+<li><p>Geeft -1 terug bij een fout</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="distance-accurate">
+<h4><code class="docutils literal notranslate"><span class="pre">Distance_accurate()</span></code><a class="headerlink" href="#distance-accurate" title="Link to this heading"></a></h4>
+<p>Voer een nauwkeurige afstandsmeting uit (aanbevolen).</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">int</span></code> - Gemiddelde afstand in centimeters</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sensor</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+<span class="n">afstand</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">afstand</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Obstakel dichtbij!&quot;</span><span class="p">)</span>
+    <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">afstand</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Voorzichtig rijden&quot;</span><span class="p">)</span>
+    <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vrij baan&quot;</span><span class="p">)</span>
+    <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Hoe werkt het:</strong></p>
+<ul class="simple">
+<li><p>Voert 5 metingen uit</p></li>
+<li><p>Filtert onbetrouwbare waarden</p></li>
+<li><p>Neemt gemiddelde van middelste 3 metingen</p></li>
+<li><p>Vermindert meetruis en geeft stabielere resultaten</p></li>
+<li><p>Geeft 999 terug bij een fout of buiten bereik</p></li>
+</ul>
+<p><strong>Praktische toepassing:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obstakelvermijding</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">afstand</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">afstand</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="c1"># Te dichtbij! Draai weg</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Rij vooruit</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="klasse-ssd1306-i2c">
+<h2>Klasse: SSD1306_I2C<a class="headerlink" href="#klasse-ssd1306-i2c" title="Link to this heading"></a></h2>
+<p>Klasse voor het aansturen van een SSD1306 OLED display via I2C.</p>
+<section id="id4">
+<h3>Constructor<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="init-width-height-i2c-addr-0x3c-external-vcc-false">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__(width,</span> <span class="pre">height,</span> <span class="pre">i2c,</span> <span class="pre">addr=0x3c,</span> <span class="pre">external_vcc=False)</span></code><a class="headerlink" href="#init-width-height-i2c-addr-0x3c-external-vcc-false" title="Link to this heading"></a></h4>
+<p>Initialiseer het OLED display.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> (int): Breedte in pixels (meestal 128)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code> (int): Hoogte in pixels (32 of 64)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i2c</span></code> (I2C): I2C bus object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addr</span></code> (int): I2C adres (standaard 0x3c)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">external_vcc</span></code> (bool): Gebruik externe voeding (standaard False)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">SSD1306_I2C</span>
+
+<span class="c1"># Initialiseer I2C</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+
+<span class="c1"># Initialiseer OLED (128x32 pixels)</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="display-functies">
+<h3>Display Functies<a class="headerlink" href="#display-functies" title="Link to this heading"></a></h3>
+<section id="text-string-x-y-col-1">
+<h4><code class="docutils literal notranslate"><span class="pre">text(string,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">col=1)</span></code><a class="headerlink" href="#text-string-x-y-col-1" title="Link to this heading"></a></h4>
+<p>Toon tekst op het display.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> (str): De tekst om te tonen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (int): X positie (0 = links)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> (int): Y positie (0 = boven)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code> (int): Kleur (1 = wit, 0 = zwart)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Robot!&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Vergeet niet!</span>
+</pre></div>
+</div>
+<p><strong>Tips:</strong></p>
+<ul class="simple">
+<li><p>Lettergrootte is 8x8 pixels</p></li>
+<li><p>Maximum ~16 karakters per regel (bij 128 pixels breedte)</p></li>
+<li><p>Y-coördinaten: 0, 10, 20, 30 voor 4 regels tekst</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pixel-x-y-col">
+<h4><code class="docutils literal notranslate"><span class="pre">pixel(x,</span> <span class="pre">y,</span> <span class="pre">col)</span></code><a class="headerlink" href="#pixel-x-y-col" title="Link to this heading"></a></h4>
+<p>Zet een enkele pixel aan of uit.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (int): X positie (0-127)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> (int): Y positie (0-31 of 0-63)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code> (int): 1 = aan, 0 = uit</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teken een punt</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Teken een lijn van pixels</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="fill-col">
+<h4><code class="docutils literal notranslate"><span class="pre">fill(col)</span></code><a class="headerlink" href="#fill-col" title="Link to this heading"></a></h4>
+<p>Vul het hele scherm met een kleur.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">col</span></code> (int): 0 = zwart (leeg scherm), 1 = wit (vol scherm)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maak scherm leeg</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Vul scherm (test)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Gebruik:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">oled.fill(0)</span></code> voor het wissen van het scherm</p></li>
+<li><p>Doe dit voor je nieuwe tekst toont</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h4><code class="docutils literal notranslate"><span class="pre">show()</span></code><a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<p>Toon de inhoud van de buffer op het display.</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># NU pas verschijnt de tekst!</span>
+</pre></div>
+</div>
+<p><strong>BELANGRIJK:</strong></p>
+<ul class="simple">
+<li><p>Je MOET show() aanroepen om wijzigingen te zien</p></li>
+<li><p>Zonder show() verandert het scherm niet</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="praktische-voorbeelden-oled">
+<h3>Praktische Voorbeelden OLED<a class="headerlink" href="#praktische-voorbeelden-oled" title="Link to this heading"></a></h3>
+<section id="voorbeeld-1-sensor-waarde-tonen">
+<h4>Voorbeeld 1: Sensor waarde tonen<a class="headerlink" href="#voorbeeld-1-sensor-waarde-tonen" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">SSD1306_I2C</span><span class="p">,</span> <span class="n">ultrasonic</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Initialiseer</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">afstand</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+    
+    <span class="c1"># Wis scherm</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Toon afstand</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Afstand:&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">afstand</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; cm&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-2-status-display">
+<h4>Voorbeeld 2: Status display<a class="headerlink" href="#voorbeeld-2-status-display" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Robot Status&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Batterij: 87%&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Mode: Auto&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-3-scrollende-tekst">
+<h4>Voorbeeld 3: Scrollende tekst<a class="headerlink" href="#voorbeeld-3-scrollende-tekst" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Welkom bij de Pico Robot!&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">128</span>  <span class="c1"># Start rechts buiten beeld</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">:</span>  <span class="c1"># 8 pixels per karakter</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>  <span class="c1"># Scroll snelheid</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="klasse-ir">
+<h2>Klasse: ir<a class="headerlink" href="#klasse-ir" title="Link to this heading"></a></h2>
+<p>Klasse voor het ontvangen van infrarood signalen van een afstandsbediening.</p>
+<section id="id6">
+<h3>Constructor<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<section id="id7">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__()</span></code><a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<p>Initialiseer de infrarood ontvanger.</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">ir</span>
+
+<span class="n">Ir</span> <span class="o">=</span> <span class="n">ir</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>IR ontvanger pin: GPIO 7</p></li>
+<li><p>Ondersteunt standaard NEC protocol afstandsbedieningen</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ir-functies">
+<h3>IR Functies<a class="headerlink" href="#ir-functies" title="Link to this heading"></a></h3>
+<section id="getir">
+<h4><code class="docutils literal notranslate"><span class="pre">Getir()</span></code><a class="headerlink" href="#getir" title="Link to this heading"></a></h4>
+<p>Lees het ontvangen IR signaal.</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Returns:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Knop code (0-20)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: Geen knop ingedrukt</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Ir</span> <span class="o">=</span> <span class="n">ir</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">knop</span> <span class="o">=</span> <span class="n">Ir</span><span class="o">.</span><span class="n">Getir</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">knop</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Knop ingedrukt:&quot;</span><span class="p">,</span> <span class="n">knop</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Up knop</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>  <span class="c1"># Down knop</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>  <span class="c1"># Left knop</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Left</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>  <span class="c1"># Right knop</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># OK knop</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Knop codes:</strong></p>
+<ul class="simple">
+<li><p>0 = Power</p></li>
+<li><p>1 = Up</p></li>
+<li><p>2 = Light</p></li>
+<li><p>4 = Left</p></li>
+<li><p>5 = OK/Sound</p></li>
+<li><p>6 = Right</p></li>
+<li><p>8 = Turn Left</p></li>
+<li><p>9 = Down</p></li>
+<li><p>10 = Turn Right</p></li>
+<li><p>12 = Plus (+)</p></li>
+<li><p>13 = Zero (0)</p></li>
+<li><p>14 = Min (-)</p></li>
+<li><p>16 = 1</p></li>
+<li><p>17 = 2</p></li>
+<li><p>18 = 3</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="praktisch-voorbeeld-robot-met-afstandsbediening">
+<h3>Praktisch Voorbeeld: Robot met afstandsbediening<a class="headerlink" href="#praktisch-voorbeeld-robot-met-afstandsbediening" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span><span class="p">,</span> <span class="n">ir</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+<span class="n">Ir</span> <span class="o">=</span> <span class="n">ir</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robot klaar! Gebruik afstandsbediening&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">knop</span> <span class="o">=</span> <span class="n">Ir</span><span class="o">.</span><span class="n">Getir</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">knop</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Up</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vooruit&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>  <span class="c1"># Down</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Achteruit&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>  <span class="c1"># Left</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Links&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Left</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>  <span class="c1"># Right</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rechts&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># OK/Sound (stop)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stop&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>  <span class="c1"># Knop 1 (langzaam)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Langzaam vooruit&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>  <span class="c1"># Knop 2 (gemiddeld)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gemiddeld vooruit&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+            
+        <span class="k">elif</span> <span class="n">knop</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>  <span class="c1"># Knop 3 (snel)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Snel vooruit&quot;</span><span class="p">)</span>
+            <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="klasse-ds">
+<h2>Klasse: ds<a class="headerlink" href="#klasse-ds" title="Link to this heading"></a></h2>
+<p>Klasse voor het uitlezen van DS18B20 temperatuursensoren via OneWire protocol.</p>
+<section id="id8">
+<h3>Constructor<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<section id="init-unit-c-resolution-12">
+<h4><code class="docutils literal notranslate"><span class="pre">__init__(unit='c',</span> <span class="pre">resolution=12)</span></code><a class="headerlink" href="#init-unit-c-resolution-12" title="Link to this heading"></a></h4>
+<p>Initialiseer de temperatuursensor.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code> (str): Temperatuur eenheid (‘c’ voor Celsius, ‘f’ voor Fahrenheit)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code> (int): Meetresolutie in bits (9, 10, 11 of 12)</p></li>
+</ul>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">ds</span>
+
+<span class="n">temp_sensor</span> <span class="o">=</span> <span class="n">ds</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Hardware:</strong></p>
+<ul class="simple">
+<li><p>OneWire data pin: GPIO 7</p></li>
+<li><p>Ondersteunt meerdere sensoren op één pin</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="temperatuur-functies">
+<h3>Temperatuur Functies<a class="headerlink" href="#temperatuur-functies" title="Link to this heading"></a></h3>
+<section id="read">
+<h4><code class="docutils literal notranslate"><span class="pre">read()</span></code><a class="headerlink" href="#read" title="Link to this heading"></a></h4>
+<p>Lees de temperatuur van alle aangesloten sensoren.</p>
+<p><strong>Parameters:</strong> Geen</p>
+<p><strong>Returns:</strong> <code class="docutils literal notranslate"><span class="pre">list</span></code> - Lijst met temperatuurwaarden (één per sensor)</p>
+<p><strong>Voorbeeld:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_sensor</span> <span class="o">=</span> <span class="n">ds</span><span class="p">()</span>
+<span class="n">temperaturen</span> <span class="o">=</span> <span class="n">temp_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">temperaturen</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">temp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">temperaturen</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensor </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">temp</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Resolutie en meettijd:</strong></p>
+<ul class="simple">
+<li><p>12 bit (standaard): 0.0625°C nauwkeurigheid, ~1000ms meettijd</p></li>
+<li><p>11 bit: 0.125°C nauwkeurigheid, ~400ms meettijd</p></li>
+<li><p>10 bit: 0.25°C nauwkeurigheid, ~200ms meettijd</p></li>
+<li><p>9 bit: 0.5°C nauwkeurigheid, ~100ms meettijd</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="complete-voorbeelden">
+<h2>Complete Voorbeelden<a class="headerlink" href="#complete-voorbeelden" title="Link to this heading"></a></h2>
+<section id="voorbeeld-1-obstakelvermijding-met-leds-en-display">
+<h3>Voorbeeld 1: Obstakelvermijding met LEDs en Display<a class="headerlink" href="#voorbeeld-1-obstakelvermijding-met-leds-en-display" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span><span class="p">,</span> <span class="n">ultrasonic</span><span class="p">,</span> <span class="n">ws2812b</span><span class="p">,</span> <span class="n">SSD1306_I2C</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Initialiseer hardware</span>
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="n">ws2812b</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Obstakelvermijding gestart!&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">afstand</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+    
+    <span class="c1"># Update display</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Afstand:&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">afstand</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; cm&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">afstand</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="c1"># STOP! Te dichtbij</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Rood</span>
+        <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;STOP!&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">afstand</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="c1"># Langzaam rijden</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Geel</span>
+        <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Voorzichtig&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Normale snelheid</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Groen</span>
+        <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Vrije baan&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-2-lijnvolger-met-feedback">
+<h3>Voorbeeld 2: Lijnvolger met Feedback<a class="headerlink" href="#voorbeeld-2-lijnvolger-met-feedback" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span><span class="p">,</span> <span class="n">ws2812b</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Initialiseer</span>
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="n">ws2812b</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Lijnvolg sensoren (GPIO 2-5)</span>
+<span class="n">sensor_L</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">sensor_ML</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">sensor_MR</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">sensor_R</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="c1"># Snelheden</span>
+<span class="n">SNELHEID</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">BOCHT_SNELHEID</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Lees sensoren (0 = zwart/lijn, 1 = wit/grond)</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">sensor_L</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+    <span class="n">midden_links</span> <span class="o">=</span> <span class="n">sensor_ML</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+    <span class="n">midden_rechts</span> <span class="o">=</span> <span class="n">sensor_MR</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+    <span class="n">rechts</span> <span class="o">=</span> <span class="n">sensor_R</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+    
+    <span class="c1"># Logica voor lijnvolgen</span>
+    <span class="k">if</span> <span class="n">midden_links</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">midden_rechts</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Recht vooruit</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="n">SNELHEID</span><span class="p">,</span> <span class="n">SNELHEID</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Groen = goed</span>
+        
+    <span class="k">elif</span> <span class="n">midden_links</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Draai iets naar links</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="n">BOCHT_SNELHEID</span><span class="p">,</span> <span class="n">SNELHEID</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Blauw = links</span>
+        
+    <span class="k">elif</span> <span class="n">midden_rechts</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Draai iets naar rechts</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="n">SNELHEID</span><span class="p">,</span> <span class="n">BOCHT_SNELHEID</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Magenta = rechts</span>
+        
+    <span class="k">elif</span> <span class="n">links</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Scherpe bocht links</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Left</span><span class="p">(</span><span class="n">BOCHT_SNELHEID</span><span class="p">,</span> <span class="n">BOCHT_SNELHEID</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Cyaan = scherp links</span>
+        
+    <span class="k">elif</span> <span class="n">rechts</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Scherpe bocht rechts</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="n">BOCHT_SNELHEID</span><span class="p">,</span> <span class="n">BOCHT_SNELHEID</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Geel = scherp rechts</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Lijn kwijt!</span>
+        <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Rood = fout</span>
+    
+    <span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="voorbeeld-3-dashboard-met-alle-sensoren">
+<h3>Voorbeeld 3: Dashboard met alle sensoren<a class="headerlink" href="#voorbeeld-3-dashboard-met-alle-sensoren" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">ultrasonic</span><span class="p">,</span> <span class="n">SSD1306_I2C</span><span class="p">,</span> <span class="n">ds</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span><span class="p">,</span> <span class="n">ADC</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Initialiseer hardware</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+<span class="n">ultrasone</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+<span class="n">temp_sensor</span> <span class="o">=</span> <span class="n">ds</span><span class="p">()</span>
+<span class="n">batterij</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Lees alle sensoren</span>
+    <span class="n">afstand</span> <span class="o">=</span> <span class="n">ultrasone</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">bat_waarde</span> <span class="o">=</span> <span class="n">batterij</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="n">bat_procent</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">bat_waarde</span> <span class="o">/</span> <span class="mi">65535</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    
+    <span class="c1"># Toon op display</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Dashboard&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Afst:</span><span class="si">{</span><span class="n">afstand</span><span class="si">}</span><span class="s1">cm&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Temp:</span><span class="si">{</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">C&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Bat:</span><span class="si">{</span><span class="n">bat_procent</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tips-en-trucs">
+<h2>Tips en Trucs<a class="headerlink" href="#tips-en-trucs" title="Link to this heading"></a></h2>
+<section id="motorbesturing">
+<h3>Motorbesturing<a class="headerlink" href="#motorbesturing" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Start altijd met lagere snelheden</strong> (100-150) om te testen</p></li>
+<li><p><strong>Gebruik Car_Stop()</strong> na elke beweging voor controle</p></li>
+<li><p><strong>Experimenteer met tijd</strong> - elke robot is anders</p></li>
+<li><p><strong>Kalibreer je motoren</strong> - pas snelheden aan als robot scheef rijdt</p></li>
+</ol>
+</section>
+<section id="led-strip">
+<h3>LED Strip<a class="headerlink" href="#led-strip" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Vergeet show() niet</strong> - zonder show() zie je niets!</p></li>
+<li><p><strong>Gebruik lagere helderheid</strong> om stroom te besparen</p></li>
+<li><p><strong>Wis oude kleuren</strong> met fill(0,0,0) voor schone effecten</p></li>
+</ol>
+</section>
+<section id="oled-display">
+<h3>OLED Display<a class="headerlink" href="#oled-display" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>fill(0) voor nieuwe tekst</strong> om oude tekst te wissen</p></li>
+<li><p><strong>Tekst past niet?</strong> Gebruik kortere strings of kleinere font</p></li>
+<li><p><strong>Update niet te snel</strong> - 0.1s pauze is prima</p></li>
+<li><p><strong>Test zonder robot</strong> eerst om snelheid te controleren</p></li>
+</ol>
+</section>
+<section id="ultrasone-sensor">
+<h3>Ultrasone Sensor<a class="headerlink" href="#ultrasone-sensor" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Gebruik Distance_accurate()</strong> voor betrouwbare metingen</p></li>
+<li><p><strong>Controleer op 999</strong> (foutcode) in je code</p></li>
+<li><p><strong>15cm minimum afstand</strong> voor veilige stop</p></li>
+<li><p><strong>Meet niet sneller dan 10x per seconde</strong></p></li>
+</ol>
+</section>
+<section id="algemeen">
+<h3>Algemeen<a class="headerlink" href="#algemeen" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Test per onderdeel</strong> - eerst motor, dan sensoren, dan combinatie</p></li>
+<li><p><strong>Gebruik print()</strong> om waarden te debuggen</p></li>
+<li><p><strong>Voeg pauzes toe</strong> met time.sleep() voor stabiele werking</p></li>
+<li><p><strong>Documenteer je code</strong> met comments voor later</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="motor-draait-niet">
+<h3>Motor draait niet<a class="headerlink" href="#motor-draait-niet" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Controleer batterijen</p></li>
+<li><p>Controleer of PWM frequentie is ingesteld (gebeurt automatisch in <strong>init</strong>)</p></li>
+<li><p>Test met lagere snelheid (50-100)</p></li>
+</ul>
+</section>
+<section id="leds-werken-niet">
+<h3>LEDs werken niet<a class="headerlink" href="#leds-werken-niet" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Heb je show() aangeroepen?</p></li>
+<li><p>Controleer GPIO 6 aansluiting</p></li>
+<li><p>Test met eenvoudige code eerst</p></li>
+</ul>
+</section>
+<section id="oled-toont-niets">
+<h3>OLED toont niets<a class="headerlink" href="#oled-toont-niets" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Controleer I2C verbinding (GPIO 14 en 15)</p></li>
+<li><p>Heb je show() aangeroepen?</p></li>
+<li><p>Test met oled.fill(1) voor vol wit scherm</p></li>
+</ul>
+</section>
+<section id="ultrasone-sensor-geeft-999">
+<h3>Ultrasone sensor geeft 999<a class="headerlink" href="#ultrasone-sensor-geeft-999" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Obstakel te dichtbij (&lt; 2cm) of te ver (&gt; 400cm)</p></li>
+<li><p>Controleer GPIO 0 en 1 verbindingen</p></li>
+<li><p>Test met Distance() eerst</p></li>
+</ul>
+</section>
+<section id="ir-werkt-niet">
+<h3>IR werkt niet<a class="headerlink" href="#ir-werkt-niet" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Richt afstandsbediening recht op sensor</p></li>
+<li><p>Verwijder obstakels tussen zender en ontvanger</p></li>
+<li><p>Controleer batterijen in afstandsbediening</p></li>
+<li><p>Print knop waarde om te testen: <code class="docutils literal notranslate"><span class="pre">print(Ir.Getir())</span></code></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="snelle-referentie-tabel">
+<h2>Snelle Referentie Tabel<a class="headerlink" href="#snelle-referentie-tabel" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functie</p></th>
+<th class="head"><p>Gebruik</p></th>
+<th class="head"><p>Voorbeeld</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Car_Run(s1,</span> <span class="pre">s2)</span></code></p></td>
+<td><p>Rij vooruit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Run(255,</span> <span class="pre">255)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Car_Stop()</span></code></p></td>
+<td><p>Stop robot</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Stop()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Car_Back(s1,</span> <span class="pre">s2)</span></code></p></td>
+<td><p>Rij achteruit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Back(200,</span> <span class="pre">200)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Car_Left(s1,</span> <span class="pre">s2)</span></code></p></td>
+<td><p>Draai links</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Left(150,</span> <span class="pre">150)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Car_Right(s1,</span> <span class="pre">s2)</span></code></p></td>
+<td><p>Draai rechts</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Right(150,</span> <span class="pre">150)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">servo180(num,</span> <span class="pre">angle)</span></code></p></td>
+<td><p>Bestuur servo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Motor.servo180(1,</span> <span class="pre">90)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_pixel(n,</span> <span class="pre">r,</span> <span class="pre">g,</span> <span class="pre">b)</span></code></p></td>
+<td><p>Zet LED kleur</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixels.set_pixel(0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fill(r,</span> <span class="pre">g,</span> <span class="pre">b)</span></code></p></td>
+<td><p>Alle LEDs</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixels.fill(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show()</span></code></p></td>
+<td><p>Toon LEDs</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pixels.show()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Distance_accurate()</span></code></p></td>
+<td><p>Meet afstand</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">sensor.Distance_accurate()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">text(str,</span> <span class="pre">x,</span> <span class="pre">y)</span></code></p></td>
+<td><p>Toon tekst</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">oled.text(&quot;Hi&quot;,</span> <span class="pre">0,</span> <span class="pre">0)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Getir()</span></code></p></td>
+<td><p>Lees IR knop</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">knop</span> <span class="pre">=</span> <span class="pre">Ir.Getir()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Veel succes met programmeren van je Pico Robot!</strong> 🤖</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les10.html" class="btn btn-neutral float-left" title="Les 10: Oplevering en presentatie van je robotproject" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="referenties.html" class="btn btn-neutral float-right" title="Referenties" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

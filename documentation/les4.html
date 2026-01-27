@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 4: Programmeren van sensoren &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Les 5: Maak je eigen robot-werktuig" href="les5.html" />
+    <link rel="prev" title="Les 3: Programmeren van actoren" href="les3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1a.html">Les 1a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1b.html">Les 1b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2.html">Les 2: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Programmeren van actoren</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les 4: Programmeren van sensoren</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lichtsensoren">Lichtsensoren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht">Opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ultrasonische-sensor">Ultrasonische sensor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#trackingsensoren">Trackingsensoren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Opdracht</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 6: Geavanceerde robotica technieken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de eindopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende eindopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les 4: Programmeren van sensoren</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les4.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="les-4-programmeren-van-sensoren">
+<h1>Les 4: Programmeren van sensoren<a class="headerlink" href="#les-4-programmeren-van-sensoren" title="Link to this heading"></a></h1>
+<p>Een sensor is een apparaat dat fysieke grootheden uit de omgeving meet en deze omzet in signalen die door een computer of microcontroller kunnen worden verwerkt.</p>
+<p>Op de pico-robot zijn verschillende sensoren aanwezig die gebruikt kunnen worden om de omgeving te detecteren. In deze les leer je hoe je deze sensoren kunt programmeren en gebruiken in je robotprojecten.</p>
+<section id="lichtsensoren">
+<h2>Lichtsensoren<a class="headerlink" href="#lichtsensoren" title="Link to this heading"></a></h2>
+<p>Er zijn twee lichtsensoren op de pico-robot.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/lightsensor1.jpg" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/lightsensor2.jpg" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Deze sensoren kunnen de hoeveelheid licht in de omgeving meten. Dit doen ze met behulp van een fotoweerstand die de weerstand verandert afhankelijk van de hoeveelheid licht die erop valt. De gemeten waarden kunnen worden gebruikt om beslissingen te nemen in je robotprogramma, zoals het volgen van een lichtbron of het vermijden van donkere gebieden. De waarden die de lichtsensoren teruggeven liggen tussen 0 (geen licht) en 65535 (veel licht). De waarde van de lichtsensoren kan worden uitgelezen met behulp van de ADC (Analog to Digital Converter) functionaliteit van de microcontroller.</p>
+<p>Een ADC is een apparaat dat een analoog signaal (zoals de spanning van een sensor) omzet in een digitaal signaal dat door de microcontroller kan worden verwerkt. In dit geval wordt de analoge spanning van de lichtsensoren omgezet in een digitale waarde tussen 0 en 65535.</p>
+<p>Hier is een voorbeeldcode om de lichtsensoren uit te lezen en de waarden op de console weer te geven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">ADC</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Light1 -&gt; GP27</span>
+<span class="c1"># Light2 -&gt; GP26</span>
+<span class="n">light1</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+<span class="n">light2</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Lees waarden uit</span>
+    <span class="n">LightS1</span> <span class="o">=</span> <span class="n">light1</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="n">LightS2</span> <span class="o">=</span> <span class="n">light2</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;light1 is </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">LightS1</span><span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;light2 is </span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">LightS2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_code_licht_sensor.html"><span class="std std-doc">Licht Sensor Code Uitleg</span></a>.</p>
+<section id="opdracht">
+<h3>Opdracht<a class="headerlink" href="#opdracht" title="Link to this heading"></a></h3>
+<p>Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je de lichtsensoren blootstelt aan verschillende lichtomstandigheden (gebruik de zaklamp van je telefoon als lichtbron om op de sensor te schijnen).</p>
+</section>
+</section>
+<section id="ultrasonische-sensor">
+<h2>Ultrasonische sensor<a class="headerlink" href="#ultrasonische-sensor" title="Link to this heading"></a></h2>
+<p>Een ultrasonische sensor meet de afstand tot een object door geluidsgolven uit te zenden en de tijd te meten die het duurt voordat het geluid terugkeert na het weerkaatsen op het object. Dit maakt het mogelijk om obstakels te detecteren en afstanden te meten, wat handig is voor navigatie en botsingsvermijding. Op de pico-robot is een ultrasonische sensor gemonteerd die kan worden gebruikt om afstanden te meten.
+<img alt="image" src="../_images/ultrasoonsensor.jpg" /></p>
+<p>De ultrasonische sensor werkt door het uizenden van een onhoorbaar ultrasonisch signaal via een zender (transducer). Wanneer dit signaal een object raakt, wordt het teruggekaatst en opgevangen door een ontvanger (receiver). De tijd die het signaal nodig heeft om heen en terug te reizen wordt gemeten, en op basis daarvan kan de afstand tot het object worden berekend.
+<img alt="inmage" src="../_images/ultrasonic-sensor-working2.gif" />
+<em><strong>Bron: <a class="reference external" href="https://arnin.in/sensors/ultrasonic-sensor-hc-sr04-with-arduino/?srsltid=AfmBOor5WMsG7SSVyTevzlf4CACYMkjzvcJpYzCU9Wl_XgBbt-MC2_tu">Ultrasonic sensor HC-SR04 with Arduino</a></strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">ultrasonic</span>
+
+<span class="c1"># Initialiseer ultrasone sensor</span>
+<span class="n">ultrasonic</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Lees afstand uit</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="o">.</span><span class="n">Distance_accurate</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;distance is </span><span class="si">%d</span><span class="s2"> cm&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_code_ultrasoon_sensor.html"><span class="std std-doc">Ultrasoon Sensor Code Uitleg</span></a>.</p>
+<section id="id1">
+<h3>Opdracht<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je voor de sensor een voorwerp(je hand kan ook) houd op verschillende afstanden van de sensor.</p>
+</section>
+</section>
+<section id="trackingsensoren">
+<h2>Trackingsensoren<a class="headerlink" href="#trackingsensoren" title="Link to this heading"></a></h2>
+<p>Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot lijnen op de grond volgen, bijvoorbeeld een zwarte lijn op een witte ondergrond.</p>
+<p><img alt="image" src="../_images/trackingsensors.jpg" /></p>
+<p>De sensoren werken door het reflecteren van licht: wanneer de sensor boven een donkere lijn staat, wordt minder licht teruggekaatst dan wanneer deze boven een lichte ondergrond staat. Hierdoor kan de robot bepalen of hij zich boven de lijn bevindt of niet.</p>
+<p>Er wordt een bijzijzonder soort licht gebruikt, infrarood licht, dat voor mensen onzichtbaar is maar wel door de sensoren kan worden gedetecteerd.</p>
+<p>De trackingsensoren geven een digitale waarde terug: <code class="docutils literal notranslate"><span class="pre">0</span></code> (nul) wanneer ze een donkere lijn detecteren (zwart) en <code class="docutils literal notranslate"><span class="pre">1</span></code> (één) wanneer ze een lichte ondergrond detecteren (wit). De trackingsensoren worden gebruikt om op korte afstand een lijn te detecteren en te volgen.</p>
+<p><img alt="image" src="../_images/infraroodsensor.gif" /></p>
+<blockquote>
+<div><p>Zoals al beschreven is het licht niet zichtbaar voor het menselijk oog, maar je kunt het licht wel zien door met de camera van je telefoon naar de sensoren te kijken terwijl ze actief zijn. Je zult een zwak paarsachtig licht zien dat door de infrarood LED’s van de sensoren wordt uitgezonden.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Dit kun je thuis ook doen met een afstandsbediening van een televisie: richt de afstandsbediening op de camera van je telefoon en druk op een knop. Je zult een lichtflits zien op het scherm van je telefoon, wat het infrarode licht van de afstandsbediening is. Zo kun je controleren of de batterijen van de afstandsbediening nog werken!</p>
+</div></blockquote>
+<p>Hier is een voorbeeldcode om de trackingsensoren uit te lezen en de waarden op de console weer te geven:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="c1"># Definieer de lijnvolg sensoren, 1-4 van links naar rechts</span>
+<span class="c1"># Zwart wordt herkend als 0 en wit als 1</span>
+<span class="c1"># Tracing_1 Tracing_2 Tracing_3 Tracing_4</span>
+<span class="c1">#    2         3        4          5     </span>
+<span class="n">Tracing_1</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">Tracing_2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">Tracing_3</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="n">Tracing_4</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;T1: </span><span class="si">%d</span><span class="s2"> T2: </span><span class="si">%d</span><span class="s2"> T3: </span><span class="si">%d</span><span class="s2"> T4: </span><span class="si">%d</span><span class="s2"> &quot;</span><span class="o">%</span><span class="p">(</span><span class="n">Tracing_1</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span><span class="n">Tracing_2</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span><span class="n">Tracing_3</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span><span class="n">Tracing_4</span><span class="o">.</span><span class="n">value</span><span class="p">()))</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_code_trackingsensor.html"><span class="std std-doc">Trackingsensor Code Uitleg</span></a>.</p>
+<section id="id2">
+<h3>Opdracht<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Plaats de robot op een oppervlak met een duidelijke lijn (bijvoorbeeld een zwarte tape op een witte vloer) en observeer de waarden die worden weergegeven op de console terwijl de robot over de lijn beweegt.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les3.html" class="btn btn-neutral float-left" title="Les 3: Programmeren van actoren" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="les5.html" class="btn btn-neutral float-right" title="Les 5: Maak je eigen robot-werktuig" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

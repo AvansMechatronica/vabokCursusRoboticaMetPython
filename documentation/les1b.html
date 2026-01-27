@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 1b: Interactief programmeren met Python &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Les 2: Bouw en programmeer je eerste robot" href="les2.html" />
+    <link rel="prev" title="Les 1a: Introductie in Python programmeren" href="les1a.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1a.html">Les 1a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les 1b: Interactief programmeren met Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-vragen-aan-de-gebruiker">Input: Vragen aan de gebruiker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basis-voorbeeld">Basis voorbeeld:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#let-op-input-is-altijd-tekst">Let op: Input is altijd tekst!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#omzetten-naar-een-getal">Omzetten naar een getal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-werken-met-input">Opdracht 1: Werken met input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-statements-keuzes-maken">If-statements: Keuzes maken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basis-structuur">Basis structuur:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-else-twee-mogelijkheden">If-Else: Twee mogelijkheden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-elif-else-meerdere-mogelijkheden">If-Elif-Else: Meerdere mogelijkheden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vergelijkingsoperatoren">Vergelijkingsoperatoren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meerdere-voorwaarden-combineren">Meerdere voorwaarden combineren</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-werken-met-if-statements">Opdracht 2: Werken met if-statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loops-code-herhalen">Loops: Code herhalen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-loop-vaste-aantal-herhalingen">For-loop: Vaste aantal herhalingen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voorbeelden-van-for-loops">Voorbeelden van for-loops:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#door-een-lijst-heen-loopen">Door een lijst heen loopen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while-loop-herhalen-tot-een-voorwaarde-niet-meer-waar-is">While-loop: Herhalen tot een voorwaarde niet meer waar is</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when-to-use-which">When to use which?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-3-werken-met-loops">Opdracht 3: Werken met loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#break-en-continue">Break en Continue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#break-stop-de-loop">Break: Stop de loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#continue-sla-deze-iteratie-over">Continue: Sla deze iteratie over</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#praktisch-voorbeeld">Praktisch voorbeeld:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-interactief-programma-maken">Opdracht 4: Interactief programma maken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optie-a-quiz-programma">Optie A: Quiz programma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optie-b-rekenmachine-menu">Optie B: Rekenmachine menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optie-c-raadspel-met-hints">Optie C: Raadspel met hints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#veelgemaakte-fouten-en-oplossingen">Veelgemaakte fouten en oplossingen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fout-1-vergeten-om-input-om-te-zetten">Fout 1: Vergeten om input om te zetten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fout-2-verkeerde-inspringing">Fout 2: Verkeerde inspringing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fout-3-in-plaats-van">Fout 3: = in plaats van ==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fout-4-oneindige-loop">Fout 4: Oneindige loop</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-en-tricks">Tips en tricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samenvatting">Samenvatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-oefeningen-voor-thuis">Extra oefeningen (voor thuis)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les2.html">Les 2: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Programmeren van actoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les4.html">Les 4: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 6: Geavanceerde robotica technieken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de eindopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende eindopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les 1b: Interactief programmeren met Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les1b.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="les-1b-interactief-programmeren-met-python">
+<h1>Les 1b: Interactief programmeren met Python<a class="headerlink" href="#les-1b-interactief-programmeren-met-python" title="Link to this heading"></a></h1>
+<p>Welkom bij het vervolg van les 1a! In de vorige les heb je geleerd hoe je tekst kunt printen, variabelen kunt maken en eenvoudige berekeningen kunt doen. Nu gaan we je programma’s interactief maken, zodat ze kunnen reageren op wat de gebruiker invoert en beslissingen kunnen nemen.</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading"></a></h2>
+<p>Aan het einde van deze les kun je:</p>
+<ul class="simple">
+<li><p>Input van de gebruiker vragen en gebruiken</p></li>
+<li><p>Keuzes maken met if-statements</p></li>
+<li><p>Code herhalen met loops (for en while)</p></li>
+<li><p>Een interactief programma maken dat reageert op gebruikersinvoer</p></li>
+</ul>
+</section>
+<section id="input-vragen-aan-de-gebruiker">
+<h2>Input: Vragen aan de gebruiker<a class="headerlink" href="#input-vragen-aan-de-gebruiker" title="Link to this heading"></a></h2>
+<p>Tot nu toe hebben we alleen maar dingen geprint naar het scherm. Maar wat als je programma informatie van de gebruiker wil krijgen? Daarvoor gebruik je <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p>
+<section id="basis-voorbeeld">
+<h3>Basis voorbeeld:<a class="headerlink" href="#basis-voorbeeld" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">naam</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat is je naam? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="n">naam</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt er?</strong></p>
+<ol class="arabic simple">
+<li><p>Het programma stopt en wacht op input van de gebruiker</p></li>
+<li><p>De gebruiker typt iets in en drukt op Enter</p></li>
+<li><p>Wat de gebruiker heeft ingetypt wordt opgeslagen in de variabele <code class="docutils literal notranslate"><span class="pre">naam</span></code></p></li>
+<li><p>Het programma print een begroeting met de naam</p></li>
+</ol>
+</section>
+<section id="let-op-input-is-altijd-tekst">
+<h3>Let op: Input is altijd tekst!<a class="headerlink" href="#let-op-input-is-altijd-tekst" title="Link to this heading"></a></h3>
+<p>Wanneer je <code class="docutils literal notranslate"><span class="pre">input()</span></code> gebruikt, krijg je altijd een <strong>string</strong> (tekst) terug, zelfs als de gebruiker een getal intypt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">leeftijd</span><span class="p">))</span>  <span class="c1"># Dit print: &lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="omzetten-naar-een-getal">
+<h3>Omzetten naar een getal<a class="headerlink" href="#omzetten-naar-een-getal" title="Link to this heading"></a></h3>
+<p>Als je met de invoer wilt rekenen, moet je het omzetten naar een getal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Van tekst naar integer (geheel getal)</span>
+<span class="n">leeftijd_tekst</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">)</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">leeftijd_tekst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volgend jaar ben je&quot;</span><span class="p">,</span> <span class="n">leeftijd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Of korter geschreven:</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volgend jaar ben je&quot;</span><span class="p">,</span> <span class="n">leeftijd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Andere conversies:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code> - omzetten naar geheel getal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code> - omzetten naar kommagetal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str()</span></code> - omzetten naar tekst</p></li>
+</ul>
+</section>
+</section>
+<section id="opdracht-1-werken-met-input">
+<h2>Opdracht 1: Werken met input<a class="headerlink" href="#opdracht-1-werken-met-input" title="Link to this heading"></a></h2>
+<p><strong>1.1</strong> Vraag om de naam en leeftijd van de gebruiker:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">naam</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat is je naam? &quot;</span><span class="p">)</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="n">naam</span> <span class="o">+</span> <span class="s2">&quot;, je bent &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">leeftijd</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; jaar oud!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>1.2</strong> Maak een eenvoudige rekenmachine:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">getal1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geef het eerste getal: &quot;</span><span class="p">))</span>
+<span class="n">getal2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geef het tweede getal: &quot;</span><span class="p">))</span>
+<span class="n">som</span> <span class="o">=</span> <span class="n">getal1</span> <span class="o">+</span> <span class="n">getal2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;De som is:&quot;</span><span class="p">,</span> <span class="n">som</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>1.3</strong> Vraag om iemands favoriet eten en kleur:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jouw code hier</span>
+<span class="c1"># Vraag om favoriet eten en favoriet kleur</span>
+<span class="c1"># Print een leuke zin met beide antwoorden</span>
+</pre></div>
+</div>
+</section>
+<section id="if-statements-keuzes-maken">
+<h2>If-statements: Keuzes maken<a class="headerlink" href="#if-statements-keuzes-maken" title="Link to this heading"></a></h2>
+<p>Met een <strong>if-statement</strong> kan je programma beslissingen nemen. Afhankelijk van een voorwaarde gebeurt er iets wel of niet.</p>
+<section id="basis-structuur">
+<h3>Basis structuur:<a class="headerlink" href="#basis-structuur" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent volwassen!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Let op de structuur:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> gevolgd door een voorwaarde en een dubbele punt <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>De code die uitgevoerd moet worden staat <strong>ingesprongen</strong> (4 spaties of 1 tab)</p></li>
+<li><p>De inspringing is cruciaal in Python!</p></li>
+</ul>
+</section>
+<section id="if-else-twee-mogelijkheden">
+<h3>If-Else: Twee mogelijkheden<a class="headerlink" href="#if-else-twee-mogelijkheden" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent volwassen!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent nog minderjarig.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="if-elif-else-meerdere-mogelijkheden">
+<h3>If-Elif-Else: Meerdere mogelijkheden<a class="headerlink" href="#if-elif-else-meerdere-mogelijkheden" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cijfer</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat is je cijfer? &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">cijfer</span> <span class="o">&gt;=</span> <span class="mf">8.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uitstekend!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">cijfer</span> <span class="o">&gt;=</span> <span class="mf">7.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ruim voldoende!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">cijfer</span> <span class="o">&gt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Voldoende.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Onvoldoende.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Hoe werkt dit?</strong></p>
+<ul class="simple">
+<li><p>Python controleert de voorwaarden van boven naar beneden</p></li>
+<li><p>Bij de eerste voorwaarde die waar is, wordt die code uitgevoerd</p></li>
+<li><p>De rest wordt overgeslagen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code> is kort voor “else if”</p></li>
+</ul>
+</section>
+<section id="vergelijkingsoperatoren">
+<h3>Vergelijkingsoperatoren<a class="headerlink" href="#vergelijkingsoperatoren" title="Link to this heading"></a></h3>
+<p>Je kunt verschillende dingen vergelijken:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Betekenis</p></th>
+<th class="head"><p>Voorbeeld</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>Is gelijk aan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Is niet gelijk aan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>Groter dan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>Kleiner dan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>Groter dan of gelijk aan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>Kleiner dan of gelijk aan</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Let op:</strong> Een enkel <code class="docutils literal notranslate"><span class="pre">=</span></code> is voor toewijzen, dubbel <code class="docutils literal notranslate"><span class="pre">==</span></code> is voor vergelijken!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>      <span class="c1"># Toewijzen: x krijgt de waarde 5</span>
+<span class="n">x</span> <span class="o">==</span> <span class="mi">5</span>     <span class="c1"># Vergelijken: is x gelijk aan 5?</span>
+</pre></div>
+</div>
+</section>
+<section id="meerdere-voorwaarden-combineren">
+<h3>Meerdere voorwaarden combineren<a class="headerlink" href="#meerdere-voorwaarden-combineren" title="Link to this heading"></a></h3>
+<p>Je kunt voorwaarden combineren met <code class="docutils literal notranslate"><span class="pre">and</span></code> en <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="n">heeft_rijbewijs</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Heb je een rijbewijs? (ja/nee) &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">heeft_rijbewijs</span> <span class="o">==</span> <span class="s2">&quot;ja&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je mag autorijden!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je mag nog niet autorijden.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Logische operators:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> - beide voorwaarden moeten waar zijn</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> - minstens één voorwaarde moet waar zijn</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> - keert de voorwaarde om</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Voorbeelden</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">leeftijd</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent in de werkende leeftijd&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dag</span> <span class="o">==</span> <span class="s2">&quot;zaterdag&quot;</span> <span class="ow">or</span> <span class="n">dag</span> <span class="o">==</span> <span class="s2">&quot;zondag&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Het is weekend!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">is_student</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent geen student&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="opdracht-2-werken-met-if-statements">
+<h2>Opdracht 2: Werken met if-statements<a class="headerlink" href="#opdracht-2-werken-met-if-statements" title="Link to this heading"></a></h2>
+<p><strong>2.1</strong> Controleer of een getal positief of negatief is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">getal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geef een getal: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">getal</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Het getal is positief&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">getal</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Het getal is negatief&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Het getal is nul&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>2.2</strong> Maak een wachtwoord checker:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wachtwoord</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geef het wachtwoord: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Controleer of het wachtwoord &quot;python123&quot; is</span>
+<span class="c1"># Print &quot;Toegang verleend!&quot; of &quot;Toegang geweigerd!&quot;</span>
+</pre></div>
+</div>
+<p><strong>2.3</strong> Controleer of iemand mag stemmen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="n">nationaliteit</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Heb je de Nederlandse nationaliteit? (ja/nee) &quot;</span><span class="p">)</span>
+
+<span class="c1"># Iemand mag stemmen als ze 18 of ouder zijn EN de Nederlandse nationaliteit hebben</span>
+<span class="c1"># Print of ze wel of niet mogen stemmen</span>
+</pre></div>
+</div>
+<p><strong>2.4</strong> Maak een eenvoudig menu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== MENU ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Koffie&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Thee&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Water&quot;</span><span class="p">)</span>
+
+<span class="n">keuze</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat wil je drinken? (1/2/3) &quot;</span><span class="p">)</span>
+
+<span class="c1"># Gebruik if-elif-else om te printen wat ze hebben gekozen</span>
+</pre></div>
+</div>
+</section>
+<section id="loops-code-herhalen">
+<h2>Loops: Code herhalen<a class="headerlink" href="#loops-code-herhalen" title="Link to this heading"></a></h2>
+<p>Soms wil je een stuk code meerdere keren uitvoeren. Daarvoor gebruik je <strong>loops</strong> (lussen).</p>
+<section id="for-loop-vaste-aantal-herhalingen">
+<h3>For-loop: Vaste aantal herhalingen<a class="headerlink" href="#for-loop-vaste-aantal-herhalingen" title="Link to this heading"></a></h3>
+<p>Een <strong>for-loop</strong> gebruik je als je weet hoeveel keer iets herhaald moet worden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tel van 0 tot en met 4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Uitvoer:</span>
+<span class="c1"># 0</span>
+<span class="c1"># 1</span>
+<span class="c1"># 2</span>
+<span class="c1"># 3</span>
+<span class="c1"># 4</span>
+</pre></div>
+</div>
+<p><strong>Wat is <code class="docutils literal notranslate"><span class="pre">range()</span></code>?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(5)</span></code> geeft: 0, 1, 2, 3, 4 (5 getallen, begint bij 0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">6)</span></code> geeft: 1, 2, 3, 4, 5 (van 1 tot 6, exclusief 6)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">10,</span> <span class="pre">2)</span></code> geeft: 0, 2, 4, 6, 8 (stappen van 2)</p></li>
+</ul>
+</section>
+<section id="voorbeelden-van-for-loops">
+<h3>Voorbeelden van for-loops:<a class="headerlink" href="#voorbeelden-van-for-loops" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tel van 1 tot en met 10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Print 5 keer &quot;Hallo&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tafel van 5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 x&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="door-een-lijst-heen-loopen">
+<h3>Door een lijst heen loopen<a class="headerlink" href="#door-een-lijst-heen-loopen" title="Link to this heading"></a></h3>
+<p>Je kunt ook door een lijst met items loopen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kleuren</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rood&quot;</span><span class="p">,</span> <span class="s2">&quot;blauw&quot;</span><span class="p">,</span> <span class="s2">&quot;groen&quot;</span><span class="p">,</span> <span class="s2">&quot;geel&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">kleur</span> <span class="ow">in</span> <span class="n">kleuren</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mijn favoriete kleur is&quot;</span><span class="p">,</span> <span class="n">kleur</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="while-loop-herhalen-tot-een-voorwaarde-niet-meer-waar-is">
+<h3>While-loop: Herhalen tot een voorwaarde niet meer waar is<a class="headerlink" href="#while-loop-herhalen-tot-een-voorwaarde-niet-meer-waar-is" title="Link to this heading"></a></h3>
+<p>Een <strong>while-loop</strong> blijft draaien zolang een voorwaarde waar is.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Teller is:&quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">)</span>
+    <span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Klaar!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt er?</strong></p>
+<ol class="arabic simple">
+<li><p>Controleer of <code class="docutils literal notranslate"><span class="pre">teller</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> waar is</p></li>
+<li><p>Zo ja: voer de code uit en verhoog teller met 1</p></li>
+<li><p>Ga terug naar stap 1</p></li>
+<li><p>Zo nee: stop de loop</p></li>
+</ol>
+<p>⚠️ <strong>Let op voor oneindige loops!</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DIT STOPT NOOIT! (oneindige loop)</span>
+<span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
+    <span class="c1"># Vergeten om teller te verhogen!</span>
+</pre></div>
+</div>
+<p>Zorg er altijd voor dat de voorwaarde op een gegeven moment niet meer waar is!</p>
+</section>
+<section id="when-to-use-which">
+<h3>When to use which?<a class="headerlink" href="#when-to-use-which" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>For-loop</strong>: Als je weet hoeveel keer iets herhaald moet worden</p></li>
+<li><p><strong>While-loop</strong>: Als je wilt herhalen totdat een bepaalde voorwaarde niet meer waar is</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For: Print 10 sterretjes</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+
+<span class="c1"># While: Blijf vragen tot het antwoord correct is</span>
+<span class="n">antwoord</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">while</span> <span class="n">antwoord</span> <span class="o">!=</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+    <span class="n">antwoord</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat is de beste programmeertaal? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="opdracht-3-werken-met-loops">
+<h2>Opdracht 3: Werken met loops<a class="headerlink" href="#opdracht-3-werken-met-loops" title="Link to this heading"></a></h2>
+<p><strong>3.1</strong> Print de getallen 1 tot en met 20:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jouw code hier met een for-loop</span>
+</pre></div>
+</div>
+<p><strong>3.2</strong> Print alle even getallen van 0 tot en met 20:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tip: gebruik range(0, 21, 2) of gebruik if om te checken of een getal even is</span>
+</pre></div>
+</div>
+<p><strong>3.3</strong> Maak de tafel van 7:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print: 7 x 1 = 7, 7 x 2 = 14, etc. tot 7 x 10 = 70</span>
+</pre></div>
+</div>
+<p><strong>3.4</strong> Tel tot 100 met stappen van 10:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print: 0, 10, 20, 30, ... 100</span>
+</pre></div>
+</div>
+<p><strong>3.5</strong> Raadspel met while-loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geheim_getal</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">geraden</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="ow">not</span> <span class="n">geraden</span><span class="p">:</span>
+    <span class="n">gok</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Raad het getal (1-10): &quot;</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">gok</span> <span class="o">==</span> <span class="n">geheim_getal</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goed geraden!&quot;</span><span class="p">)</span>
+        <span class="n">geraden</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Helaas, probeer opnieuw!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>3.6</strong> Tel af van 10 naar 0:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0</span>
+<span class="c1"># Tip: gebruik range(10, -1, -1)</span>
+</pre></div>
+</div>
+</section>
+<section id="break-en-continue">
+<h2>Break en Continue<a class="headerlink" href="#break-en-continue" title="Link to this heading"></a></h2>
+<p>Soms wil je een loop eerder stoppen of een iteratie overslaan:</p>
+<section id="break-stop-de-loop">
+<h3>Break: Stop de loop<a class="headerlink" href="#break-stop-de-loop" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># Stop de loop wanneer i 5 is</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Output: 0, 1, 2, 3, 4</span>
+</pre></div>
+</div>
+</section>
+<section id="continue-sla-deze-iteratie-over">
+<h3>Continue: Sla deze iteratie over<a class="headerlink" href="#continue-sla-deze-iteratie-over" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Sla 5 over</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Output: 0, 1, 2, 3, 4, 6, 7, 8, 9</span>
+</pre></div>
+</div>
+</section>
+<section id="praktisch-voorbeeld">
+<h3>Praktisch voorbeeld:<a class="headerlink" href="#praktisch-voorbeeld" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zoek naar een specifiek woord</span>
+<span class="n">woorden</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hond&quot;</span><span class="p">,</span> <span class="s2">&quot;kat&quot;</span><span class="p">,</span> <span class="s2">&quot;vogel&quot;</span><span class="p">,</span> <span class="s2">&quot;vis&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">woord</span> <span class="ow">in</span> <span class="n">woorden</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">woord</span> <span class="o">==</span> <span class="s2">&quot;vogel&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vogel gevonden!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zoeken...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="opdracht-4-interactief-programma-maken">
+<h2>Opdracht 4: Interactief programma maken<a class="headerlink" href="#opdracht-4-interactief-programma-maken" title="Link to this heading"></a></h2>
+<p>Nu gaan we alles combineren! Maak een interactief programma naar keuze:</p>
+<section id="optie-a-quiz-programma">
+<h3>Optie A: Quiz programma<a class="headerlink" href="#optie-a-quiz-programma" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== QUIZ ===&quot;</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Vraag 1</span>
+<span class="n">antwoord</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wat is de hoofdstad van Nederland? &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">antwoord</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;amsterdam&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fout, het juiste antwoord is Amsterdam&quot;</span><span class="p">)</span>
+
+<span class="c1"># Vraag 2</span>
+<span class="n">antwoord</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoeveel poten heeft een spin? &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">antwoord</span> <span class="o">==</span> <span class="s2">&quot;8&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fout, het juiste antwoord is 8&quot;</span><span class="p">)</span>
+
+<span class="c1"># Vraag 3 - voeg zelf een vraag toe!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je score is:&quot;</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="s2">&quot;van de 3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="optie-b-rekenmachine-menu">
+<h3>Optie B: Rekenmachine menu<a class="headerlink" href="#optie-b-rekenmachine-menu" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== REKENMACHINE ===&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. Optellen&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Aftrekken&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Vermenigvuldigen&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Delen&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5. Stop&quot;</span><span class="p">)</span>
+    
+    <span class="n">keuze</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Maak een keuze (1-5): &quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">keuze</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tot ziens!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    
+    <span class="n">getal1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Eerste getal: &quot;</span><span class="p">))</span>
+    <span class="n">getal2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Tweede getal: &quot;</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">keuze</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultaat:&quot;</span><span class="p">,</span> <span class="n">getal1</span> <span class="o">+</span> <span class="n">getal2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">keuze</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultaat:&quot;</span><span class="p">,</span> <span class="n">getal1</span> <span class="o">-</span> <span class="n">getal2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">keuze</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultaat:&quot;</span><span class="p">,</span> <span class="n">getal1</span> <span class="o">*</span> <span class="n">getal2</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">keuze</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">getal2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultaat:&quot;</span><span class="p">,</span> <span class="n">getal1</span> <span class="o">/</span> <span class="n">getal2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fout: Kan niet delen door 0!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ongeldige keuze!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="optie-c-raadspel-met-hints">
+<h3>Optie C: Raadspel met hints<a class="headerlink" href="#optie-c-raadspel-met-hints" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">geheim_getal</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">pogingen</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">max_pogingen</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== RAADSPEL ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ik denk aan een getal tussen 1 en 100&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je hebt&quot;</span><span class="p">,</span> <span class="n">max_pogingen</span><span class="p">,</span> <span class="s2">&quot;pogingen&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">pogingen</span> <span class="o">&lt;</span> <span class="n">max_pogingen</span><span class="p">:</span>
+    <span class="n">gok</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jouw gok: &quot;</span><span class="p">))</span>
+    <span class="n">pogingen</span> <span class="o">=</span> <span class="n">pogingen</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">gok</span> <span class="o">==</span> <span class="n">geheim_getal</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎉 Gefeliciteerd! Je hebt het geraden in&quot;</span><span class="p">,</span> <span class="n">pogingen</span><span class="p">,</span> <span class="s2">&quot;pogingen!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">gok</span> <span class="o">&lt;</span> <span class="n">geheim_getal</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Te laag! Je hebt nog&quot;</span><span class="p">,</span> <span class="n">max_pogingen</span> <span class="o">-</span> <span class="n">pogingen</span><span class="p">,</span> <span class="s2">&quot;pogingen over&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Te hoog! Je hebt nog&quot;</span><span class="p">,</span> <span class="n">max_pogingen</span> <span class="o">-</span> <span class="n">pogingen</span><span class="p">,</span> <span class="s2">&quot;pogingen over&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Helaas, je pogingen zijn op! Het getal was:&quot;</span><span class="p">,</span> <span class="n">geheim_getal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Opdracht:</strong> Kies een van de drie programma’s hierboven, typ het over en test het. Probeer het daarna uit te breiden met:</p>
+<ul class="simple">
+<li><p>Meer vragen/opties</p></li>
+<li><p>Betere foutafhandeling</p></li>
+<li><p>Extra functies</p></li>
+</ul>
+</section>
+</section>
+<section id="veelgemaakte-fouten-en-oplossingen">
+<h2>Veelgemaakte fouten en oplossingen<a class="headerlink" href="#veelgemaakte-fouten-en-oplossingen" title="Link to this heading"></a></h2>
+<section id="fout-1-vergeten-om-input-om-te-zetten">
+<h3>Fout 1: Vergeten om input om te zetten<a class="headerlink" href="#fout-1-vergeten-om-input-om-te-zetten" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ❌ Fout</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">leeftijd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># ERROR!</span>
+
+<span class="c1"># ✅ Correct</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">leeftijd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="fout-2-verkeerde-inspringing">
+<h3>Fout 2: Verkeerde inspringing<a class="headerlink" href="#fout-2-verkeerde-inspringing" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ❌ Fout</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volwassen&quot;</span><span class="p">)</span>  <span class="c1"># ERROR: moet ingesprongen zijn</span>
+
+<span class="c1"># ✅ Correct</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volwassen&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="fout-3-in-plaats-van">
+<h3>Fout 3: = in plaats van ==<a class="headerlink" href="#fout-3-in-plaats-van" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ❌ Fout</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># ERROR: dit is toewijzen, niet vergelijken</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is 5&quot;</span><span class="p">)</span>
+
+<span class="c1"># ✅ Correct</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is 5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="fout-4-oneindige-loop">
+<h3>Fout 4: Oneindige loop<a class="headerlink" href="#fout-4-oneindige-loop" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ❌ Fout</span>
+<span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
+    <span class="c1"># Vergeten om teller te verhogen!</span>
+
+<span class="c1"># ✅ Correct</span>
+<span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">teller</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">teller</span><span class="p">)</span>
+    <span class="n">teller</span> <span class="o">=</span> <span class="n">teller</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="tips-en-tricks">
+<h2>Tips en tricks<a class="headerlink" href="#tips-en-tricks" title="Link to this heading"></a></h2>
+<p>💡 <strong>Tip 1:</strong> Gebruik duidelijke variabelennamen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Niet zo goed</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Naam: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Beter</span>
+<span class="n">naam</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Naam: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>💡 <strong>Tip 2:</strong> Test je code stap voor stap</p>
+<ul class="simple">
+<li><p>Schrijf niet alle code in één keer</p></li>
+<li><p>Test elke functie apart</p></li>
+<li><p>Voeg dan pas de volgende functie toe</p></li>
+</ul>
+<p>💡 <strong>Tip 3:</strong> Gebruik comments om je code uit te leggen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vraag om de leeftijd van de gebruiker</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+
+<span class="c1"># Controleer of de gebruiker volwassen is</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Je bent volwassen!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>💡 <strong>Tip 4:</strong> Let op datatypes bij vergelijkingen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dit werkt niet zoals je verwacht!</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">)</span>  <span class="c1"># Dit is een string!</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>  <span class="c1"># Vergelijkt strings, niet getallen!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volwassen&quot;</span><span class="p">)</span>
+
+<span class="c1"># Beter:</span>
+<span class="n">leeftijd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hoe oud ben je? &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">leeftijd</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volwassen&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading"></a></h2>
+<p>In deze les heb je geleerd:</p>
+<ul class="simple">
+<li><p>✅ Input vragen met <code class="docutils literal notranslate"><span class="pre">input()</span></code> en omzetten met <code class="docutils literal notranslate"><span class="pre">int()</span></code> en <code class="docutils literal notranslate"><span class="pre">float()</span></code></p></li>
+<li><p>✅ Keuzes maken met if, elif en else</p></li>
+<li><p>✅ Vergelijkingsoperatoren gebruiken: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+<li><p>✅ Logische operators gebruiken: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
+<li><p>✅ Code herhalen met for-loops en while-loops</p></li>
+<li><p>✅ <code class="docutils literal notranslate"><span class="pre">range()</span></code> gebruiken voor for-loops</p></li>
+<li><p>✅ Loops stoppen met <code class="docutils literal notranslate"><span class="pre">break</span></code> en overslaan met <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+<li><p>✅ Interactieve programma’s maken</p></li>
+</ul>
+</section>
+<section id="extra-oefeningen-voor-thuis">
+<h2>Extra oefeningen (voor thuis)<a class="headerlink" href="#extra-oefeningen-voor-thuis" title="Link to this heading"></a></h2>
+<p><strong>Opdracht A:</strong> BMI Calculator</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vraag om lengte (in meters) en gewicht (in kg)</span>
+<span class="c1"># Bereken de BMI: gewicht / (lengte * lengte)</span>
+<span class="c1"># Print of de persoon ondergewicht, normaal gewicht of overgewicht heeft</span>
+<span class="c1"># BMI &lt; 18.5: ondergewicht</span>
+<span class="c1"># BMI 18.5-25: normaal</span>
+<span class="c1"># BMI &gt; 25: overgewicht</span>
+</pre></div>
+</div>
+<p><strong>Opdracht B:</strong> Countdown timer</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vraag om een getal</span>
+<span class="c1"># Tel af van dat getal naar 0</span>
+<span class="c1"># Print elke seconde een getal lager</span>
+<span class="c1"># Bij 0: print &quot;Tijd is om!&quot;</span>
+</pre></div>
+</div>
+<p><strong>Opdracht C:</strong> Wachtwoord generator</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vraag hoeveel letters het wachtwoord moet hebben</span>
+<span class="c1"># Genereer een wachtwoord met letters en cijfers</span>
+<span class="c1"># Tip: gebruik de random module</span>
+</pre></div>
+</div>
+<p><strong>Opdracht D:</strong> Gemiddelde berekenen</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vraag hoeveel cijfers de gebruiker wil invoeren</span>
+<span class="c1"># Gebruik een loop om alle cijfers op te vragen</span>
+<span class="c1"># Bereken en print het gemiddelde</span>
+</pre></div>
+</div>
+<p><strong>Opdracht E:</strong> FizzBuzz</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print de getallen 1 tot en met 100</span>
+<span class="c1"># Maar: als het getal deelbaar is door 3, print &quot;Fizz&quot;</span>
+<span class="c1"># Als het deelbaar is door 5, print &quot;Buzz&quot;</span>
+<span class="c1"># Als het deelbaar is door beide, print &quot;FizzBuzz&quot;</span>
+<span class="c1"># Tip: gebruik de modulo operator %</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les1a.html" class="btn btn-neutral float-left" title="Les 1a: Introductie in Python programmeren" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="les2.html" class="btn btn-neutral float-right" title="Les 2: Bouw en programmeer je eerste robot" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

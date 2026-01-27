@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 2: Bouw en programmeer je eerste robot &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Les 3: Programmeren van actoren" href="les3.html" />
+    <link rel="prev" title="Les 1b: Interactief programmeren met Python" href="les1b.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1a.html">Les 1a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1b.html">Les 1b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les 2: Bouw en programmeer je eerste robot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#leerdoelen">Leerdoelen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wat-is-de-pico-robot">Wat is de Pico-robot?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-1-bouwen-van-de-pico-robot">Stap 1: Bouwen van de Pico-robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#benodigdheden">Benodigdheden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bouwstappen">Bouwstappen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#onderdelen-herkennen-opdracht">Onderdelen herkennen - Opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-2-thonny-software-installeren">Stap 2: Thonny software installeren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installatie-op-windows">Installatie op Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thonny-configureren-voor-micropython">Thonny configureren voor MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-3-de-pico-car-bibliotheek-installeren">Stap 3: De pico_car bibliotheek installeren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-4-je-eerste-programma-voor-de-robot-schrijven">Stap 4: Je eerste programma voor de robot schrijven</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wat-doet-dit-programma">Wat doet dit programma?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-schrijven">Code schrijven</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-5-het-programma-uploaden-naar-de-robot">Stap 5: Het programma uploaden naar de robot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#optie-a-direct-uitvoeren-voor-testen">Optie A: Direct uitvoeren (voor testen)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optie-b-automatisch-opstarten">Optie B: Automatisch opstarten</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stap-6-de-robot-voor-de-eerste-keer-testen">Stap 6: De robot voor de eerste keer testen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#veiligheidscheck-voor-het-testen">Veiligheidscheck voor het testen!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-1-basistest">Test 1: Basistest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-2-snelheid-aanpassen">Test 2: Snelheid aanpassen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-3-verschillende-bewegingen">Test 3: Verschillende bewegingen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdrachten">Opdrachten</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-1-basis-bewegingen">Opdracht 1: Basis bewegingen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-2-snelheid-experimenteren">Opdracht 2: Snelheid experimenteren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-3-patronen-maken">Opdracht 3: Patronen maken</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-4-uitdaging">Opdracht 4: Uitdaging!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-veelvoorkomende-problemen">Troubleshooting: Veelvoorkomende problemen</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#probleem-1-robot-rijdt-niet-recht">Probleem 1: Robot rijdt niet recht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probleem-2-robot-reageert-traag">Probleem 2: Robot reageert traag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probleem-3-importerror-no-module-named-pico-car">Probleem 3: ImportError: no module named ‘pico_car’</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probleem-4-robot-stopt-niet">Probleem 4: Robot stopt niet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#probleem-5-code-werkt-niet-na-reset">Probleem 5: Code werkt niet na reset</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-voor-succesvol-programmeren">Tips voor succesvol programmeren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samenvatting">Samenvatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-uitdagingen-voor-thuis">Extra uitdagingen (voor thuis)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#volgende-les">Volgende les</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Programmeren van actoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les4.html">Les 4: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 6: Geavanceerde robotica technieken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de eindopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende eindopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les 2: Bouw en programmeer je eerste robot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les2.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="les-2-bouw-en-programmeer-je-eerste-robot">
+<h1>Les 2: Bouw en programmeer je eerste robot<a class="headerlink" href="#les-2-bouw-en-programmeer-je-eerste-robot" title="Link to this heading"></a></h1>
+<p>Welkom bij les 2! Dit wordt een spannende les waarin je je eigen robot gaat bouwen en programmeren. Je gaat de Pico-robot in elkaar zetten, de software installeren en je eerste programma schrijven waarmee de robot kan bewegen.</p>
+<section id="leerdoelen">
+<h2>Leerdoelen<a class="headerlink" href="#leerdoelen" title="Link to this heading"></a></h2>
+<p>Aan het einde van deze les kun je:</p>
+<ul class="simple">
+<li><p>De Pico-robot correct in elkaar zetten</p></li>
+<li><p>Thonny IDE installeren en gebruiken</p></li>
+<li><p>Een eenvoudig programma schrijven om de robot te besturen</p></li>
+<li><p>Code uploaden naar de Raspberry Pi Pico</p></li>
+<li><p>De robot testen en debuggen</p></li>
+</ul>
+</section>
+<section id="wat-is-de-pico-robot">
+<h2>Wat is de Pico-robot?<a class="headerlink" href="#wat-is-de-pico-robot" title="Link to this heading"></a></h2>
+<p>De <strong>Pico-robot</strong> is een klein robotvoertuig dat wordt aangestuurd door een <strong>Raspberry Pi Pico</strong> microcontroller. Dit is een klein computertje dat speciaal is ontworpen om apparaten aan te sturen.</p>
+<p><strong>De robot heeft:</strong></p>
+<ul class="simple">
+<li><p><strong>Motoren</strong> - om te kunnen rijden</p></li>
+<li><p><strong>Wielen</strong> - voor beweging</p></li>
+<li><p><strong>Sensoren</strong> - om de omgeving waar te nemen (zoals ultrasone sensor, lijnvolg sensoren)</p></li>
+<li><p><strong>LEDs</strong> - voor visuele feedback</p></li>
+<li><p><strong>Buzzer</strong> - voor geluid</p></li>
+<li><p><strong>Batterijen</strong> - voor stroomvoorziening</p></li>
+<li><p><strong>Raspberry Pi Pico</strong> - het “brein” van de robot</p></li>
+</ul>
+<p><img alt="image" src="../_images/pico-robot.png" /></p>
+</section>
+<section id="stap-1-bouwen-van-de-pico-robot">
+<h2>Stap 1: Bouwen van de Pico-robot<a class="headerlink" href="#stap-1-bouwen-van-de-pico-robot" title="Link to this heading"></a></h2>
+<section id="benodigdheden">
+<h3>Benodigdheden<a class="headerlink" href="#benodigdheden" title="Link to this heading"></a></h3>
+<p>Controleer of je alle onderdelen hebt die je nodig hebt:</p>
+<ul class="simple">
+<li><p>☐ Chassis (het frame van de robot)</p></li>
+<li><p>☐ Raspberry Pi Pico microcontroller</p></li>
+<li><p>☐ Motor driver board</p></li>
+<li><p>☐ 2x DC motoren met wielen</p></li>
+<li><p>☐ 1x Swivel wheel (draaiwiel vooraan)</p></li>
+<li><p>☐ Ultrasone sensor (voor afstand meten)</p></li>
+<li><p>☐ Lijnvolg sensoren</p></li>
+<li><p>☐ LEDs en buzzer</p></li>
+<li><p>☐ Batterijhouder met batterijen</p></li>
+<li><p>☐ Schroeven en moeren</p></li>
+<li><p>☐ Kabels en connectoren</p></li>
+</ul>
+</section>
+<section id="bouwstappen">
+<h3>Bouwstappen<a class="headerlink" href="#bouwstappen" title="Link to this heading"></a></h3>
+<p><strong>De raspberry Pi wordt door je docent geprogrammeerd met de benodigde firmware. Je kunt deze stap dus overslaan!</strong></p>
+<p><strong>🎉 Gefeliciteerd!</strong> Je robot is nu in elkaar gezet!</p>
+</section>
+<section id="onderdelen-herkennen-opdracht">
+<h3>Onderdelen herkennen - Opdracht<a class="headerlink" href="#onderdelen-herkennen-opdracht" title="Link to this heading"></a></h3>
+<p>Bekijk je robot goed en beantwoord de volgende vragen:</p>
+<ol class="arabic simple">
+<li><p>Waar zitten de motoren?</p></li>
+<li><p>Welke sensor zit aan de voorkant?</p></li>
+<li><p>Waar zit de Raspberry Pi Pico?</p></li>
+<li><p>Hoeveel wielen heeft de robot in totaal?</p></li>
+<li><p>Waar komen de batterijen?</p></li>
+</ol>
+</section>
+</section>
+<section id="stap-2-thonny-software-installeren">
+<h2>Stap 2: Thonny software installeren<a class="headerlink" href="#stap-2-thonny-software-installeren" title="Link to this heading"></a></h2>
+<p><strong>Thonny</strong> is een IDE (Integrated Development Environment) speciaal ontworpen voor Python. Het is perfect voor beginners omdat het eenvoudig en overzichtelijk is.</p>
+<section id="installatie-op-windows">
+<h3>Installatie op Windows<a class="headerlink" href="#installatie-op-windows" title="Link to this heading"></a></h3>
+<p><strong>Stap 2.1:</strong> Download Thonny</p>
+<ul class="simple">
+<li><p>Ga naar <a class="reference external" href="https://thonny.org">https://thonny.org</a></p></li>
+<li><p>Klik op de grote groene knop <strong>“Windows”</strong></p></li>
+<li><p>Het bestand wordt gedownload (thonny-x.x.x.exe)</p></li>
+</ul>
+<p><strong>Stap 2.2:</strong> Installeer Thonny</p>
+<ul class="simple">
+<li><p>Dubbelklik op het gedownloade bestand</p></li>
+<li><p>Klik op <strong>“Install for all users”</strong> (aanbevolen)</p></li>
+<li><p>Klik op <strong>“Next”</strong> en volg de instructies</p></li>
+<li><p>Klik op <strong>“Finish”</strong> wanneer de installatie klaar is</p></li>
+</ul>
+<p><strong>Stap 2.3:</strong> Start Thonny</p>
+<ul class="simple">
+<li><p>Open Thonny via het Start menu</p></li>
+<li><p>Bij de eerste keer opstarten wordt gevraagd om een taal te kiezen</p></li>
+<li><p>Kies <strong>“Nederlands”</strong> of <strong>“English”</strong> (naar jouw voorkeur)</p></li>
+</ul>
+</section>
+<section id="thonny-configureren-voor-micropython">
+<h3>Thonny configureren voor MicroPython<a class="headerlink" href="#thonny-configureren-voor-micropython" title="Link to this heading"></a></h3>
+<p><strong>Stap 2.4:</strong> Verbinden met de Raspberry Pi Pico</p>
+<ul class="simple">
+<li><p>Sluit de Raspberry Pi Pico aan op je computer via een USB-kabel
+<strong>Stap 2.5:</strong> Controleer de verbinding</p></li>
+<li><p>Koppel de USB-kabel los en weer aan (zonder BOOTSEL knop!)</p></li>
+<li><p>In Thonny: klik rechtsonder en kies <strong>“MicroPython (Raspberry Pi Pico)”</strong></p></li>
+<li><p>In het onderste venster (Shell) zou je nu moeten zien: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code></p></li>
+<li><p>Dit betekent dat de verbinding werkt! ✓</p></li>
+</ul>
+<p><strong>Test de verbinding:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, Robot!&quot;</span><span class="p">)</span>
+<span class="go">Hello, Robot!</span>
+</pre></div>
+</div>
+<p>Type dit in de Shell en druk op Enter. Zie je “Hello, Robot!”? Dan werkt alles!</p>
+</section>
+</section>
+<section id="stap-3-de-pico-car-bibliotheek-installeren">
+<h2>Stap 3: De pico_car bibliotheek installeren<a class="headerlink" href="#stap-3-de-pico-car-bibliotheek-installeren" title="Link to this heading"></a></h2>
+<p>De robot gebruikt een speciale bibliotheek genaamd <code class="docutils literal notranslate"><span class="pre">pico_car</span></code>. Deze bevat alle functies om de robot aan te sturen. Deze bibliotheek is al door je docent op de Raspberry Pi Pico gezet. Je kunt deze stap dus overslaan!</p>
+</section>
+<section id="stap-4-je-eerste-programma-voor-de-robot-schrijven">
+<h2>Stap 4: Je eerste programma voor de robot schrijven<a class="headerlink" href="#stap-4-je-eerste-programma-voor-de-robot-schrijven" title="Link to this heading"></a></h2>
+<p>Nu gaat het gebeuren - we gaan de robot laten bewegen!</p>
+<section id="wat-doet-dit-programma">
+<h3>Wat doet dit programma?<a class="headerlink" href="#wat-doet-dit-programma" title="Link to this heading"></a></h3>
+<p>We schrijven een eenvoudig programma dat:</p>
+<ol class="arabic simple">
+<li><p>De robot 5 seconden vooruit laat rijden</p></li>
+<li><p>Vervolgens de robot stopt</p></li>
+</ol>
+</section>
+<section id="code-schrijven">
+<h3>Code schrijven<a class="headerlink" href="#code-schrijven" title="Link to this heading"></a></h3>
+<p><strong>Stap 4.1:</strong> Open een nieuw bestand in Thonny</p>
+<ul class="simple">
+<li><p>Klik op <strong>“File”</strong> → <strong>“New”</strong></p></li>
+<li><p>Je ziet nu een leeg code-venster</p></li>
+</ul>
+<p><strong>Stap 4.2:</strong> Typ de volgende code over:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import de pico_car bibliotheek</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Maak een Motor object aan</span>
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robot start met bewegen!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Auto vooruit, parameter (Linker motor snelheid, Rechter motor snelheid)</span>
+<span class="c1"># Snelheid kan tussen 0-255 zijn</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="c1"># Wacht 5 seconden</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Stop de auto</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robot gestopt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit  programma kun je vinden in de <a class="reference internal" href="les2_eerste_robot_programma.html"><span class="std std-doc">Eerste Robot Programma Code Uitleg</span></a>.</p>
+<p><strong>Stap 4.3:</strong> Bewaar het programma</p>
+<ul class="simple">
+<li><p>Klik op <strong>“File”</strong> → <strong>“Save as…”</strong></p></li>
+<li><p>Kies <strong>“Raspberry Pi Pico”</strong> (niet je computer!)</p></li>
+<li><p>Geef het bestand een naam: <code class="docutils literal notranslate"><span class="pre">test_vooruit.py</span></code></p></li>
+<li><p>Klik op <strong>“OK”</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="stap-5-het-programma-uploaden-naar-de-robot">
+<h2>Stap 5: Het programma uploaden naar de robot<a class="headerlink" href="#stap-5-het-programma-uploaden-naar-de-robot" title="Link to this heading"></a></h2>
+<p>Het programma staat nu op de Pico, maar draait nog niet automatisch.</p>
+<section id="optie-a-direct-uitvoeren-voor-testen">
+<h3>Optie A: Direct uitvoeren (voor testen)<a class="headerlink" href="#optie-a-direct-uitvoeren-voor-testen" title="Link to this heading"></a></h3>
+<p><strong>Stap 5.1:</strong> Zorg dat de robot klaar is</p>
+<ul class="simple">
+<li><p>⚠️ <strong>Plaats de robot op een open plek</strong> (niet aan de rand van een tafel!)</p></li>
+<li><p>Leg de robot op de grond of op een grote tafel</p></li>
+<li><p>Plaats de batterijen in de batterijhouder</p></li>
+<li><p>Zet de schakelaar op <strong>“ON”</strong></p></li>
+</ul>
+<p><strong>Stap 5.2:</strong> Voer het programma uit</p>
+<ul class="simple">
+<li><p>In Thonny: klik op de groene <strong>“Play”</strong> knop (▶) of druk op <strong>F5</strong></p></li>
+<li><p>De robot zou nu 5 seconden vooruit moeten rijden en dan stoppen!</p></li>
+</ul>
+</section>
+<section id="optie-b-automatisch-opstarten">
+<h3>Optie B: Automatisch opstarten<a class="headerlink" href="#optie-b-automatisch-opstarten" title="Link to this heading"></a></h3>
+<p>Als je wilt dat het programma automatisch start wanneer je de robot aanzet:</p>
+<p><strong>Stap 5.3:</strong> Hernoem naar main.py</p>
+<ul class="simple">
+<li><p>Het bestand moet <code class="docutils literal notranslate"><span class="pre">main.py</span></code> heten</p></li>
+<li><p>De Pico voert automatisch <code class="docutils literal notranslate"><span class="pre">main.py</span></code> uit bij het opstarten</p></li>
+<li><p>Klik op <strong>“File”</strong> → <strong>“Save as…”</strong></p></li>
+<li><p>Kies <strong>“Raspberry Pi Pico”</strong></p></li>
+<li><p>Noem het bestand: <code class="docutils literal notranslate"><span class="pre">main.py</span></code></p></li>
+</ul>
+<p><strong>Let op:</strong> Er kan maar één <code class="docutils literal notranslate"><span class="pre">main.py</span></code> zijn op de Pico!</p>
+</section>
+</section>
+<section id="stap-6-de-robot-voor-de-eerste-keer-testen">
+<h2>Stap 6: De robot voor de eerste keer testen<a class="headerlink" href="#stap-6-de-robot-voor-de-eerste-keer-testen" title="Link to this heading"></a></h2>
+<section id="veiligheidscheck-voor-het-testen">
+<h3>Veiligheidscheck voor het testen!<a class="headerlink" href="#veiligheidscheck-voor-het-testen" title="Link to this heading"></a></h3>
+<p>⚠️ <strong>BELANGRIJK - Lees dit voordat je de robot test:</strong></p>
+<ul class="simple">
+<li><p>✓ Test de robot NIET op een tafel zonder beveiliging</p></li>
+<li><p>✓ Houd de robot vast als je voor het eerst test</p></li>
+<li><p>✓ Zorg dat er geen obstakels in de weg staan</p></li>
+<li><p>✓ Houd je handen uit de buurt van de wielen</p></li>
+<li><p>✓ Test op de grond of op een grote, lege tafel</p></li>
+</ul>
+</section>
+<section id="test-1-basistest">
+<h3>Test 1: Basistest<a class="headerlink" href="#test-1-basistest" title="Link to this heading"></a></h3>
+<p><strong>Stap 6.1:</strong> Eerste testrun</p>
+<ul class="simple">
+<li><p>Zet de robot op de grond</p></li>
+<li><p>Zet de schakelaar op ON</p></li>
+<li><p>Druk op de Play knop in Thonny (of reset de Pico als je main.py hebt)</p></li>
+<li><p><strong>Observeer:</strong> Rijdt de robot vooruit? Hoeveel seconden?</p></li>
+</ul>
+<p><strong>Mogelijke problemen:</strong></p>
+<p>❌ <strong>De robot beweegt niet</strong></p>
+<ul class="simple">
+<li><p>Controleer: Staan de batterijen erin en is de schakelaar op ON?</p></li>
+<li><p>Controleer: Zijn de motor kabels goed aangesloten?</p></li>
+<li><p>Controleer: Staat de USB-kabel nog aangesloten? (Voor testen is dit nodig)</p></li>
+</ul>
+<p>❌ <strong>De robot rijdt achteruit in plaats van vooruit</strong></p>
+<ul class="simple">
+<li><p>De motoren zijn verkeerd aangesloten</p></li>
+<li><p>Wissel de draadjes van beide motoren om (+ en - omdraaien)</p></li>
+</ul>
+<p>❌ <strong>De robot draait in een cirkel</strong></p>
+<ul class="simple">
+<li><p>Eén motor loopt sneller dan de andere</p></li>
+<li><p>Dit is normaal! We kunnen dit in de code corrigeren</p></li>
+</ul>
+<p>❌ <strong>Foutmelding in Thonny</strong></p>
+<ul class="simple">
+<li><p>Lees de foutmelding goed</p></li>
+<li><p>Controleer of je <code class="docutils literal notranslate"><span class="pre">pico_car.py</span></code> hebt geüpload naar de Pico</p></li>
+<li><p>Controleer of je code exact hetzelfde is als het voorbeeld</p></li>
+</ul>
+</section>
+<section id="test-2-snelheid-aanpassen">
+<h3>Test 2: Snelheid aanpassen<a class="headerlink" href="#test-2-snelheid-aanpassen" title="Link to this heading"></a></h3>
+<p>Nu gaan we experimenteren met verschillende snelheden!</p>
+<p><strong>Opdracht 2.1:</strong> Langzamer rijden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="c1"># Probeer verschillende snelheden</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Halve snelheid</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Opdracht 2.2:</strong> Verschillende snelheden per motor</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="c1"># Links sneller dan rechts - de robot draait naar rechts</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Vraag:</strong> Wat gebeurt er als de linker motor sneller draait dan de rechter motor?</p>
+</section>
+<section id="test-3-verschillende-bewegingen">
+<h3>Test 3: Verschillende bewegingen<a class="headerlink" href="#test-3-verschillende-bewegingen" title="Link to this heading"></a></h3>
+<p>De <code class="docutils literal notranslate"><span class="pre">pico_car</span></code> bibliotheek heeft meer functies dan alleen vooruit rijden!</p>
+<p><strong>Beschikbare functies:</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Functie</p></th>
+<th class="head"><p>Wat doet het?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Run(links,</span> <span class="pre">rechts)</span></code></p></td>
+<td><p>Beide motoren vooruit</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Back(links,</span> <span class="pre">rechts)</span></code></p></td>
+<td><p>Beide motoren achteruit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Left(links,</span> <span class="pre">rechts)</span></code></p></td>
+<td><p>Draai naar links</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Right(links,</span> <span class="pre">rechts)</span></code></p></td>
+<td><p>Draai naar rechts</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Motor.Car_Stop()</span></code></p></td>
+<td><p>Stop beide motoren</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Opdracht 2.3:</strong> Maak een vierkant</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="c1"># Herhaal 4 keer (voor 4 zijden van het vierkant)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Rij vooruit</span>
+    <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Draai 90 graden naar rechts</span>
+    <span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Experimenteer met deze tijd!</span>
+
+<span class="c1"># Stop</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Opdracht 2.4:</strong> Maak een dans-programma</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="c1"># Vooruit</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Achteruit</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Back</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Spin naar links</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Left</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Spin naar rechts</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Right</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># Stop</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dans afgelopen!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Link to this heading"></a></h2>
+<section id="opdracht-1-basis-bewegingen">
+<h3>Opdracht 1: Basis bewegingen<a class="headerlink" href="#opdracht-1-basis-bewegingen" title="Link to this heading"></a></h3>
+<p>Schrijf programma’s voor de volgende bewegingen:</p>
+<ul class="simple">
+<li><p><strong>A)</strong> Rij 3 seconden vooruit, stop, rij 3 seconden achteruit</p></li>
+<li><p><strong>B)</strong> Rij 2 seconden vooruit, draai 1 seconde naar links, rij 2 seconden vooruit</p></li>
+<li><p><strong>C)</strong> Maak een “zigzag” beweging</p></li>
+</ul>
+</section>
+<section id="opdracht-2-snelheid-experimenteren">
+<h3>Opdracht 2: Snelheid experimenteren<a class="headerlink" href="#opdracht-2-snelheid-experimenteren" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>A)</strong> Rij met 3 verschillende snelheden (langzaam, gemiddeld, snel)</p></li>
+<li><p><strong>B)</strong> Rij in een cirkel door één motor sneller te laten draaien</p></li>
+<li><p><strong>C)</strong> Vind de minimale snelheid waarbij de robot nog beweegt</p></li>
+</ul>
+</section>
+<section id="opdracht-3-patronen-maken">
+<h3>Opdracht 3: Patronen maken<a class="headerlink" href="#opdracht-3-patronen-maken" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>A)</strong> Programmeer de robot om een driehoek te rijden</p></li>
+<li><p><strong>B)</strong> Programmeer de robot om een achtje (∞) te rijden</p></li>
+<li><p><strong>C)</strong> Maak een “obstakelvermijding” patroon: vooruit, links, vooruit, rechts, vooruit</p></li>
+</ul>
+</section>
+<section id="opdracht-4-uitdaging">
+<h3>Opdracht 4: Uitdaging!<a class="headerlink" href="#opdracht-4-uitdaging" title="Link to this heading"></a></h3>
+<p>Programmeer de robot om:</p>
+<ol class="arabic simple">
+<li><p>2 seconden vooruit te rijden</p></li>
+<li><p>Een volledige draai te maken (360 graden)</p></li>
+<li><p>Terug te rijden naar het beginpunt</p></li>
+</ol>
+<p><strong>Tip:</strong> Experimenteer met de tijd voor de draai. Begin met 1 seconde en pas aan totdat het precies een volledige draai is.</p>
+</section>
+</section>
+<section id="troubleshooting-veelvoorkomende-problemen">
+<h2>Troubleshooting: Veelvoorkomende problemen<a class="headerlink" href="#troubleshooting-veelvoorkomende-problemen" title="Link to this heading"></a></h2>
+<section id="probleem-1-robot-rijdt-niet-recht">
+<h3>Probleem 1: Robot rijdt niet recht<a class="headerlink" href="#probleem-1-robot-rijdt-niet-recht" title="Link to this heading"></a></h3>
+<p><strong>Oorzaak:</strong> Motoren lopen niet exact dezelfde snelheid
+<strong>Oplossing:</strong> Pas de snelheden aan in je code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Als robot naar links trekt:</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Linker motor iets langzamer</span>
+
+<span class="c1"># Als robot naar rechts trekt:</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>  <span class="c1"># Rechter motor iets langzamer</span>
+</pre></div>
+</div>
+</section>
+<section id="probleem-2-robot-reageert-traag">
+<h3>Probleem 2: Robot reageert traag<a class="headerlink" href="#probleem-2-robot-reageert-traag" title="Link to this heading"></a></h3>
+<p><strong>Oorzaak:</strong> Batterijen bijna leeg
+<strong>Oplossing:</strong> Vervang de batterijen door nieuwe</p>
+</section>
+<section id="probleem-3-importerror-no-module-named-pico-car">
+<h3>Probleem 3: ImportError: no module named ‘pico_car’<a class="headerlink" href="#probleem-3-importerror-no-module-named-pico-car" title="Link to this heading"></a></h3>
+<p><strong>Oorzaak:</strong> De bibliotheek is niet geüpload naar de Pico
+<strong>Oplossing:</strong> Upload <code class="docutils literal notranslate"><span class="pre">pico_car.py</span></code> opnieuw naar de Raspberry Pi Pico</p>
+</section>
+<section id="probleem-4-robot-stopt-niet">
+<h3>Probleem 4: Robot stopt niet<a class="headerlink" href="#probleem-4-robot-stopt-niet" title="Link to this heading"></a></h3>
+<p><strong>Oorzaak:</strong> <code class="docutils literal notranslate"><span class="pre">Motor.Car_Stop()</span></code> wordt niet aangeroepen
+<strong>Oplossing:</strong> Voeg altijd een stop commando toe aan het einde van je programma</p>
+</section>
+<section id="probleem-5-code-werkt-niet-na-reset">
+<h3>Probleem 5: Code werkt niet na reset<a class="headerlink" href="#probleem-5-code-werkt-niet-na-reset" title="Link to this heading"></a></h3>
+<p><strong>Oorzaak:</strong> Het programma heet niet <code class="docutils literal notranslate"><span class="pre">main.py</span></code>
+<strong>Oplossing:</strong> Sla je programma op als <code class="docutils literal notranslate"><span class="pre">main.py</span></code> op de Pico</p>
+</section>
+</section>
+<section id="tips-voor-succesvol-programmeren">
+<h2>Tips voor succesvol programmeren<a class="headerlink" href="#tips-voor-succesvol-programmeren" title="Link to this heading"></a></h2>
+<p>💡 <strong>Tip 1:</strong> Test kleine stapjes</p>
+<ul class="simple">
+<li><p>Schrijf niet alle code in één keer</p></li>
+<li><p>Test elke beweging apart</p></li>
+<li><p>Voeg dan pas de volgende beweging toe</p></li>
+</ul>
+<p>💡 <strong>Tip 2:</strong> Gebruik comments</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dit is een comment - uitleg voor jezelf en anderen</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  <span class="c1"># Start motoren op volle snelheid</span>
+</pre></div>
+</div>
+<p>💡 <strong>Tip 3:</strong> Experimenteer met tijden</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time.sleep()</span></code> is vaak anders dan je verwacht</p></li>
+<li><p>Test verschillende waarden om te zien wat werkt</p></li>
+</ul>
+<p>💡 <strong>Tip 4:</strong> Houd een logboek bij</p>
+<ul class="simple">
+<li><p>Noteer welke snelheden goed werken</p></li>
+<li><p>Noteer hoelang een draai duurt</p></li>
+<li><p>Dit helpt bij latere programma’s</p></li>
+</ul>
+<p>💡 <strong>Tip 5:</strong> Batterijen controleren</p>
+<ul class="simple">
+<li><p>Zwakke batterijen = traag rijden</p></li>
+<li><p>Test altijd met volle batterijen</p></li>
+</ul>
+</section>
+<section id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Link to this heading"></a></h2>
+<p>In deze les heb je:</p>
+<ul class="simple">
+<li><p>✅ De Pico-robot in elkaar gezet</p></li>
+<li><p>✅ Thonny IDE geïnstalleerd en geconfigureerd</p></li>
+<li><p>✅ MicroPython geïnstalleerd op de Raspberry Pi Pico</p></li>
+<li><p>✅ De pico_car bibliotheek geüpload</p></li>
+<li><p>✅ Je eerste robotprogramma geschreven</p></li>
+<li><p>✅ De robot laten bewegen met verschillende snelheden</p></li>
+<li><p>✅ Verschillende bewegingspatronen geprogrammeerd</p></li>
+</ul>
+<p><strong>Je hebt nu de basis om je robot te programmeren!</strong></p>
+</section>
+<section id="extra-uitdagingen-voor-thuis">
+<h2>Extra uitdagingen (voor thuis)<a class="headerlink" href="#extra-uitdagingen-voor-thuis" title="Link to this heading"></a></h2>
+<p><strong>Uitdaging A:</strong> Parkeer-programma
+Programmeer de robot om:</p>
+<ul class="simple">
+<li><p>Vooruit te rijden tot een “parkeerplek”</p></li>
+<li><p>Achteruit in te parkeren</p></li>
+<li><p>Precies recht te staan</p></li>
+</ul>
+<p><strong>Uitdaging B:</strong> Race-circuit</p>
+<ul class="simple">
+<li><p>Maak een parcours met tape op de grond</p></li>
+<li><p>Programmeer de robot om het parcours te volgen</p></li>
+<li><p>Meet hoelang het duurt</p></li>
+</ul>
+<p><strong>Uitdaging C:</strong> Hindernisbaan</p>
+<ul class="simple">
+<li><p>Zet wat hindernissen neer (bekers, boeken)</p></li>
+<li><p>Programmeer een route eromheen</p></li>
+<li><p>Probeer zo snel mogelijk te zijn</p></li>
+</ul>
+<p><strong>Uitdaging D:</strong> Muzikale robot</p>
+<ul class="simple">
+<li><p>Combineer beweging met geluid (als je buzzer hebt aangesloten)</p></li>
+<li><p>Maak een dans met muziek!</p></li>
+</ul>
+</section>
+<section id="volgende-les">
+<h2>Volgende les<a class="headerlink" href="#volgende-les" title="Link to this heading"></a></h2>
+<p>In de volgende les gaan we verder met:</p>
+<ul class="simple">
+<li><p>Sensoren uitlezen (ultrasone sensor, lijnvolg sensoren)</p></li>
+<li><p>De robot laten reageren op zijn omgeving</p></li>
+<li><p>Automatische obstakelvermijding programmeren</p></li>
+<li><p>If-statements en loops gebruiken voor slimmere robots</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les1b.html" class="btn btn-neutral float-left" title="Les 1b: Interactief programmeren met Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="les3.html" class="btn btn-neutral float-right" title="Les 3: Programmeren van actoren" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

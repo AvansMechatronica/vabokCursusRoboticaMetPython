@@ -1,0 +1,3 @@
+# Les 10: Oplevering en presentatie van je robotproject
+
+In deze laatste les van de cursus richten we ons op het opleveren en presenteren van je robotproject. Je leert hoe je je project op een professionele manier kunt documenteren, inclusief het schrijven van een gebruikershandleiding en technische documentatie. Daarnaast bespreken we effectieve presentatietechnieken, zodat je je project overtuigend kunt presenteren aan een publiek. We zullen ook enkele tips geven over hoe je feedback kunt verzamelen en gebruiken om je toekomstige projecten te verbeteren.
