@@ -1,5 +1,7 @@
 # Les 4: Programmeren van sensoren
 
+Een sensor is een apparaat dat fysieke grootheden uit de omgeving meet en deze omzet in signalen die door een computer of microcontroller kunnen worden verwerkt.
+
 Op de pico-robot zijn verschillende sensoren aanwezig die gebruikt kunnen worden om de omgeving te detecteren. In deze les leer je hoe je deze sensoren kunt programmeren en gebruiken in je robotprojecten.
 
 ## Lichtsensoren

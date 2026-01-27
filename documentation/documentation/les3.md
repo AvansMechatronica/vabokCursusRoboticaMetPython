@@ -1,3 +1,3 @@
-# Les 3: programmeren van actuatoren
+# Les 3: Programmeren van actoren
 
-In deze les leer je hoe je actuatoren kunt aansturen met Python. We behandelen verschillende soorten actuatoren, zoals motoren, servo's en LED's. Je zult leren hoe je deze componenten kunt aansluiten op je robot en hoe je ze kunt programmeren om specifieke taken uit te voeren, zoals bewegen, draaien en signaleren.
+Een actor is een apparaat dat signalen van een computer of microcontroller omzet in fysieke acties, zoals beweging of lichtsignalen af te geven. Op de pico-robot zijn verschillende actoren aanwezig die je kunt programmeren om je robot te laten bewegen en reageren op de omgeving.
