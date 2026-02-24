@@ -85,7 +85,13 @@ De trackingsensoren geven een digitale waarde terug: `0` (nul) wanneer ze een do
 
 > Zoals al beschreven is het licht niet zichtbaar voor het menselijk oog, maar je kunt het licht wel zien door met de camera van je telefoon naar de sensoren te kijken terwijl ze actief zijn. Je zult een zwak paarsachtig licht zien dat door de infrarood LED's van de sensoren wordt uitgezonden.
 
-> Dit kun je thuis ook doen met een afstandsbediening van een televisie: richt de afstandsbediening op de camera van je telefoon en druk op een knop. Je zult een lichtflits zien op het scherm van je telefoon, wat het infrarode licht van de afstandsbediening is. Zo kun je controleren of de batterijen van de afstandsbediening nog werken!
+:::{attention}
+Het licht zal alleen zichtbaar zijn als de batterijen van de robot nog voldoende stroom leveren. Als de batterijen bijna leeg zijn, zal het licht zwakker worden en uiteindelijk niet meer zichtbaar zijn.
+:::
+
+:::{hint}
+Dit kun je thuis ook doen met een afstandsbediening van een televisie: richt de afstandsbediening op de camera van je telefoon en druk op een knop. Je zult een lichtflits zien op het scherm van je telefoon, wat het infrarode licht van de afstandsbediening is. Zo kun je controleren of de batterijen van de afstandsbediening nog werken!
+:::
 
 
 Hier is een voorbeeldcode om de trackingsensoren uit te lezen en de waarden op de console weer te geven:
@@ -113,4 +119,4 @@ while True:
 De uitleg van dit Python-programma vind je in de [Trackingsensor Code Uitleg](les4_uitleg_code_trackingsensor.md).
 
 ### Opdracht
-Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Plaats de robot op een oppervlak met een duidelijke lijn (bijvoorbeeld een zwarte tape op een witte vloer) en observeer de waarden die worden weergegeven op de console terwijl de robot over de lijn beweegt.  
+Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Plaats de robot op een oppervlak met een duidelijke lijn (bijvoorbeeld een zwarte tape op een witte vloer) en observeer de waarden die worden weergegeven op de console terwijl de robot over de lijn beweegt.Kijk ook naar de led's boven op de robot: deze zullen uitgaan wanneer de bijbehorende trackingsensor een donkere lijn detecteert.

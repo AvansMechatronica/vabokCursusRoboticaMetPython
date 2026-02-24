@@ -1,13 +1,13 @@
-# Les 7: Introductie van de eindopdracht
+# Les 7: Introductie van de examenopdracht
 
-In deze les maken we kennis met de eindopdracht van de cursus. We bespreken de vereisten en doelstellingen van de opdracht, evenals de beoordelingscriteria. Je krijgt ook de kans om vragen te stellen en eventuele onduidelijkheden te bespreken voordat je aan de slag gaat met het ontwerpen en bouwen van je eigen robotproject.
+In deze les maken we kennis met de examenopdracht van de cursus. We bespreken de vereisten en doelstellingen van de opdracht, evenals de beoordelingscriteria. Je krijgt ook de kans om vragen te stellen en eventuele onduidelijkheden te bespreken voordat je aan de slag gaat met het ontwerpen en bouwen van je eigen robotproject.
 
-## Doelstellingen van de eindopdracht
+## Doelstellingen van de examenopdracht
 - Toepassen van de kennis en vaardigheden die je hebt opgedaan tijdens de cursus.
 - Ontwerpen en bouwen van een functioneel robotproject dat een specifieke taak uitvoert.
 - Documenteren van het ontwerpproces en de implementatie van je project.
 
-## De eindopdracht
+## De examenopdracht
 ![image](../images/magazijn.png)
 Je werkt als junior-robotengineer aan een project voor een internetwinkel dat een groot magazijn heeft met veel verschillende producten. De producten zijn netjes opgeslagen in magazijnstellingen en worden regelmatig bijgevuld. De winkel heeft een robot nodig die de producten kan ophalen en naar de verpakkingsafdeling kan brengen.
 
