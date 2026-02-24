@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welkom bij de VABOK cursus Robotica met Python 
-=============================================_
+==============================================
 
 **VABOK cursus Robotica met Python** is ontwikkeld voor het project Versterking aansluiting beroepsonderwijskolom (VABOK) en is bedoeld om studenten kennis te laten maken met de basisprincipes van robotica en programmeren met Python.
 
