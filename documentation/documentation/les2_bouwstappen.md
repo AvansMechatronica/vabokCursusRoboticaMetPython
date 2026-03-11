@@ -1,45 +1,59 @@
 
 ### Bouwstappen
 
+![image](../images/pico-robot.png)
 
-**Stap 1.1:** Monteer de motoren aan het chassis
-- Bevestig beide DC motoren stevig aan de onderkant van het chassis
-- Let op de richting: de draadjes moeten naar binnen wijzen
-- Gebruik de juiste schroeven en draai ze stevig vast (maar niet té hard!)
+## Wat hebben we nodig
 
-**Stap 1.2:** Bevestig de wielen
-- Plaats de wielen op de assen van de motoren
-- Zorg dat ze stevig vastzitten
+![image](../images/mounting/Inhoud-1.png)
 
-**Stap 1.3:** Monteer het draaiwiel
-- Bevestig het swivel wheel aan de voorkant van het chassis
-- Dit zorgt ervoor dat de robot stabiel blijft en soepel kan draaien
+![image](../images/mounting/Inhoud-2.png)
 
-**Stap 1.4:** Plaats de Raspberry Pi Pico en motor driver
-- Bevestig het motor driver board op het chassis
-- Plaats de Raspberry Pi Pico op de motor driver
-- **Let op:** Controleer of alle pinnen correct zijn uitgelijnd!
+![image](../images/mounting/Inhoud-3.png)
 
-**Stap 1.5:** Sluit de motoren aan
-- Verbind de draadjes van de linker motor met de linker motor-aansluitingen
-- Verbind de draadjes van de rechter motor met de rechter motor-aansluitingen
-- **Noteer welke motor links en rechts is - dit heb je straks nodig!**
+![image](../images/mounting/Inhoud-4.png)
 
-**Stap 1.6:** Monteer de sensoren
-- Bevestig de ultrasone sensor aan de voorkant (deze meet afstanden)
-- Monteer de lijnvolg sensoren aan de onderkant (deze detecteren zwarte lijnen)
 
-**Stap 1.7:** Sluit de batterijen aan
-- Plaats de batterijen in de batterijhouder
-- Verbind de batterijhouder met het motor driver board
-- **Let op:** Controleer de polariteit (+ en -)!
-- **Doe de batterijen er nog NIET in!**
+## 1. Monteer de motoren
+:::{note}
+Bij het installeren van de motor moet de tandwielloze zijde met de smalle sleuf worden uitgelijnd met de tinnen strip op de bodemplaat (zoals hieronder weergegeven).
+:::
 
-**Stap 1.8:** Laatste controle
-- ✓ Controleer of alle schroeven stevig vastzitten
-- ✓ Controleer of alle kabels goed zijn aangesloten
-- ✓ Controleer of er geen losse draadjes zijn die ergens tegenaan kunnen komen
-- ✓ Controleer of de Raspberry Pi Pico stevig op de motor driver is geplaatst
+::::{grid} 2
+:::{grid-item-card} 
+![image](../images/mounting/Montage-1.png)
+:::
+:::{grid-item-card}
+![image](../images/mounting/Montage-1a.png)
+:::
+::::
+
+## 2. Monteer het stuurwiel
+![image](../images/mounting/Montage-2.png)
+
+## 3. Monteer de zijwielen
+![image](../images/mounting/Montage-3.png)
+
+## 4. Monteer het OLED scherm en de Bluetooth module
+![image](../images/mounting/Montage-4.png)
+
+## 5. Monteer de “Raspberry Pi” (de computer)
+![image](../images/mounting/Montage-5.png)
+
+## 6. Monteer de batterij
+![image](../images/mounting/Montage-6.png)
+
+## 7. Aansluitdiagram
+Elk component dient volgens de onderstaande afbeeldingen correct te zijn aangesloten.
+::::{grid} 2
+:::{grid-item-card} 
+![image](../images/mounting/Aansluiten-1.png)
+:::
+:::{grid-item-card}
+![image](../images/mounting/Aansluiten-2.png)
+:::
+::::
+
 
 **🎉 Gefeliciteerd!** Je robot is nu in elkaar gezet!
 

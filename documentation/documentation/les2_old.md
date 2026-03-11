@@ -28,11 +28,26 @@ De **Pico-robot** is een klein robotvoertuig dat wordt aangestuurd door een **Ra
 
 ## Stap 1: Bouwen van de Pico-robot
 
+### Benodigdheden
+Controleer of je alle onderdelen hebt die je nodig hebt:
+- ☐ Chassis (het frame van de robot)
+- ☐ Raspberry Pi Pico microcontroller
+- ☐ Motor driver board
+- ☐ 2x DC motoren met wielen
+- ☐ 1x Swivel wheel (draaiwiel vooraan)
+- ☐ Ultrasone sensor (voor afstand meten)
+- ☐ Lijnvolg sensoren
+- ☐ LEDs en buzzer
+- ☐ Batterijhouder met batterijen
+- ☐ Schroeven en moeren
+- ☐ Kabels en connectoren
+
 ### Bouwstappen
-[Bekijk de bouwstappen hier](les2_bouwstappen.md)
+
 
 **De raspberry Pi wordt door je docent geprogrammeerd met de benodigde firmware. Je kunt deze stap dus overslaan!**
 
+**🎉 Gefeliciteerd!** Je robot is nu in elkaar gezet!
 
 ### Onderdelen herkennen - Opdracht
 
