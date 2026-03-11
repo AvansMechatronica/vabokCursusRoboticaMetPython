@@ -19,11 +19,15 @@
 Bij het installeren van de motor moet de tandwielloze zijde met de smalle sleuf worden uitgelijnd met de tinnen strip op de bodemplaat (zoals hieronder weergegeven).
 :::
 
-::::{grid} 2
-:::{grid-item-card} 
+::::{grid} 12
+:::{grid-item-card}
+:columns: 12 12 8 8
+
 ![image](../images/mounting/Montage-1.png)
 :::
 :::{grid-item-card}
+:columns: 12 12 4 4
+
 ![image](../images/mounting/Montage-1a.png)
 :::
 ::::
