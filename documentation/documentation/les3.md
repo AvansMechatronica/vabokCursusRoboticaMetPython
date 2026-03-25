@@ -29,7 +29,19 @@ Motor.Car_Stop()
 print("Robot gestopt!")
 ```
 
-In dit voorbeeld laten we de robot 5 seconden vooruit rijden en daarna stoppen. Je kunt de snelheden aanpassen om de beweging van de robot te variëren.
+De uitleg van dit Python-programma vind je in de [Motor Code Uitleg](les2_eerste_robot_programma.md).
+
+### Opdracht 1
+Expirimenteer met verschillende snelheden en richtingen door de parameters van `Motor.Car_Run()` aan te passen. Probeer bijvoorbeeld de robot langzaam vooruit te laten rijden of een bocht naar links te maken.
+
+## Opdracht 2
+Maak een programma dat de robot dat de volgende stappen uitvoert:
+* 3 seconden vooruit 
+* bocht naar rechts (door de linker motor sneller te laten draaien dan de rechter) voor 2 seconden
+* 3 seconden vooruit
+* stop 2 seconden
+* 5 seconden achteruit
+* stop
 
 
 ## LED
@@ -50,10 +62,13 @@ while True:
     # Wacht 1 seconde
     time.sleep(1)
 ```
+
+De uitleg van dit Python-programma vind je in de [LED Code Uitleg](les3_uitleg_led.md).
+
 ### Opdracht
 Breid het programma van de motoren uit door de LED aan te zetten wanneer de robot vooruit rijdt en uit te zetten wanneer de robot stopt.
 
-### Display
+## Display
 Op de pico-robot zit ook een klein schermpje, een OLED-display. OLED staat voor "Organic Light Emitting Diode". Je kent mischien de term wel van de OLDE-tv, deze werkt op dezefde principe. Je kunt hier tekst en eenvoudige afbeeldingen op weergeven. Hier is een voorbeeld van hoe je het OLED-display kunt gebruiken:
 
 ```python
@@ -82,7 +97,7 @@ oled.fill(0)
 time.sleep(1)
 ```
 
-
+De uitleg van dit Python-programma vind je in de [Display Code Uitleg](les3_uitleg_display.md).
 
 ### Opdracht
 Programmeer een programma dat de tekst "Pico Robot" op het OLED-display toont wanneer de robot vooruit rijdt en "Stopped" wanneer de robot stopt. 
