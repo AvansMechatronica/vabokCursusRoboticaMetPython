@@ -1,4 +1,4 @@
-# Eerste Robot Programma - Uitleg Onderwijsniveau 4
+# Eerste Robot Programma
 
 ## Wat doet dit programma?
 Dit is het allereerste programma voor je Pico-robot! Het programma laat de robot 5 seconden vooruit rijden en stopt hem daarna.
