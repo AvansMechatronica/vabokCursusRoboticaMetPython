@@ -149,7 +149,7 @@ Het programma staat nu op de Pico, maar draait nog niet automatisch.
 
 **Stap 5.2:** Voer het programma uit
 - In Thonny: klik op de groene **"Play"** knop (▶) of druk op **F5**
-- De robot zou nu 5 seconden vooruit moeten rijden en dan stoppen!
+- De robot zal nu 5 seconden vooruit rijden en dan stoppen!
 
 ### Optie B: Automatisch opstarten
 

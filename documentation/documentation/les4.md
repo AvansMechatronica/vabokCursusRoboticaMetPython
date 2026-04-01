@@ -67,8 +67,35 @@ while True:
 ```
 De uitleg van dit Python-programma vind je in de [Ultrasoon Sensor Code Uitleg](les4_uitleg_code_ultrasoon_sensor.md).
 
-### Opdracht
+### Opdracht 1
 Copieer de bovestaande code in een eigen bestand (gemaakt in Thonny) en voer deze uit op de pico-robot. Observeer de waarden die worden weergegeven op de console terwijl je voor de sensor een voorwerp(je hand kan ook) houd op verschillende afstanden van de sensor.
+### Opdracht 2
+Gebruik de afstandswaarden van de ultrasone sensor om een eenvoudige botsingsvermijdingslogica te implementeren. Bijvoorbeeld: als de afstand kleiner is dan een bepaalde drempel (bijvoorbeeld 20 cm), laat de robot dan stoppen. Je kun deze code als basis gebruiken:
+
+```python
+# Import de pico_car bibliotheek
+from pico_car import pico_car
+from pico_car import ultrasonic
+import time
+
+# Maak een Motor object aan
+Motor = pico_car()
+ultrasonic = ultrasonic()
+
+while True:
+    # Lees afstand uit
+    distance = ultrasonic.Distance_accurate()
+    print("distance is %d cm"%(distance) )
+    if distance > 20.0:
+        # start de motoren
+        # TODO: voeg hier de code toe om de robot vooruit te laten rijden
+    else:
+        # stop de motoren
+        # TODO: voeg hier de code toe om de robot te laten stoppen
+    time.sleep(1)
+
+### Opdracht 3(Next-level)
+Breid je opdracht 2 uit door de robot een andere richting op te laten draaien wanneer een obstakel wordt gedetecteerd. Bijvoorbeeld: als de afstand kleiner is dan 20 cm, laat de robot dan stoppen en vervolgens naar links of rechts draaien voordat hij weer vooruit gaat.
 
 ## Trackingsensoren
 Er zijn vier trackingsensoren op de pico-robot. Met deze sensoren kan de robot lijnen op de grond volgen, bijvoorbeeld een zwarte lijn op een witte ondergrond. 

@@ -25,6 +25,10 @@ i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=100000)
 - `scl=Pin(15)` is de kloklijn, `sda=Pin(14)` is de datalijn
 - `freq=100000` betekent 100 kHz communicatiesnelheid
 
+:::{note}
+Een I2C-bus is een manier waarop de Pico en het OLED-display met elkaar kunnen praten. De kloklijn (SCL) synchroniseert de communicatie, terwijl de datalijn (SDA) de informatie verzendt.
+:::
+
 ```python
 oled = SSD1306_I2C(128, 32, i2c)
 ```

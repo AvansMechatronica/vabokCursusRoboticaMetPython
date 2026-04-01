@@ -1,9 +1,21 @@
-import machine 
-import time 
-led_onboard = machine.Pin(25, machine.Pin.OUT)
+# Import de pico_car bibliotheek
+from pico_car import pico_car
+from pico_car import ultrasonic
+import time
 
-while True: 
-    led_onboard.value(1) 
-    time.sleep(1) 
-    led_onboard.value(0) 
+# Maak een Motor object aan
+Motor = pico_car()
+ultrasonic = ultrasonic()
+
+while True:
+    # Lees afstand uit
+    distance = ultrasonic.Distance_accurate()
+    print("distance is %d cm"%(distance) )
+    if distance > 10.0:
+        Motor.Car_Run(255, 255)
+    else:
+        Motor.Car_Stop()
     time.sleep(1)
+    
+        
+
