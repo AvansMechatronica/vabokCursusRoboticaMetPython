@@ -93,6 +93,7 @@ while True:
         # stop de motoren
         # TODO: voeg hier de code toe om de robot te laten stoppen
     time.sleep(1)
+```
 
 ### Opdracht 3(Next-level)
 Breid je opdracht 2 uit door de robot een andere richting op te laten draaien wanneer een obstakel wordt gedetecteerd. Bijvoorbeeld: als de afstand kleiner is dan 20 cm, laat de robot dan stoppen en vervolgens naar links of rechts draaien voordat hij weer vooruit gaat.
