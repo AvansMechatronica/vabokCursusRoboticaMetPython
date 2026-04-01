@@ -10,8 +10,6 @@ Text Paul moet nog worden toegevoegd
 ![image](../images/werktuig/Afbeelding3.png)
 ![image](../images/werktuig/Afbeelding4.png)
 ![image](../images/werktuig/Afbeelding5.png)
-![image](../images/werktuig/Afbeelding5.png)
-![image](../images/werktuig/Afbeelding5.png)
 ![image](../images/werktuig/Afbeelding6.png)
 
 ## Parts downloads
