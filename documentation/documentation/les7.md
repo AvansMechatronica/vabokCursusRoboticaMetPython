@@ -21,6 +21,21 @@ er zijn twee soorten magazijnopstellingen:
 1. Het magazijn wordt voorgesteld als een grid van 5 rijen en 5 kolommen, waarbij elke cel een magazijnstelling vertegenwoordigt. De robot navigeert van de ene cel naar de andere om producten op te halen en te vervoeren.
 2. Het magazijn wordt voorgesteld als een lijn waarlangs de magazijnstellingen zijn geplaatst. De robot moet van de ene kant van de lijn naar de andere kunnen navigeren.
 
+::::{grid}
+:::{grid-item-card}
+
+
+![image](../images/robot_in_doolhof.jpg)
+Voorbeeld van robot in een doolhof-achtige omgeving, vergelijkbaar met de grid-opstelling van het magazijn.
+:::
+:::{grid-item-card}
+
+
+![image](../images/robot_op_lijn.jpg)
+Voorbeeld van robot die een lijn volgt, vergelijkbaar met de lijn-opstelling van het magazijn.
+:::
+::::
+
 ## Stappenplan
 1. **Ontwerp**: Bedenk een ontwerp voor je robot dat voldoet aan de vereisten van de opdracht. Denk na over de sensoren, actuatoren en het navigatiesysteem dat je wilt gebruiken.
 2. **Bouw**: Gebruik de materialen en tools die je tot je beschikking hebt om je robot te bouwen volgens je ontwerp.

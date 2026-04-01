@@ -31,3 +31,52 @@ Volg de stappen in de les "Software installeren op de pico-robot" om Thonny en d
 - Je ziet nu twee panelen: je computer (boven) en Raspberry Pi Pico (onder)
 - Sleep `pico_car.py` naar het Raspberry Pi Pico paneel
 - Het bestand wordt geüpload naar de Pico
+
+### Planning van de examenopdrachten
+#### Les 7: Introductie van de examenopdracht
+
+Aanvangstijd 9:00 of 13:00
+
+
+| Tijdstip | Activiteit |
+|---|---|
+| Aanvangstijd |  Uitleg van het examen|
+| Aanvangstijd + 0:10 |  Uitleg van de opdracht en vereisten|
+| Aanvangstijd + 0:20 | Starten met de opdracht |
+| Aanvangstijd + 1:30 |  Pauze|
+| Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
+| Aanvangstijd + 3:15 |  Einde van de sessie|
+
+#### Les 8: Vervolg werken aan de examenopdracht
+
+Aanvangstijd 9:00 of 13:00
+
+| Tijdstip | Activiteit |
+|---|---|
+| Aanvangstijd | Starten met de opdracht |
+| Aanvangstijd + 1:30 |  Pauze|
+| Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
+| Aanvangstijd + 3:15 |  Einde van de sessie|
+
+#### Les 9: Assessments
+
+Aanvangstijd 9:00 of 13:00
+
+| Tijdstip | Activiteit |
+|---|---|
+| Aanvangstijd | Starten met de assessments |
+| Aanvangstijd + 1:30 |  Pauze|
+| Aanvangstijd + 1:45 |  Vervolg  aan de assessments|
+| Aanvangstijd + 3:15 |  Einde van de sessie|
+
+#### Les 10: Afsluiting en presentatie
+
+Aanvangstijd 9:00 of 13:00
+
+| Tijdstip | Activiteit |
+|---|---|
+| Aanvangstijd | Presentaties |
+| Aanvangstijd + 1:30 |  Pauze|
+| Aanvangstijd + 1:45 |  Certificaten uitreiken|
+| Aanvangstijd + 1:45 |  Afsluitend drankje|
+| Aanvangstijd + 3:15 |  Einde van de sessie|

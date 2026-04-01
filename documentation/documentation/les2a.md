@@ -1,4 +1,4 @@
-# Les 1a: Introductie in Python programmeren
+# Les 2a: Introductie in Python programmeren
 
 Welkom bij de eerste les! In deze les ga je kennismaken met programmeren. We gaan werken met Python, een programmeertaal die veel wordt gebruikt en relatief makkelijk te leren is. Aan het einde van deze les kun je:
 - Uitleggen wat een programmeertaal is
