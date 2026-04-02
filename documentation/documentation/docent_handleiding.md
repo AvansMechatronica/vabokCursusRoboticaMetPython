@@ -32,8 +32,8 @@ Volg de stappen in de les "Software installeren op de pico-robot" om Thonny en d
 - Sleep `pico_car.py` naar het Raspberry Pi Pico paneel
 - Het bestand wordt geüpload naar de Pico
 
-### Planning van de examenopdrachten
-#### Les 7: Introductie van de examenopdracht
+## Planning van de examenopdrachten
+### Les 7: Introductie van de examenopdracht
 
 Aanvangstijd 9:00 of 13:00
 
@@ -47,7 +47,7 @@ Aanvangstijd 9:00 of 13:00
 | Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
-#### Les 8: Vervolg werken aan de examenopdracht
+### Les 8: Vervolg werken aan de examenopdracht
 
 Aanvangstijd 9:00 of 13:00
 
@@ -58,7 +58,7 @@ Aanvangstijd 9:00 of 13:00
 | Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
-#### Les 9: Assessments
+### Les 9: Assessments
 
 Aanvangstijd 9:00 of 13:00
 
@@ -69,7 +69,7 @@ Aanvangstijd 9:00 of 13:00
 | Aanvangstijd + 1:45 |  Vervolg  aan de assessments|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
-#### Les 10: Afsluiting en presentatie
+### Les 10: Afsluiting en presentatie
 
 Aanvangstijd 9:00 of 13:00
 
