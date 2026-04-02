@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 7: Introductie van de examenopdracht &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Les 8: Werkende examenopdracht robotica in Python" href="les8.html" />
+    <link rel="prev" title="Les 5: Maak je eigen robot-werktuig" href="les6.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1.html">Les 1: Bedrijfsbezoek Hoppenbrouwers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2a.html">Les 2a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2b.html">Les 2b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les4.html">Les 4: Programmeren van actoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les 7: Introductie van de examenopdracht</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#doelstellingen-van-de-examenopdracht">Doelstellingen van de examenopdracht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#de-examenopdracht">De examenopdracht</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vereisten">Vereisten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magzijnindeling">Magzijnindeling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stappenplan">Stappenplan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#werkwijze">Werkwijze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beoordelingscriteria">Beoordelingscriteria</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende examenopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les 7: Introductie van de examenopdracht</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les7.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="les-7-introductie-van-de-examenopdracht">
+<h1>Les 7: Introductie van de examenopdracht<a class="headerlink" href="#les-7-introductie-van-de-examenopdracht" title="Link to this heading"></a></h1>
+<p>In deze les maken we kennis met de examenopdracht van de cursus. We bespreken de vereisten en doelstellingen van de opdracht, evenals de beoordelingscriteria. Je krijgt ook de kans om vragen te stellen en eventuele onduidelijkheden te bespreken voordat je aan de slag gaat met het ontwerpen en bouwen van je eigen robotproject.</p>
+<section id="doelstellingen-van-de-examenopdracht">
+<h2>Doelstellingen van de examenopdracht<a class="headerlink" href="#doelstellingen-van-de-examenopdracht" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Toepassen van de kennis en vaardigheden die je hebt opgedaan tijdens de cursus.</p></li>
+<li><p>Ontwerpen en bouwen van een functioneel robotproject dat een specifieke taak uitvoert.</p></li>
+<li><p>Documenteren van het ontwerpproces en de implementatie van je project.</p></li>
+</ul>
+</section>
+<section id="de-examenopdracht">
+<h2>De examenopdracht<a class="headerlink" href="#de-examenopdracht" title="Link to this heading"></a></h2>
+<p><img alt="image" src="../_images/magazijn.png" />
+Je werkt als junior-robotengineer aan een project voor een internetwinkel dat een groot magazijn heeft met veel verschillende producten. De producten zijn netjes opgeslagen in magazijnstellingen en worden regelmatig bijgevuld. De winkel heeft een robot nodig die de producten kan ophalen en naar de verpakkingsafdeling kan brengen.</p>
+<section id="vereisten">
+<h3>Vereisten<a class="headerlink" href="#vereisten" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>De robot moet in staat zijn om producten op te halen uit de magazijnstellingen.</p></li>
+<li><p>De robot moet de producten naar de verpakkingsafdeling kunnen brengen.</p></li>
+<li><p>De robot moet veilig kunnen navigeren door het magazijn zonder schade aan te richten.</p></li>
+</ul>
+</section>
+<section id="magzijnindeling">
+<h3>Magzijnindeling<a class="headerlink" href="#magzijnindeling" title="Link to this heading"></a></h3>
+<p>er zijn twee soorten magazijnopstellingen:</p>
+<ol class="arabic simple">
+<li><p>Het magazijn wordt voorgesteld als een grid van 5 rijen en 5 kolommen, waarbij elke cel een magazijnstelling vertegenwoordigt. De robot navigeert van de ene cel naar de andere om producten op te halen en te vervoeren.</p></li>
+<li><p>Het magazijn wordt voorgesteld als een lijn waarlangs de magazijnstellingen zijn geplaatst. De robot moet van de ene kant van de lijn naar de andere kunnen navigeren.</p></li>
+</ol>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="image" src="../_images/robot_in_doolhof.jpg" />
+Voorbeeld van robot in een doolhof-achtige omgeving, vergelijkbaar met de grid-opstelling van het magazijn.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="image" src="../_images/robot_op_lijn.jpg" />
+Voorbeeld van robot die een lijn volgt, vergelijkbaar met de lijn-opstelling van het magazijn.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stappenplan">
+<h2>Stappenplan<a class="headerlink" href="#stappenplan" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Ontwerp</strong>: Bedenk een ontwerp voor je robot dat voldoet aan de vereisten van de opdracht. Denk na over de sensoren, actuatoren en het navigatiesysteem dat je wilt gebruiken.</p></li>
+<li><p><strong>Bouw</strong>: Gebruik de materialen en tools die je tot je beschikking hebt om je robot te bouwen volgens je ontwerp.</p></li>
+<li><p><strong>Programmeer</strong>: Schrijf de code die nodig is om je robot te laten functioneren en de taken uit te voeren die in de opdracht zijn beschreven.</p></li>
+<li><p><strong>Test</strong>: Test je robot in een gesimuleerde omgeving om ervoor te zorgen dat het correct functioneert en de taken uitvoert zoals bedoeld.</p></li>
+</ol>
+</section>
+<section id="werkwijze">
+<h2>Werkwijze<a class="headerlink" href="#werkwijze" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Je werkt in tweetallen aan deze opdracht, waarbij je samen het ontwerp, de bouw en de programmering van de robot aanpakt. Je werkt samen aan één van de twee magazijnopstellingen. De docent zal de teams indelen en de magazijnopstellingen toewijzen.</p></li>
+<li><p>Je hebt toegang tot de materialen en tools die je nodig hebt om je robot te bouwen, evenals tot de online bronnen en documentatie die je kunnen helpen bij het ontwerpen en programmeren van je robot.</p></li>
+<li><p>Je zult regelmatig feedback krijgen van de instructeurs en medestudenten om je te helpen bij het verbeteren van je ontwerp en implementatie.</p></li>
+</ul>
+</section>
+<section id="beoordelingscriteria">
+<h2>Beoordelingscriteria<a class="headerlink" href="#beoordelingscriteria" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Samenwerking</strong>: Je moet effectief samenwerken met je teamgenoot en bijdragen aan alle aspecten van het project.</p></li>
+<li><p><strong>Functionaliteit</strong>: De robot moet de taken uitvoeren zoals beschreven in de opdracht.</p></li>
+<li><p><strong>Ontwerp</strong>: Het ontwerp van de robot moet creatief en effectief zijn in het oplossen van het probleem.</p></li>
+<li><p><strong>Programmering</strong>: De code moet goed gestructureerd, leesbaar en efficiënt zijn.</p></li>
+<li><p><strong>Documentatie</strong>: Je moet een duidelijke en gedetailleerde documentatie van je ontwerpproces en implementatie leveren, inclusief eventuele uitdagingen en hoe je deze hebt opgelost.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les6.html" class="btn btn-neutral float-left" title="Les 5: Maak je eigen robot-werktuig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="les8.html" class="btn btn-neutral float-right" title="Les 8: Werkende examenopdracht robotica in Python" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
