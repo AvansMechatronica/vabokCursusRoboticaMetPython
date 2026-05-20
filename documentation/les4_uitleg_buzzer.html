@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buzzer Code Uitleg &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1.html">Les 1: Bedrijfsbezoek Hoppenbrouwers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2a.html">Les 2a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2b.html">Les 2b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les4.html">Les 4: Programmeren van actoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de examenopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende examenopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Buzzer Code Uitleg</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les4_uitleg_buzzer.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="buzzer-code-uitleg">
+<h1>Buzzer Code Uitleg<a class="headerlink" href="#buzzer-code-uitleg" title="Link to this heading"></a></h1>
+<section id="wat-is-een-buzzer">
+<h2>Wat is een Buzzer?<a class="headerlink" href="#wat-is-een-buzzer" title="Link to this heading"></a></h2>
+<p>Een buzzer is een klein elektronisch apparaatje dat geluid kan maken. Op onze robot geniet de buzzer ervan om verschillende tonen af te spelen — hoge tonen, lage tonen, snel, langzaam. Het is als een kleine luidspreker!</p>
+</section>
+<section id="wat-doet-deze-code">
+<h2>Wat doet deze code?<a class="headerlink" href="#wat-doet-deze-code" title="Link to this heading"></a></h2>
+<p>Deze code laat de buzzer op de Pico geluid maken. Het is zoals een klein muziekinstrument dat verschillende tonen kan afspelen — precies volgens de opgegeven frequenties en duur. Met deze code kun je:</p>
+<ul class="simple">
+<li><p>Verschillende tonen afspelen</p></li>
+<li><p>Muziek componeren</p></li>
+<li><p>Signalen maken (piep, geluid)</p></li>
+</ul>
+</section>
+<section id="stap-voor-stap-uitleg">
+<h2>Stap-voor-stap uitleg<a class="headerlink" href="#stap-voor-stap-uitleg" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">machine</span> <span class="pre">import</span> <span class="pre">Pin,</span> <span class="pre">PWM</span></code> — We halen twee gereedschappen, Pin en PWM. Pin is om contact te maken met de buzzer. PWM is om de buzzer met verschillende sterkte aan en uit te schakelen (zoals dimmen doe je met een lamp).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">time</span></code> — Dit laadt het time-gereedschap zodat we kunnen zeggen: “wacht even” (met <code class="docutils literal notranslate"><span class="pre">time.sleep</span></code>)</p></li>
+</ul>
+<section id="stap-1-buzzer-voorbereiding">
+<h3>Stap 1: Buzzer voorbereiding<a class="headerlink" href="#stap-1-buzzer-voorbereiding" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BZ</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">22</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>We maken verbinding met Pin 22 (dit is waar de buzzer op aangesloten is)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PWM</span></code> maakt er een “geluidsmachine” van — iets wat we kunnen aan en uit zetten</p></li>
+</ul>
+</section>
+<section id="stap-2-standaard-geluidshoogte-instellen">
+<h3>Stap 2: Standaard geluidshoogte instellen<a class="headerlink" href="#stap-2-standaard-geluidshoogte-instellen" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BZ</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">freq(1000)</span></code> betekent: de frequentie (pitch/hoogte) is 1000 Hz</p></li>
+<li><p>Dit is ongeveer een middelste toon — niet heel hoog, niet heel laag</p></li>
+<li><p>(Hogere getallen = hogere toon, lagere getallen = lagere toon)</p></li>
+</ul>
+</section>
+<section id="stap-3-muzieknoten-definieren">
+<h3>Stap 3: Muzieknoten definiëren<a class="headerlink" href="#stap-3-muzieknoten-definieren" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CM</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">393</span><span class="p">,</span> <span class="mi">441</span><span class="p">,</span> <span class="mi">495</span><span class="p">,</span> <span class="mi">556</span><span class="p">,</span> <span class="mi">624</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>Dit is een lijst met verschillende frequenties (tonen)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[0]</span> <span class="pre">=</span> <span class="pre">0</span></code> — geen geluid (stil)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[1]</span> <span class="pre">=</span> <span class="pre">330</span> <span class="pre">Hz</span></code> — lage Do note</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[2]</span> <span class="pre">=</span> <span class="pre">350</span> <span class="pre">Hz</span></code> — Re note</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[3]</span> <span class="pre">=</span> <span class="pre">393</span> <span class="pre">Hz</span></code> — Mi note</p></li>
+<li><p>… en zo verder</p></li>
+<li><p>Deze list is zoals een piano keyboard — elk getal is een ander toetje!</p></li>
+</ul>
+</section>
+<section id="stap-4-de-melodie-kiezen">
+<h3>Stap 4: De melodie kiezen<a class="headerlink" href="#stap-4-de-melodie-kiezen" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">song</span> <span class="o">=</span> <span class="p">[</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],]</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>Dit is de volgorde van noten die we willen afspelen</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[1]</span></code> twee keer = “Do Do”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CM[5]</span></code> twee keer = “Sol Sol”</p></li>
+<li><p>We spelen deze noten na elkaar af — dit vormt een melodie!</p></li>
+</ul>
+</section>
+<section id="stap-5-ritme-instellen">
+<h3>Stap 5: Ritme instellen<a class="headerlink" href="#stap-5-ritme-instellen" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">beat</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,]</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>Dit bepaalt HOE LANG elke noot speelt (in seconden)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code> = halve seconde speelt deze noot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> = hele seconde speelt deze noot</p></li>
+<li><p>Zo krijgt elke noot zijn eigen duur!</p></li>
+</ul>
+</section>
+<section id="stap-6-de-muziekfunctie">
+<h3>Stap 6: De muziekfunctie<a class="headerlink" href="#stap-6-de-muziekfunctie" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">music</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Speelt liedje ...&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">song</span><span class="p">)):</span>
+            <span class="n">BZ</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>      <span class="c1"># Zet buzzer aan (500 betekent: 50% kracht)</span>
+            <span class="n">BZ</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">song</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>       <span class="c1"># Speel noot nummer i</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">beat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>    <span class="c1"># Wacht zo lang als de beat aangeeft</span>
+            <span class="n">BZ</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>         <span class="c1"># Zet buzzer uit (pauze)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>       <span class="c1"># Kleine pauze van 0.01 seconde tussen noten</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p>Dit is ons “recept” om muziek af te spelen</p></li>
+<li><p>We gaan door alle noten (de loop <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(len(song))</span></code>)</p></li>
+<li><p>Voor elke noot:</p>
+<ul>
+<li><p>Zet buzzer aan</p></li>
+<li><p>Stel frequentie in (welke noot speelt)</p></li>
+<li><p>Wacht zo lang als de beat aangeeft</p></li>
+<li><p>Zet buzzer uit (pauze)</p></li>
+<li><p>Wacht heel kort</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="stap-7-muziek-afspelen">
+<h3>Stap 7: Muziek afspelen<a class="headerlink" href="#stap-7-muziek-afspelen" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">music</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einde&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Wat gebeurt hier?</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music()</span></code> — We voeren onze muziekfunctie uit = het lied begint!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(&quot;Einde&quot;)</span></code> — Na afloop print het “Einde”</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="samengevat">
+<h2>Samengevat<a class="headerlink" href="#samengevat" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Voorbereiding</strong> — We maken verbinding met pin 22 waar de buzzer zit</p></li>
+<li><p><strong>Tonen definiëren</strong> — We zeggen wat de frequenties zijn (Do, Re, Mi…)</p></li>
+<li><p><strong>Volgorde bepalen</strong> — We zeggen welke noten we willen spelen</p></li>
+<li><p><strong>Ritme toevoegen</strong> — We zeggen hoe lang elke noot moet spelen</p></li>
+<li><p><strong>Afspelen</strong> — We voeren de musik() functie uit</p></li>
+</ol>
+<p>De robot laat de buzzer verschillende tonen afspelen volgens de opgegeven frequenties en duur — zo kun je muziek maken met de buzzer!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 4: Programmeren van actoren &mdash; Avans: VABOK cursus Robotica met Python 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Les 5: Programmeren van sensoren" href="les5.html" />
+    <link rel="prev" title="Les 3: Bouw en programmeer je eerste robot" href="les3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: VABOK cursus Robotica met Python
+              <img src="../_static/AvansYonder.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Discaimer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html#inleiding">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robbie.html">Virtuele assistent Robbie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les1.html">Les 1: Bedrijfsbezoek Hoppenbrouwers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2a.html">Les 2a: Introductie in Python programmeren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les2b.html">Les 2b: Interactief programmeren met Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les3.html">Les 3: Bouw en programmeer je eerste robot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les 4: Programmeren van actoren</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motoren">Motoren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-1">Opdracht 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2">Opdracht 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#led">LED</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht">Opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#display">Display</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#buzzer">Buzzer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Opdracht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-level-neopixels">Next Level: NeoPixels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les5.html">Les 5: Programmeren van sensoren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les6.html">Les 5: Maak je eigen robot-werktuig</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les7.html">Les 7: Introductie van de examenopdracht</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les8.html">Les 8: Werkende examenopdracht robotica in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les9.html">Les 9: Optimalisatie en foutopsporing in robotica projecten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les10.html">Les 10: Oplevering en presentatie van je robotproject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pico_car_functies.html">Pico Car Bibliotheek - Functie Referentie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="referenties.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docent_handleiding.html">Docent Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: VABOK cursus Robotica met Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Les 4: Programmeren van actoren</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/les4.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="les-4-programmeren-van-actoren">
+<h1>Les 4: Programmeren van actoren<a class="headerlink" href="#les-4-programmeren-van-actoren" title="Link to this heading"></a></h1>
+<p>Een actor is een apparaat dat signalen van een computer of microcontroller omzet in fysieke acties, zoals beweging of lichtsignalen af te geven. Op de pico-robot zijn verschillende actoren aanwezig die je kunt programmeren om je robot te laten bewegen en reageren op de omgeving.</p>
+<section id="motoren">
+<h2>Motoren<a class="headerlink" href="#motoren" title="Link to this heading"></a></h2>
+<p>De pico-robot heeft twee motoren die de wielen aandrijven. Je kunt deze motoren programmeren om vooruit, achteruit, links of rechts te bewegen. Hier is een voorbeeld van hoe je de motoren kunt aansturen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import de pico_car bibliotheek</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">pico_car</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Maak een Motor object aan</span>
+<span class="n">Motor</span> <span class="o">=</span> <span class="n">pico_car</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robot start met bewegen!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Auto vooruit, parameter (Linker motor snelheid, Rechter motor snelheid)</span>
+<span class="c1"># Snelheid kan tussen 0-255 zijn</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Run</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="c1"># Wacht 5 seconden</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Stop de auto</span>
+<span class="n">Motor</span><span class="o">.</span><span class="n">Car_Stop</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Robot gestopt!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les3_eerste_robot_programma.html"><span class="std std-doc">Motor Code Uitleg</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>De robot gaat rijden!!! Plaats de robot op een open oppervlak voordat je dit programma uitvoert, of houd de robot vast terwijl je het programma uitvoert.</p>
+</div>
+<section id="opdracht-1">
+<h3>Opdracht 1<a class="headerlink" href="#opdracht-1" title="Link to this heading"></a></h3>
+<p>Expirimenteer met verschillende snelheden en richtingen door de parameters van <code class="docutils literal notranslate"><span class="pre">Motor.Car_Run()</span></code> aan te passen. Probeer bijvoorbeeld de robot langzaam vooruit te laten rijden of een bocht naar links te maken.</p>
+</section>
+</section>
+<section id="opdracht-2">
+<h2>Opdracht 2<a class="headerlink" href="#opdracht-2" title="Link to this heading"></a></h2>
+<p>Maak een programma dat de robot dat de volgende stappen uitvoert:</p>
+<ul class="simple">
+<li><p>3 seconden vooruit</p></li>
+<li><p>bocht naar rechts (door de linker motor sneller te laten draaien dan de rechter) voor 2 seconden</p></li>
+<li><p>3 seconden vooruit</p></li>
+<li><p>stop 2 seconden</p></li>
+<li><p>5 seconden achteruit</p></li>
+<li><p>stop</p></li>
+</ul>
+</section>
+<section id="led">
+<h2>LED<a class="headerlink" href="#led" title="Link to this heading"></a></h2>
+<p>Op de pico-robot is ook een lampje aanwezig. We noemen zo’n lampje een LED (Light Emitting Diode). Je kunt deze LED aan- en uitzetten met je programma. Hier is een voorbeeld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span> 
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="n">led_onboard</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="c1"># Zet de LED aan</span>
+    <span class="n">led_onboard</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="c1"># Wacht 1 seconde</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="c1"># Zet de LED uit</span>
+    <span class="n">led_onboard</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+    <span class="c1"># Wacht 1 seconde</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_led.html"><span class="std std-doc">LED Code Uitleg</span></a>.</p>
+<section id="opdracht">
+<h3>Opdracht<a class="headerlink" href="#opdracht" title="Link to this heading"></a></h3>
+<p>Breid het programma van de motoren uit door de LED aan te zetten wanneer de robot vooruit rijdt en uit te zetten wanneer de robot stopt.</p>
+</section>
+</section>
+<section id="display">
+<h2>Display<a class="headerlink" href="#display" title="Link to this heading"></a></h2>
+<p>Op de pico-robot zit ook een klein schermpje, een OLED-display. OLED staat voor “Organic Light Emitting Diode”. Je kent mischien de term wel van de OLDE-tv, deze werkt op dezefde principe. Je kunt hier tekst en eenvoudige afbeeldingen op weergeven. Hier is een voorbeeld van hoe je het OLED-display kunt gebruiken:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">SSD1306_I2C</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Stel I2C pinnen in</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="c1"># Initialiseer OLED</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+<span class="c1"># Toon &quot;Hello&quot; op OLED op positie 0,0</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Toon &quot;World&quot; op OLED op positie 0,10</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Toon pixel op positie 100,30</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">pixel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_display.html"><span class="std std-doc">Display Code Uitleg</span></a>.</p>
+<section id="id1">
+<h3>Opdracht<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Programmeer een programma dat de tekst “Pico Robot” op het OLED-display toont wanneer de robot vooruit rijdt en “Stopped” wanneer de robot stopt.</p>
+</section>
+</section>
+<section id="buzzer">
+<h2>Buzzer<a class="headerlink" href="#buzzer" title="Link to this heading"></a></h2>
+<p>De pico-robot heeft ook een buzzer, een klein apparaatje dat geluid kan maken. Je kunt deze buzzer gebruiken om geluidssignalen te geven. Hier is een voorbeeld van hoe je de buzzer kunt aansturen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="c1"># Stel buzzer pin in</span>
+<span class="n">BZ</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">22</span><span class="p">))</span>
+<span class="n">BZ</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># Initialiseer muziek</span>
+<span class="n">CM</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">393</span><span class="p">,</span> <span class="mi">441</span><span class="p">,</span> <span class="mi">495</span><span class="p">,</span> <span class="mi">556</span><span class="p">,</span> <span class="mi">624</span><span class="p">]</span> 
+<span class="n">song</span> <span class="o">=</span> <span class="p">[</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">CM</span><span class="p">[</span><span class="mi">1</span><span class="p">],]</span>
+<span class="n">beat</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,]</span>
+<span class="c1"># Muziek functie   </span>
+<span class="k">def</span> <span class="nf">music</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Speelt liedje ...&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">song</span><span class="p">)):</span>
+            <span class="n">BZ</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+            <span class="n">BZ</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="n">song</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">beat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> 
+            <span class="n">BZ</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> 
+<span class="c1"># Speel muziek   </span>
+<span class="n">music</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Einde&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="les4_uitleg_buzzer.html"><span class="std std-doc">Buzzer Code Uitleg</span></a>.</p>
+<section id="id2">
+<h3>Opdracht<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Programmeer een programma dat een piepje afspeelt op de buzzer wanneer de robot vooruit rijdt en stopt wanneer de robot stopt.</p>
+</section>
+<section id="next-level-neopixels">
+<h3>Next Level: NeoPixels<a class="headerlink" href="#next-level-neopixels" title="Link to this heading"></a></h3>
+<p>De pico-robot heeft ook een rijtje van 8 kleine 3 kleuren-leds, ook wel NeoPixels genoemd. Deze kleuren leds zitten aan de onderkant van de robot. Deze kunnen in verschillende kleuren oplichten. Hier is een voorbeeld van hoe je de NeoPixels kunt aansturen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">pico_car</span> <span class="kn">import</span> <span class="n">ws2812b</span>
+
+<span class="n">num_leds</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Aantal NeoPixels</span>
+<span class="c1"># Pin waar NeoPixels zijn aangesloten</span>
+<span class="n">pixels</span> <span class="o">=</span> <span class="n">ws2812b</span><span class="p">(</span><span class="n">num_leds</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Zet alle leds aan</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Lopend licht effect</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_leds</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_leds</span><span class="p">):</span>
+            <span class="c1">#pixel_nummer, rood, groen, blauw</span>
+            <span class="n">pixels</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="o">%</span><span class="mi">10</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="o">%</span><span class="mi">10</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">6</span><span class="p">))</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">pixels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>De uitleg van dit Python-programma vind je in de <a class="reference internal" href="#les3_uitleg_neopixel.md"><span class="xref myst">NeoPixel Code Uitleg</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="les3.html" class="btn btn-neutral float-left" title="Les 3: Bouw en programmeer je eerste robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="les5.html" class="btn btn-neutral float-right" title="Les 5: Programmeren van sensoren" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
