@@ -64,9 +64,9 @@ Aanvangstijd 9:00 of 13:00
 
 | Tijdstip | Activiteit |
 |---|---|
-| Aanvangstijd | Starten met de assessments |
+| Aanvangstijd | Starten met de cgi's |
 | Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Vervolg  aan de assessments|
+| Aanvangstijd + 1:45 |  Vervolg  aan de cgi's|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
 ### Les 10: Afsluiting en presentatie
