@@ -58,15 +58,15 @@ Aanvangstijd 9:00 of 13:00
 | Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
-### Les 9: Assessments
+### Les 9: Criterium gericht interview (CGI)
 
 Aanvangstijd 9:00 of 13:00
 
 | Tijdstip | Activiteit |
 |---|---|
-| Aanvangstijd | Starten met de cgi's |
+| Aanvangstijd | Starten met de CGI's |
 | Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Vervolg  aan de cgi's|
+| Aanvangstijd + 1:45 |  Vervolg  aan de CGI's|
 | Aanvangstijd + 3:15 |  Einde van de sessie|
 
 ### Les 10: Afsluiting en presentatie
