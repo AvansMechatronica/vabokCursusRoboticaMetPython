@@ -16,8 +16,8 @@ Je werkt als junior-robotengineer aan een project voor een internetwinkel dat ee
 - De robot moet de producten naar de verpakkingsafdeling kunnen brengen.
 - De robot moet veilig kunnen navigeren door het magazijn zonder schade aan te richten.
 
-### Magzijnindeling
-er zijn twee soorten magazijnopstellingen:
+### Magazijnindeling
+Er zijn twee soorten magazijnopstellingen:
 1. Het magazijn wordt voorgesteld als een grid van 5 rijen en 5 kolommen, waarbij elke cel een magazijnstelling vertegenwoordigt. De robot navigeert van de ene cel naar de andere om producten op te halen en te vervoeren.
 2. Het magazijn wordt voorgesteld als een lijn waarlangs de magazijnstellingen zijn geplaatst. De robot moet van de ene kant van de lijn naar de andere kunnen navigeren.
 
