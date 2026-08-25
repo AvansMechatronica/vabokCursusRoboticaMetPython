@@ -1,4 +1,4 @@
-# Les 5: Maak je eigen robot-werktuig
+# Les 6: Maak je eigen robot-werktuig
 
 In deze les ga je aan de slag met het ontwerpen en bouwen van je eigen robot-werktuig. Je leert hoe je verschillende componenten kunt combineren om een functioneel werktuig te creëren dat specifieke taken kan uitvoeren. We zullen ook bespreken hoe je je werktuig kunt integreren met de bestaande robot en hoe je het kunt programmeren om samen te werken met de robot's besturingssysteem.
 
