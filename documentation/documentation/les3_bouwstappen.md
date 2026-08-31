@@ -58,6 +58,5 @@ Elk component dient volgens de onderstaande afbeeldingen correct te zijn aangesl
 :::
 ::::
 
-
 **🎉 Gefeliciteerd!** Je robot is nu in elkaar gezet!
 
