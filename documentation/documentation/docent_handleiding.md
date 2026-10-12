@@ -32,51 +32,16 @@ Volg de stappen in de les "Software installeren op de pico-robot" om Thonny en d
 - Sleep `pico_car.py` naar het Raspberry Pi Pico paneel
 - Het bestand wordt geüpload naar de Pico
 
-## Planning van de examenopdrachten
-### Les 7: Introductie van de examenopdracht
-
-Aanvangstijd 9:00 of 13:00
-
-
-| Tijdstip | Activiteit |
-|---|---|
-| Aanvangstijd |  Uitleg van het examen|
-| Aanvangstijd + 0:10 |  Uitleg van de opdracht en vereisten|
-| Aanvangstijd + 0:20 | Starten met de opdracht |
-| Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
-| Aanvangstijd + 3:15 |  Einde van de sessie|
-
-### Les 8: Vervolg werken aan de examenopdracht
-
-Aanvangstijd 9:00 of 13:00
-
-| Tijdstip | Activiteit |
-|---|---|
-| Aanvangstijd | Starten met de opdracht |
-| Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Vervolg werken aan de opdracht|
-| Aanvangstijd + 3:15 |  Einde van de sessie|
-
-### Les 9: Criterium gericht interview (CGI)
-
-Aanvangstijd 9:00 of 13:00
-
-| Tijdstip | Activiteit |
-|---|---|
-| Aanvangstijd | Starten met de CGI's |
-| Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Vervolg  aan de CGI's|
-| Aanvangstijd + 3:15 |  Einde van de sessie|
-
-### Les 10: Afsluiting en presentatie
-
-Aanvangstijd 9:00 of 13:00
-
-| Tijdstip | Activiteit |
-|---|---|
-| Aanvangstijd | Presentaties |
-| Aanvangstijd + 1:30 |  Pauze|
-| Aanvangstijd + 1:45 |  Certificaten uitreiken|
-| Aanvangstijd + 1:45 |  Afsluitend drankje|
-| Aanvangstijd + 3:15 |  Einde van de sessie|
+## Materialen
+Voor de course zijn de volgende materialen nodig:
+- Pico-robot, zie [Yahboom](https://category.yahboom.net/products/pico-robot?srsltid=AU7gw4WrzJ70YM7uN15P4GCEEBnzdfTh9Mp6qkQ_cbC0b-OCeWlQe8UG)
+- Computer met volgende software geïnstalleerd:
+  - [Thonny IDE](https://thonny.org/)
+  - Webbrowser voor de documentatie en online bronnen
+    - [Deze course documentatie](https://avansmechatronica.github.io/vabokCursusRoboticaMetPython/)
+    - [Online Python](https://www.online-python.com/)
+- Reserve batterijen ([link](https://www.123accu.nl/DR-INR18650-18650-Li-ion-batterij-3-6-V-2850-mAh-8-4-A-123accu-huismerk-i49322.html))
+- Batterijenlader ([link](https://www.123accu.nl/Nitecore-i4-Oplader-voor-Li-ion-LiFePO4-Ni-Mh-Batterijen-i31489.html))
+- USB-adapter ([bijvoorbeeld link](https://www.123accu.nl/Xtorm-Next-Gen-Wall-Charger-USB-C-45-W-i59620.html))
+- micro USB-A kabel ([link](https://www.123accu.nl/search/?search=micro+USB-A+kabel))
+- 3d-prints van werktuigen voor de Pico-robot, zie course documentatie

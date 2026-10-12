@@ -32,6 +32,7 @@ Welkom bij de VABOK cursus Robotica met Python
    documentation/pico_car_functies.md
    documentation/referenties.md
    documentation/docent_handleiding.md
+   documentation/planning2026-2027.md
 
 
 Deze workshop is ontwikkeld door:
