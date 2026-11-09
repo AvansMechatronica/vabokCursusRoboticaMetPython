@@ -68,8 +68,9 @@ Bekijk je robot goed en beantwoord de volgende vragen:
 ### Thonny configureren voor MicroPython
 **Stap 2.4:** Verbinden met de Raspberry Pi Pico
 - Sluit de Raspberry Pi Pico aan op je computer via een USB-kabel
+
 **Stap 2.5:** Controleer de verbinding
-- Koppel de USB-kabel los en weer aan (zonder BOOTSEL knop!)
+
 - In Thonny: klik rechtsonder en kies **"MicroPython (Raspberry Pi Pico)"**
 - In het onderste venster (Shell) zou je nu moeten zien: `>>>`
 - Dit betekent dat de verbinding werkt! ✓
@@ -81,6 +82,9 @@ Hello, Robot!
 ```
 
 Type dit in de Shell en druk op Enter. Zie je "Hello, Robot!"? Dan werkt alles!
+
+Hieronder kun je zien hoe het op je scherm er uit ziet.
+![imgage](../images/thony_hello_world.png)
 
 ## Stap 3: De pico_car bibliotheek installeren
 

@@ -36,17 +36,25 @@ Python is ideaal om te leren programmeren omdat:
 
 Om te kunnen programmeren heb je een plek nodig waar je code kunt schrijven en uitvoeren. Dit noemen we een **IDE** (Integrated Development Environment), oftewel een ontwikkelomgeving.
 
-In deze les gebruiken we [online-python.com](https://www.online-python.com/). Dit is een website waar je direct kunt beginnen met programmeren, zonder dat je iets hoeft te installeren op je computer.
+In deze les gebruiken we <a href="https://www.online-python.com/" target="_blank" rel="noopener noreferrer">online-python.com</a>. Dit is een website waar je direct kunt beginnen met programmeren, zonder dat je iets hoeft te installeren op je computer.
 
 ### Stap voor stap aan de slag:
 
 **Stap 1:** Open je webbrowser (Chrome, Firefox, Edge, etc.)
 
-**Stap 2:** Ga naar [https://www.online-python.com/](https://www.online-python.com/)
+**Stap 2:** Ga naar <a href="https://www.online-python.com/" target="_blank" rel="noopener noreferrer">online-python.com</a>
+
 
 **Stap 3:** Je ziet nu een scherm met:
 - Links: een **code-editor** (hier typ je je code)
 - Rechts of onder: een **uitvoervenster** (hier zie je het resultaat)
+
+:::{note}
+Maak eerst het linker scherm met de titel `main.py` geheel leeg
+:::
+
+Het window wan `online-python`ziet er ongeveer als volgt uit
+![image](../images/online_python.png)
 
 **Stap 4:** Typ het volgende in de editor:
 ```python
@@ -256,7 +264,7 @@ print("De oppervlakte is:", oppervlakte)
 
 **4.2** Bereken je geboortejaar:
 ```python
-huidig_jaar = 2024
+huidig_jaar = 2026
 leeftijd = ...  # Vul je leeftijd in
 geboortejaar = ...  # Bereken je geboortejaar
 print("Je bent geboren in ongeveer:", geboortejaar)
@@ -321,4 +329,3 @@ getal2 = 8
 ```python
 # Tip: 1 week = 7 dagen, 1 dag = 24 uur, etc.
 ```
-
