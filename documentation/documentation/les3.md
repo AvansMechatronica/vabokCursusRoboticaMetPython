@@ -24,7 +24,7 @@ De **Pico-robot** is een klein robotvoertuig dat wordt aangestuurd door een **Ra
 - **Batterijen** - voor stroomvoorziening
 - **Raspberry Pi Pico** - het "brein" van de robot
 
-![image](../images/pico-robot.png)
+![image](../images/Pico-robot.png)
 
 ## Stap 1: Bouwen van de Pico-robot
 
@@ -86,9 +86,9 @@ Type dit in de Shell en druk op Enter. Zie je "Hello, Robot!"? Dan werkt alles!
 Hieronder kun je zien hoe het op je scherm er uit ziet.
 ![imgage](../images/thony_hello_world.png)
 
-## Stap 3: De pico_car bibliotheek installeren
+## Stap 3: De Pico_car bibliotheek installeren
 
-De robot gebruikt een speciale bibliotheek genaamd `pico_car`. Deze bevat alle functies om de robot aan te sturen. Deze bibliotheek is al door je docent op de Raspberry Pi Pico gezet. Je kunt deze stap dus overslaan!
+De robot gebruikt een speciale bibliotheek genaamd `Pico_car`. Deze bevat alle functies om de robot aan te sturen. Deze bibliotheek is al door je docent op de Raspberry Pi Pico gezet. Je kunt deze stap dus overslaan!
 
 
 ## Stap 4: Je eerste programma voor de robot schrijven
@@ -110,12 +110,12 @@ We schrijven een eenvoudig programma dat:
 **Stap 4.2:** Typ de volgende code over:
 
 ```python
-# Import de pico_car bibliotheek
-from pico_car import pico_car
+# Import de Pico_car bibliotheek
+from Pico_car import Pico_car
 import time
 
 # Maak een Motor object aan
-Motor = pico_car()
+Motor = Pico_car()
 
 print("Robot start met bewegen!")
 
@@ -204,7 +204,7 @@ Als je wilt dat het programma automatisch start wanneer je de robot aanzet:
 
 ❌ **Foutmelding in Thonny**
 - Lees de foutmelding goed
-- Controleer of je `pico_car.py` hebt geüpload naar de Pico
+- Controleer of je `Pico_car.py` hebt geüpload naar de Pico
 - Controleer of je code exact hetzelfde is als het voorbeeld
 
 ### Test 2: Snelheid aanpassen
@@ -213,10 +213,10 @@ Nu gaan we experimenteren met verschillende snelheden!
 
 **Opdracht 2.1:** Langzamer rijden
 ```python
-from pico_car import pico_car
+from Pico_car import Pico_car
 import time
 
-Motor = pico_car()
+Motor = Pico_car()
 
 # Probeer verschillende snelheden
 Motor.Car_Run(100, 100)  # Halve snelheid
@@ -226,10 +226,10 @@ Motor.Car_Stop()
 
 **Opdracht 2.2:** Verschillende snelheden per motor
 ```python
-from pico_car import pico_car
+from Pico_car import Pico_car
 import time
 
-Motor = pico_car()
+Motor = Pico_car()
 
 # Links sneller dan rechts - de robot draait naar rechts
 Motor.Car_Run(200, 100)
@@ -241,7 +241,7 @@ Motor.Car_Stop()
 
 ### Test 3: Verschillende bewegingen
 
-De `pico_car` bibliotheek heeft meer functies dan alleen vooruit rijden!
+De `Pico_car` bibliotheek heeft meer functies dan alleen vooruit rijden!
 
 **Beschikbare functies:**
 
@@ -255,10 +255,10 @@ De `pico_car` bibliotheek heeft meer functies dan alleen vooruit rijden!
 
 **Opdracht 2.3:** Maak een vierkant
 ```python
-from pico_car import pico_car
+from Pico_car import Pico_car
 import time
 
-Motor = pico_car()
+Motor = Pico_car()
 
 # Herhaal 4 keer (voor 4 zijden van het vierkant)
 for i in range(4):
@@ -276,10 +276,10 @@ Motor.Car_Stop()
 
 **Opdracht 2.4:** Maak een dans-programma
 ```python
-from pico_car import pico_car
+from Pico_car import Pico_car
 import time
 
-Motor = pico_car()
+Motor = Pico_car()
 
 # Vooruit
 Motor.Car_Run(255, 255)
@@ -346,9 +346,9 @@ Motor.Car_Run(255, 220)  # Rechter motor iets langzamer
 **Oorzaak:** Batterijen bijna leeg
 **Oplossing:** Vervang de batterijen door nieuwe
 
-### Probleem 3: ImportError: no module named 'pico_car'
+### Probleem 3: ImportError: no module named 'Pico_car'
 **Oorzaak:** De bibliotheek is niet geüpload naar de Pico
-**Oplossing:** Upload `pico_car.py` opnieuw naar de Raspberry Pi Pico
+**Oplossing:** Upload `Pico_car.py` opnieuw naar de Raspberry Pi Pico
 
 ### Probleem 4: Robot stopt niet
 **Oorzaak:** `Motor.Car_Stop()` wordt niet aangeroepen
@@ -390,7 +390,7 @@ In deze les heb je:
 - ✅ De Pico-robot in elkaar gezet
 - ✅ Thonny IDE geïnstalleerd en geconfigureerd
 - ✅ MicroPython geïnstalleerd op de Raspberry Pi Pico
-- ✅ De pico_car bibliotheek geüpload
+- ✅ De Pico_car bibliotheek geüpload
 - ✅ Je eerste robotprogramma geschreven
 - ✅ De robot laten bewegen met verschillende snelheden
 - ✅ Verschillende bewegingspatronen geprogrammeerd
@@ -426,3 +426,21 @@ In de volgende les gaan we verder met:
 - De robot laten reageren op zijn omgeving
 - Automatische obstakelvermijding programmeren
 - If-statements en loops gebruiken voor slimmere robots
+
+## Veelgestelde vragen (FAQ)
+### Hoe kan ik de python bestanden op de Pico-robot bekijken
+* Open de bestandsverkenner in `Thony` met `weergave->bestanden`. 
+
+### Waarom werkt de Pico-robot niet meer als ik de USB verbinding met de computer los maak en de Pico-robot opnieuw opstart.
+* Als de Pico-robot is uitgeschakeld raakt de `Raspberry Pi Pico` computer zijn geheugen kwijt. Na het inschakeln weet de `Raspberry Pi Pico` dan niet meer wat hij moet uitvoeren.
+* Een programma start vanzelf na het opstarten van de Pico-robot als het op de Pico-robot is opgeslagen als `main.py`. Sla het bestand in Thonny op met **Bestand → Opslaan als... → Raspberry Pi Pico** en geef het de naam `main.py`. Een bestand met een andere naam start niet automatisch; dat moet je vanuit Thonny uitvoeren.
+* Koppel daarna de USB-kabel los en start de robot opnieuw op. Controleer ook of er niet een andere `main.py` op de Pico-robot staat.
+
+### Hoe kan ik een `main.py` verwijderen op de Pico-robot
+   * Open de bestandsverkenner in `Thony` met **weergave→bestanden**. Selecteer het `main.py` bestand en kies met de rechter-muisknop `verwijderen`
+
+![image](../images/delete_main.py.png)
+
+:::{warning}
+Verwijder nooit het `pico_car.py` bestand. Dit bestand bevat de bibliotheek met de basis functies om de Pico-robot aan te sturen.
+:::
