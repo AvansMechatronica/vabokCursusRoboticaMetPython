@@ -38,7 +38,7 @@ De robot gaat rijden!!! Plaats de robot op een open oppervlak voordat je dit pro
 ### Opdracht 1
 Expirimenteer met verschillende snelheden en richtingen door de parameters van `Motor.Car_Run()` aan te passen. Probeer bijvoorbeeld de robot langzaam vooruit te laten rijden of een bocht naar links te maken.
 
-## Opdracht 2
+### Opdracht 2
 Maak een programma dat de robot dat de volgende stappen uitvoert:
 * 3 seconden vooruit 
 * bocht naar rechts (door de linker motor sneller te laten draaien dan de rechter) voor 2 seconden

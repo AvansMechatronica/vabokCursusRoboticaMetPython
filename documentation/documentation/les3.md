@@ -24,7 +24,7 @@ De **Pico-robot** is een klein robotvoertuig dat wordt aangestuurd door een **Ra
 - **Batterijen** - voor stroomvoorziening
 - **Raspberry Pi Pico** - het "brein" van de robot
 
-![image](../images/Pico-robot.png)
+![image](../images/pico-robot.png)
 
 ## Stap 1: Bouwen van de Pico-robot
 
@@ -131,7 +131,7 @@ Motor.Car_Stop()
 
 print("Robot gestopt!")
 ```
-De uitleg van dit  programma kun je vinden in de [Eerste Robot Programma Code Uitleg](les2_eerste_robot_programma.md).
+De uitleg van dit  programma kun je vinden in de [Eerste Robot Programma Code Uitleg](les3_eerste_robot_programma.md).
 
 **Stap 4.3:** Bewaar het programma
 - Klik op **"File"** → **"Save as..."**
