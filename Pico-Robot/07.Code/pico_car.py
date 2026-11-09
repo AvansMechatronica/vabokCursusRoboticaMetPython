@@ -158,7 +158,7 @@ class pico_car:
         R_A.freq(1000)
         L_B.freq(1000)
         L_A.freq(1000)
-        self.max_speed = 257
+        self.max_speed = 128#257
         
     def Car_MaxSpeed(self, max_speed):
         if max_speed > 257:

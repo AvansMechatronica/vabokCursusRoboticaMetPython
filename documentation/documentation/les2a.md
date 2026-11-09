@@ -53,14 +53,13 @@ In deze les gebruiken we <a href="https://www.online-python.com/" target="_blank
 Maak eerst het linker scherm met de titel `main.py` geheel leeg
 :::
 
-Het window wan `online-python`ziet er ongeveer als volgt uit
+Het scherm van `online-python`ziet er ongeveer als volgt uit
 ![image](../images/online_python.png)
 
 **Stap 4:** Typ het volgende in de editor:
 ```python
 print("Hello, World!")
 ```
-> Let op: Verwijder eerst eventuele voorbeeldcode die al in de editor staat.
 
 **Stap 5:** Klik op de groene knop "Run" (of druk op Ctrl+Enter)
 
