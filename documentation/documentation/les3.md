@@ -107,7 +107,7 @@ We schrijven een eenvoudig programma dat:
 - Klik op **"File"** → **"New"**
 - Je ziet nu een leeg code-venster
 
-**Stap 4.2:** Typ de volgende code over:
+**Stap 4.2:** Type de volgende code over:
 
 ```python
 # Import de Pico_car bibliotheek
@@ -142,6 +142,17 @@ De uitleg van dit  programma kun je vinden in de [Eerste Robot Programma Code Ui
 ## Stap 5: Het programma uploaden naar de robot
 
 Het programma staat nu op de Pico, maar draait nog niet automatisch.
+
+:::{warning}
+⚠️ **Test de robot veilig**
+  * Zet de robot op een vlakke, ruime plek, uit de buurt van tafelranden, trappen en andere obstakels.
+  * Test de robot bij voorkeur op de grond.
+  * Houd vingers, haren en losse kleding uit de buurt van de wielen en motoren. 
+  * Zorg dat mensen en huisdieren uit de buurt blijven en dat er geen kabels op de rijroute liggen.
+  * Begin met een lage snelheid en een korte test. Stop het programma of zet de schakelaar uit als de robot onverwacht beweegt.
+  * Gebruik een USB-verlengkabel
+
+:::
 
 ### Optie A: Direct uitvoeren (voor testen)
 
@@ -327,7 +338,8 @@ Programmeer de robot om:
 2. Een volledige draai te maken (360 graden)
 3. Terug te rijden naar het beginpunt
 
-**Tip:** Experimenteer met de tijd voor de draai. Begin met 1 seconde en pas aan totdat het precies een volledige draai is.
+:::{tip} Experimenteer met de tijd voor de draai. Begin met 1 seconde en pas aan totdat het precies een volledige draai is.
+:::
 
 ## Troubleshooting: Veelvoorkomende problemen
 
