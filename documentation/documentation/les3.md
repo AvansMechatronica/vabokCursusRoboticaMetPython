@@ -428,16 +428,21 @@ In de volgende les gaan we verder met:
 - If-statements en loops gebruiken voor slimmere robots
 
 ## Veelgestelde vragen (FAQ)
-### Hoe kan ik de python bestanden op de Pico-robot bekijken
-* Open de bestandsverkenner in `Thony` met `weergave->bestanden`. 
+### Hoe kan ik de Python-bestanden op de Pico-robot bekijken?
 
-### Waarom werkt de Pico-robot niet meer als ik de USB verbinding met de computer los maak en de Pico-robot opnieuw opstart.
-* Als de Pico-robot is uitgeschakeld raakt de `Raspberry Pi Pico` computer zijn geheugen kwijt. Na het inschakeln weet de `Raspberry Pi Pico` dan niet meer wat hij moet uitvoeren.
-* Een programma start vanzelf na het opstarten van de Pico-robot als het op de Pico-robot is opgeslagen als `main.py`. Sla het bestand in Thonny op met **Bestand → Opslaan als... → Raspberry Pi Pico** en geef het de naam `main.py`. Een bestand met een andere naam start niet automatisch; dat moet je vanuit Thonny uitvoeren.
-* Koppel daarna de USB-kabel los en start de robot opnieuw op. Controleer ook of er niet een andere `main.py` op de Pico-robot staat.
+- Open in Thonny de bestandsverkenner via **Weergave → Bestanden**.
+- In de bestandsverkenner zie je de bestanden op je computer en op de Pico.
+![image](../images/delete_main.py.png)
 
-### Hoe kan ik een `main.py` verwijderen op de Pico-robot
-   * Open de bestandsverkenner in `Thony` met **weergave→bestanden**. Selecteer het `main.py` bestand en kies met de rechter-muisknop `verwijderen`
+### Waarom werkt de Pico-robot niet meer als ik de USB-verbinding losmaak en de robot opnieuw opstart?
+
+- De Pico bewaart bestanden ook als de stroom uitvalt. Zonder USB moet de robot wel stroom krijgen van de batterijen: controleer of ze goed geplaatst zijn en zet de schakelaar op **ON**.
+- Een programma start vanzelf als het op de Pico is opgeslagen met de naam `main.py`. Sla het bestand in Thonny op met **Bestand → Opslaan als... → Raspberry Pi Pico** en geef het de naam `main.py`. Een bestand met een andere naam start niet automatisch; voer dat uit vanuit Thonny.
+- Koppel de USB-kabel los en start de robot opnieuw op. Controleer in Thonny of `main.py` op de Pico staat en de juiste code bevat.
+
+### Hoe kan ik `main.py` op de Pico-robot verwijderen?
+
+- Open in Thonny de bestandsverkenner via **Weergave → Bestanden**. Selecteer `main.py`, klik met de rechtermuisknop en kies **Verwijderen**.
 
 ![image](../images/delete_main.py.png)
 
