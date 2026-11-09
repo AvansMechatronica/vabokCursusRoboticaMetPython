@@ -143,7 +143,7 @@ De uitleg van dit  programma kun je vinden in de [Eerste Robot Programma Code Ui
 
 Het programma staat nu op de Pico, maar draait nog niet automatisch.
 
-:::{warning}
+:::{danger}
 ⚠️ **Test de robot veilig**
   * Zet de robot op een vlakke, ruime plek, uit de buurt van tafelranden, trappen en andere obstakels.
   * Test de robot bij voorkeur op de grond.
@@ -154,10 +154,14 @@ Het programma staat nu op de Pico, maar draait nog niet automatisch.
 
 :::
 
+:::{warning}
+Wees zuinig op je robot. Hij zal slechts 1 keer verstrekt worden. Raakt je robot beschadigd dan zul je met een andere student samen 1 robot moeten delen.
+:::
+
 ### Optie A: Direct uitvoeren (voor testen)
 
 **Stap 5.1:** Zorg dat de robot klaar is
-- ⚠️ **Plaats de robot op een open plek** (niet aan de rand van een tafel!)
+- ⚠️ **Plaats de robot op een open plek** 
 - Leg de robot op de grond of op een grote tafel
 - Plaats de batterijen in de batterijhouder
 - Zet de schakelaar op **"ON"**
