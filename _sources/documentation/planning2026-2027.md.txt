@@ -1,0 +1,60 @@
+# Planning studiejaar 2026-2027
+
+In studiejaar 2026-2027 vindt de VABOK cursus Robotica met Python plaats volgens de onderstaande planning.
+
+| les| lesweek |datum | tijd | Locatie | Activiteit |
+|---|-------|-----------|----------------|---------|--|
+|  | 1 | 9 november | 13.00-16.15 | Younder Tilburg | Kick-off |
+| 1 | 2 | 16 november |13.00-17.00 | Bezoek Hoppenbouwers | Hoppenbouwers(Udenhout?) |
+| 2 | 3 | 23 november | 13.00-16.15 | Younder Tilburg | Introductie in Python programmeren |
+| 3 | 4 | 30 november | 13.00-16.15 | Younder Tilburg | Bouw en programmeer je eerste robot
+| 4 | 5 | 7 december | 13.00-16.15 | Younder Tilburg | Programmeren van actoren
+| 5 | 6 | 14 december | 13.00-16.15 | Younder Tilburg | Programmeren van sensoren
+| 6 | 7 | 4 januari | 13.00-16.15 | Younder Tilburg | Maak je eigen robot-werktuig
+| 7 | 8 | 11 januari | 8.45-12.15 | Avans Breda | Uitleg van het examen |
+| 8 | 8 | 11 januari | 13.00-16.15 | Avans Breda |  Starten met de opdracht |
+| 9 | 9 | 18 januari | 8.45-12.15 | Avans Breda | Criterium gericht interview (CGI) |
+| 10 | 9 | 18 januari | 13.00-16.15 | Avans Breda | Afsluiting en presentatie |
+|  | 10| 25 januari | 9.00-16.15 |  | Reserve lessen |
+
+
+## Planning van de examenopdrachten
+### Les 7:  Uitleg van het examen
+| Tijdstip | Activiteit |
+|---|---|
+| 8.45 |  Inloop met koffie en thee |
+| 9.00 |  Uitleg van het examen|
+| 9.10 |  Uitleg van de opdracht en vereisten|
+| 9.20 | Starten met de opdracht |
+| 10.30 |  Pauze|
+| 10.45 |  Vervolg werken aan de opdracht|
+| 12.15 |  Einde van de sessie|
+
+
+### Les 8: Starten met de opdracht
+| Tijdstip | Activiteit |
+|---|---|
+| 13.00 | Starten met de opdracht |
+| 14.30 |  Pauze|
+| 14.45 |  Vervolg werken aan de opdracht|
+| 16.15 |  Einde van de sessie|
+
+
+### Les 9: Criterium gericht interview (CGI)
+| Tijdstip | Activiteit |
+|---|---|
+| 8.45 |  Inloop met koffie en thee |
+| 9.00 | Starten met de CGI's |
+| 10.30 |  Pauze|
+| 10.45 |  Vervolg  aan de CGI's|
+| 12.15 |  Einde van de sessie|
+
+
+### Les 10: Afsluiting en presentatie
+| Tijdstip | Activiteit |
+|---|---|
+| 13.00 | Presentaties |
+| 14.30 |  Pauze|
+| 14.45 |  Certificaten uitreiken|
+| 14.45 |  Afsluitend drankje|
+| 16.15 |  Einde van de sessie|
