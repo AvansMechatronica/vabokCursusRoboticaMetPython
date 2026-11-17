@@ -1,0 +1,3 @@
+# Les 9: Optimalisatie en foutopsporing in robotica projecten
+
+In deze les richten we ons op het optimaliseren van je robotica projecten en het oplossen van eventuele problemen die zich kunnen voordoen tijdens het bouwen en programmeren van je robot. We zullen verschillende technieken bespreken om de prestaties van je robot te verbeteren, zoals het verfijnen van algoritmen, het optimaliseren van code en het aanpassen van hardwarecomponenten. Daarnaast behandelen we ook methoden voor foutopsporing, zodat je effectief problemen kunt identificeren en oplossen die zich tijdens het ontwikkelingsproces kunnen voordoen.
