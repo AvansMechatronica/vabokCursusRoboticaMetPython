@@ -1,5 +1,9 @@
 # Les 2b: Interactief programmeren met Python
 
+:::{note}
+De presentatie van deze les: {download}`Les 2 – presentatie (PDF) <../presentaties/les2.pdf>`
+:::
+
 Welkom bij het vervolg van les 2a! In de vorige les heb je geleerd hoe je tekst kunt printen, variabelen kunt maken en eenvoudige berekeningen kunt doen. Nu gaan we je programma's interactief maken, zodat ze kunnen reageren op wat de gebruiker invoert en beslissingen kunnen nemen.
 
 ## Leerdoelen
