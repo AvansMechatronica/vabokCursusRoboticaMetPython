@@ -38,13 +38,13 @@ title_slide.notes_slide.notes_text_frame.text = (
 s = new(L_AGENDA, "Vandaag",
         "De tijden zijn richtlijnen. Bouwen gaat niet bij iedereen even snel: wie klaar is, laat de robot controleren en gaat door met programmeren.")
 set_lines(ph(s, 21).text_frame, [
-    ("13:00  ", "Introductie, werkwijze en veiligheid"),
-    ("13:15  ", "Uitleenovereenkomst tekenen, deel 1 – bouwen"),
+    ("12:30  ", "Introductie, werkwijze en veiligheid"),
+    ("12:45  ", "Uitleenovereenkomst tekenen, deel 1 – bouwen"),
     ("", "Klaar? Controle door de docent + Pico ophalen"),
-    ("14:30  ", "Pauze"),
-    ("14:45  ", "Deel 2 – Thonny en je eerste robotprogramma"),
-    ("15:15  ", "Opdrachten 1–4: bewegingen en patronen"),
-    ("16:00  ", "Afsluiting en vooruitblik"),
+    ("14:00  ", "Pauze"),
+    ("14:15  ", "Deel 2 – Thonny en je eerste robotprogramma"),
+    ("14:45  ", "Opdrachten 1–4: bewegingen en patronen"),
+    ("15:30  ", "Afsluiting en vooruitblik"),
 ], size=19, space_after=12)
 strip_empty(s)
 
@@ -127,7 +127,7 @@ strip_empty(s)
 
 # ================================================================ DEEL 1
 s = new(L_DEEL_A, "Deel 1",
-        "Start deel 1 (13:15). Laat iedereen eerst de uitleenovereenkomst tekenen (support/uitleenovereenkomst.docx); pas daarna het bouwpakket uitreiken.\n"
+        "Start deel 1 (12:45). Laat iedereen eerst de uitleenovereenkomst tekenen (support/uitleenovereenkomst.docx); pas daarna het bouwpakket uitreiken.\n"
         "De Raspberry Pi Pico krijgen ze nog NIET.")
 set_lines(ph(s, 21).text_frame, ["De robot bouwen"], size=22)
 strip_empty(s)
@@ -206,7 +206,7 @@ doen("Aan de slag: bouw je robot", [
     ("1  ", "Bouw de robot met de online bouwstappen"),
     ("2  ", "Beantwoord: waar zitten de motoren, welke sensor zit voorop, waar komt de Pico, hoeveel wielen, waar gaan de batterijen?"),
     ("3  ", "Klaar? Schakelaar op OFF en steek je hand op voor de controle"),
-], "Bouwen (tot ±14:30). Loop rond, let vooral op de motoren (stap 1) en de kabels (stap 7).\n"
+], "Bouwen (tot ±14:00). Loop rond, let vooral op de motoren (stap 1) en de kabels (stap 7).\n"
    "Wie klaar is: controle afnemen (volgende dia) en Pico uitgeven.",
     foot="Lesmateriaal: les 3, stap 1 en de bouwstappen")
 
@@ -231,13 +231,13 @@ pill(s, 7.9, 5.25, 4.4, "Pas daarna: programmeren", fill=RED)
 strip_empty(s)
 
 # ---------------------------------------------------------------- pauze
-s = new(L_PAUZE, "Pauze\n14:45 verder met deel 2",
-        "Pauze (14:30–14:45). Wie nog bouwt, kan na de pauze afronden en laten controleren; de anderen starten met Thonny.")
+s = new(L_PAUZE, "Pauze\n14:15 verder met deel 2",
+        "Pauze (14:00–14:15). Wie nog bouwt, kan na de pauze afronden en laten controleren; de anderen starten met Thonny.")
 strip_empty(s)
 
 # ================================================================ DEEL 2
 s = new(L_DEEL_B, "Deel 2",
-        "Start deel 2 (14:45). Alleen studenten met een gecontroleerde robot en een Pico gaan programmeren. Anderen kunnen Thonny alvast installeren.")
+        "Start deel 2 (14:15). Alleen studenten met een gecontroleerde robot en een Pico gaan programmeren. Anderen kunnen Thonny alvast installeren.")
 set_lines(ph(s, 21).text_frame, ["Thonny en je eerste robotprogramma"], size=22)
 strip_empty(s)
 
@@ -348,7 +348,7 @@ doen("Aan de slag: opdracht 1 t/m 4", [
     ("3  Patronen  ", "vierkant, driehoek, achtje"),
     ("4  Uitdaging  ", "vooruit, 360° draaien en terug naar het begin"),
     ("Tip: ", "gebruik een for-loop uit les 2 voor herhalingen"),
-], "Opdrachten (tot ±16:00). Moedig aan om een logboek bij te houden: welke snelheid en tijd geeft een draai van 90 graden?\n"
+], "Opdrachten (tot ±15:30). Moedig aan om een logboek bij te houden: welke snelheid en tijd geeft een draai van 90 graden?\n"
    "Snelle studenten: extra uitdagingen A–D in de handleiding.",
     foot="Lesmateriaal: les 3, opdrachten 1–4")
 
@@ -370,7 +370,7 @@ strip_empty(s)
 
 # ---------------------------------------------------------------- afsluiting
 s = new(L_TITLE_ONLY, "Afsluiting: wat kun je nu?",
-        "Afsluiting (16:00, ±10 min). Laat 1 of 2 studenten hun patroon of dans demonstreren.\n"
+        "Afsluiting (15:30, ±10 min). Laat 1 of 2 studenten hun patroon of dans demonstreren.\n"
         "Opruimen: schakelaar op OFF. Vooruitblik: in les 4 programmeer je de actoren: motoren, LEDs, buzzer en het display.")
 geleerd = ["De Pico-robot bouwen en aansluiten", "Thonny verbinden met de Pico",
            "Een programma opslaan en uitvoeren", "Rijden, draaien en stoppen met pico_car",

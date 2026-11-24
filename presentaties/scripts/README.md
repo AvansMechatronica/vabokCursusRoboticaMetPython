@@ -11,6 +11,8 @@ voor wie (of welke Claude-sessie) hier verder aan werkt.
 | `helpers.py` | Gedeelde code: template laden, layouts, kaarten, codeblokken, pills |
 | `build_les2.py` | Maakt `les2.pptx` (les 2a + 2b in één presentatie) |
 | `build_les3.py` | Maakt `les3.pptx` (bouwen → controle → Pico → programmeren); gebruikt `helpers.py` |
+| `build_les4.py` | Maakt `les4.pptx` (actoren: motoren, LED, display, buzzer, functies, NeoPixels) |
+| `build_les5.py` | Maakt `les5.pptx` (sensoren: licht, ultrasoon, tracking; meten → beslissen → doen) |
 | `website.png` | Screenshot van de GitHub Pages-site voor de dia "Het lesmateriaal" |
 | `render.ps1` | Exporteert dia's als PNG via PowerPoint (om te controleren) |
 | `pptx2pdf.ps1` | Exporteert een presentatie naar PDF via PowerPoint |
@@ -50,8 +52,9 @@ De presentatie van deze les: {download}`Les 2 – presentatie (PDF) <../presenta
 :::
 ```
 
-## Status (23 november 2026)
+## Status (24 november 2026)
 
-- Klaar: les 2 (2a + 2b), les 3, PDF's gekoppeld in les2a/les2b/les3, logo's in de uitleenovereenkomst.
-- Nog te doen: presentaties voor les 4 (actoren) en les 5 (sensoren) e.v.
-  `les4 .pptx` en `les5.pptx` bevatten nog alleen een titeldia en lege dia's.
+- Klaar: les 2 t/m 5. Lestijden 12:30–15:45 (pauze 14:00–14:15).
+- PDF's van les 2 en 3 gekoppeld in de handleiding; les 4 en 5 nog niet.
+- `les4 .pptx` (met spatie) is de oude lege versie; de nieuwe heet `les4.pptx`.
+- Nog te doen: les 6 (eigen robot-werktuig) e.v.

@@ -1,5 +1,9 @@
 # Les 4: Programmeren van actoren
 
+:::{note}
+De presentatie van deze les: {download}`Les 4 – presentatie (PDF) <../presentaties/les4.pdf>`
+:::
+
 Een actor is een apparaat dat signalen van een computer of microcontroller omzet in fysieke acties, zoals beweging of lichtsignalen af te geven. Op de pico-robot zijn verschillende actoren aanwezig die je kunt programmeren om je robot te laten bewegen en reageren op de omgeving.
 
 ## Motoren
@@ -159,4 +163,4 @@ while True:
         pixels.show()
         time.sleep(0.05)
 ```
-De uitleg van dit Python-programma vind je in de [NeoPixel Code Uitleg](les3_uitleg_neopixel.md).
+De uitleg van dit Python-programma vind je in de [NeoPixel Code Uitleg](les4_uitleg_neopixel.md).

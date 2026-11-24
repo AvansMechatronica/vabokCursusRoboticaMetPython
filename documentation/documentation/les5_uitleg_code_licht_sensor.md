@@ -17,8 +17,8 @@ We importeren (= meenemen) gereedschap dat we nodig hebben:
 ```python
 # Light1 -> GP27
 # Light2 -> GP26
-light1 = machine.ADC(27)
-light2 = machine.ADC(26)
+light1 = ADC(27)
+light2 = ADC(26)
 ```
 **Wat gebeurt hier?**
 - We zeggen: "sensor 1 zit op poort 27" en "sensor 2 zit op poort 26"

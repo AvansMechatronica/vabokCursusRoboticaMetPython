@@ -1,5 +1,9 @@
 # Les 5: Programmeren van sensoren
 
+:::{note}
+De presentatie van deze les: {download}`Les 5 – presentatie (PDF) <../presentaties/les5.pdf>`
+:::
+
 Een sensor is een apparaat dat fysieke grootheden uit de omgeving meet en deze omzet in signalen die door een computer of microcontroller kunnen worden verwerkt.
 
 Op de pico-robot zijn verschillende sensoren aanwezig die gebruikt kunnen worden om de omgeving te detecteren. In deze les leer je hoe je deze sensoren kunt programmeren en gebruiken in je robotprojecten.
@@ -28,8 +32,8 @@ import time
 
 # Light1 -> GP27
 # Light2 -> GP26
-light1 = machine.ADC(27)
-light2 = machine.ADC(26)
+light1 = ADC(27)
+light2 = ADC(26)
 
 while True:
     # Lees waarden uit
@@ -89,9 +93,11 @@ while True:
     if distance > 20.0:
         # start de motoren
         # TODO: voeg hier de code toe om de robot vooruit te laten rijden
+        pass  # vervang pass door je eigen code
     else:
         # stop de motoren
         # TODO: voeg hier de code toe om de robot te laten stoppen
+        pass  # vervang pass door je eigen code
     time.sleep(1)
 ```
 

@@ -185,3 +185,116 @@ def doen(title, lines, notes, foot=None):
     return s
 
 
+
+
+# ================================================================ gedeelde blokken (les 4 en verder)
+import os as _os, tempfile as _tempfile
+from PIL import Image as _Image
+
+URL = "https://avansmechatronica.github.io/vabokCursusRoboticaMetPython/"
+_TMP = _tempfile.mkdtemp(prefix="pptx_img_")
+
+
+def pic(slide, path, x, y, w, h, border=False):
+    """Afbeelding passend in kader (x, y, w, h), beeldverhouding behouden.
+    Grote foto's worden verkleind (max 1600 px) zodat de pptx klein blijft; GIF's blijven intact (animatie)."""
+    im = _Image.open(path)
+    iw, ih = im.size
+    if not path.lower().endswith(".gif") and max(iw, ih) > 1600:
+        f = 1600 / max(iw, ih)
+        small = _os.path.join(_TMP, _os.path.basename(path))
+        im.convert("RGB").resize((int(iw * f), int(ih * f))).save(small, quality=88)
+        path = small
+    scale = min(w / iw, h / ih)
+    pw, phh = iw * scale, ih * scale
+    p = slide.shapes.add_picture(path, Inches(x + (w - pw) / 2), Inches(y + (h - phh) / 2), Inches(pw), Inches(phh))
+    if border:
+        p.line.color.rgb = RGBColor(0xBB, 0xBB, 0xBB); p.line.width = Pt(0.75)
+    return p
+
+
+def titel(les, notes):
+    s = prs.slides[0]
+    for p in s.placeholders:
+        if p.placeholder_format.idx == 21:
+            runs = p.text_frame.paragraphs[0].runs
+            runs[0].text = "Les "
+            runs[1].text = les
+            for r in runs[2:]:
+                r.text = ""
+    s.notes_slide.notes_text_frame.text = notes
+
+
+def agenda(items, notes, size=19):
+    s = new(L_AGENDA, "Vandaag", notes)
+    set_lines(ph(s, 21).text_frame, items, size=size, space_after=12)
+    strip_empty(s)
+    return s
+
+
+def website(stappen, notes, img):
+    s = new(L_TITLE_ONLY, "Het lesmateriaal: alles staat online", notes + "\nURL: " + URL)
+    y = 1.8
+    for k, st in enumerate(stappen):
+        circle_num(s, 0.8, y, k + 1, d=0.5, size=17)
+        text(s, 1.5, y, 4.7, 0.5, st, size=18, anchor=MSO_ANCHOR.MIDDLE)
+        y += 0.85
+    p_ = pic(s, img, 6.6, 1.6, 6.0, 4.1, border=True)
+    p_.click_action.hyperlink.address = URL
+    ub = box(s, 0.8, 5.9, 11.8, 0.65, LILAC_T, radius=0.3)
+    tf = ub.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
+    r = p.add_run(); r.text = URL.replace("https://", "").rstrip("/")
+    r.font.size = Pt(22); r.font.bold = True; r.font.color.rgb = NAVY
+    r.hyperlink.address = URL
+    strip_empty(s)
+    return s
+
+
+def deel(lay, titel_, sub, notes):
+    s = new(lay, titel_, notes)
+    set_lines(ph(s, 21).text_frame, [sub], size=22)
+    strip_empty(s)
+    return s
+
+
+def pauze(tekst, notes):
+    s = new(L_PAUZE, tekst, notes)
+    strip_empty(s)
+    return s
+
+
+def checklist(slide, x, y, items, w=5.0, step=0.65, size=18, sym="✓", fill=GREEN):
+    for g in items:
+        circle_num(slide, x, y + 0.02, sym, fill=fill, d=0.42, size=14)
+        text(slide, x + 0.6, y, w, 0.5, g, size=size, anchor=MSO_ANCHOR.MIDDLE)
+        y += step
+    return y
+
+
+def kaartgrid(slide, items, cols=3, x0=0.8, y0=1.65, w=3.8, h=2.1, gx=4.0, gy=2.3, size=15):
+    fills = [RED_T, LILAC_T, BLUE_T]
+    for k, (hd, body) in enumerate(items):
+        cx = x0 + (k % cols) * gx
+        cy = y0 + (k // cols) * gy
+        card(slide, cx, cy, w, h, hd, ["• " + t for t in body], fill=fills[k % 3],
+             head_color=RED if k % 3 == 0 else NAVY, size=size)
+
+
+def uitleg_rijen(slide, x, y, w, rows, rh=0.82, gap=0.1):
+    for h_, b in rows:
+        box(slide, x, y, w, rh, GREY)
+        text(slide, x + 0.2, y + 0.05, w - 0.4, 0.4, h_, size=15, bold=True, color=RED, font="Courier New")
+        text(slide, x + 0.2, y + 0.42, w - 0.4, 0.4, b, size=14)
+        y += rh + gap
+    return y
+
+
+def afronden(out, notes_eind):
+    lst = prs.slides._sldIdLst
+    end = list(lst)[1]
+    lst.remove(end)
+    lst.append(end)
+    prs.slides[len(prs.slides) - 1].notes_slide.notes_text_frame.text = notes_eind
+    prs.save(out)
+    print("saved", out, len(prs.slides), "slides")

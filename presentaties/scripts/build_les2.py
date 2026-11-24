@@ -200,12 +200,12 @@ title_slide.notes_slide.notes_text_frame.text = (
 s = new(L_AGENDA, "Vandaag",
         "Laat deze dia kort zien en wijs op de pauze. De tijden zijn richtlijnen: wie sneller is, gaat gewoon door.")
 set_lines(ph(s, 21).text_frame, [
-    ("13:00  ", "Introductie en werkwijze"),
-    ("13:15  ", "Deel 2a – Python basis (opdracht 1–4)"),
-    ("14:30  ", "Pauze"),
-    ("14:45  ", "Deel 2b – Interactief programmeren (opdracht 1–4)"),
-    ("16:00  ", "Afsluiting en vooruitblik"),
-    ("16:15  ", "Einde"),
+    ("12:30  ", "Introductie en werkwijze"),
+    ("12:45  ", "Deel 2a – Python basis (opdracht 1–4)"),
+    ("14:00  ", "Pauze"),
+    ("14:15  ", "Deel 2b – Interactief programmeren (opdracht 1–4)"),
+    ("15:30  ", "Afsluiting en vooruitblik"),
+    ("15:45  ", "Einde"),
 ], size=20, space_after=14)
 strip_empty(s)
 
@@ -291,7 +291,7 @@ strip_empty(s)
 
 # ================================================================ DEEL 2A
 s = new(L_DEEL_A, "Deel 2a",
-        "Start deel 2a (13:15). Iedereen opent het lesmateriaal van les 2a en online-python.com.")
+        "Start deel 2a (12:45). Iedereen opent het lesmateriaal van les 2a en online-python.com.")
 set_lines(ph(s, 21).text_frame, ["Python basis: print, variabelen, datatypes en rekenen"], size=22)
 strip_empty(s)
 
@@ -301,7 +301,7 @@ s = new(L_TITLE_ONLY, "Je eerste programma",
         "Leg uit: print() is een functie, tussen de haakjes staat wat je wilt laten zien, aanhalingstekens = tekst.\n"
         "Laat daarna iedereen hetzelfde doen voordat ze aan opdracht 1 beginnen.")
 text(s, 0.8, 1.7, 5.9, 0.5, "Stap voor stap", size=20, bold=True, color=NAVY)
-stappen = ["Ga naar online-python.com", "Maak het scherm main.py helemaal leeg",
+stappen = [[[("Ga naar ", {}), ("online-python.com", {"bold": True})]], "Maak het scherm main.py helemaal leeg",
            "Typ de code hieronder", "Klik op Run (of Ctrl+Enter)"]
 y = 2.3
 for k, st in enumerate(stappen):
@@ -430,13 +430,13 @@ for k, (h, b, f, hc) in enumerate(hulp):
 strip_empty(s)
 
 # ---------------------------------------------------------------- pauze
-s = new(L_PAUZE, "Pauze\n14:45 verder met deel 2b",
-        "Pauze (14:30–14:45). Wie deel 2a nog niet af heeft, kan na de pauze kort afronden, maar start daarna met 2b: de opdrachten van 2a zijn de basis, de extra oefeningen zijn voor thuis.")
+s = new(L_PAUZE, "Pauze\n14:15 verder met deel 2b",
+        "Pauze (14:00–14:15). Wie deel 2a nog niet af heeft, kan na de pauze kort afronden, maar start daarna met 2b: de opdrachten van 2a zijn de basis, de extra oefeningen zijn voor thuis.")
 strip_empty(s)
 
 # ================================================================ DEEL 2B
 s = new(L_DEEL_B, "Deel 2b",
-        "Start deel 2b (14:45). Iedereen opent het lesmateriaal van les 2b.")
+        "Start deel 2b (14:15). Iedereen opent het lesmateriaal van les 2b.")
 set_lines(ph(s, 21).text_frame, ["Interactief programmeren: input, keuzes en herhalen"], size=22)
 strip_empty(s)
 
@@ -572,7 +572,7 @@ doen("Aan de slag: opdracht 4", [
     ("B  Rekenmachine  ", "– een menu dat blijft draaien"),
     ("C  Raadspel  ", "– met hints: te hoog of te laag"),
     ("Daarna: ", "breid uit met meer vragen, opties of foutafhandeling"),
-], "Opdracht 2b-4 (tot ±16:00). Hier komt alles samen. Stimuleer uitbreiden: dat is het verschil tussen overtypen en echt programmeren.\n"
+], "Opdracht 2b-4 (tot ±15:30). Hier komt alles samen. Stimuleer uitbreiden: dat is het verschil tussen overtypen en echt programmeren.\n"
    "Laat 1 of 2 studenten aan het eind kort hun programma laten zien.",
     foot="Lesmateriaal: les 2b, opdracht 4")
 
@@ -596,7 +596,7 @@ strip_empty(s)
 
 # ---------------------------------------------------------------- afsluiting
 s = new(L_TITLE_ONLY, "Afsluiting: wat kun je nu?",
-        "Afsluiting (16:00, ±10 min). Laat studenten per onderwerp zelf inschatten: lukt het (duim omhoog) of nog lastig?\n"
+        "Afsluiting (15:30, ±10 min). Laat studenten per onderwerp zelf inschatten: lukt het (duim omhoog) of nog lastig?\n"
         "Vooruitblik: volgende week bouw je de robot en gebruik je precies deze bouwstenen. De code rechts is een schets (pseudocode), niet de echte robotcode.\n"
         "Extra oefeningen 2a (A–C) en 2b (A–E) zijn voor thuis.")
 geleerd = ["print() en variabelen", "Datatypes: str, int, float, bool", "Rekenen, ook met // en %",
